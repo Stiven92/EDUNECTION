@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-	<?php 
-    include'layout/head.php'
-	 ?>
+	s
 	
     <body data-spy="scroll" data-offset="80">
 
