@@ -31,12 +31,12 @@ Version      : 1.0
 * ----------------------------------------------------------------------------------------
 */
 body {
-	color: #4a5355;
+	color: #0e4695;
 	font-family: "DM Sans", sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 26px;
-	background: #fff;
+	background: #E7F0FD;
 	overflow-x: hidden;
 }
 
@@ -103,7 +103,7 @@ fieldset {
   justify-content: center;
   z-index: 99999;
   transform: translate(-50%, -50%);
-  background: #525fe1;
+  background: #0e4695;
 }
 .loader {
   width: 106px;
@@ -204,19 +204,19 @@ width: 50px;
 /*END SCROLL TO TOP*/
 /*START BTN*/
 .btn_one {
-	background: #525fe1;
-	border: 1px solid #525fe1;
+	background: #4087EC;
+	border: 1px solid #4087EC;
 	padding: 15px 30px;
 	border-radius: 2px;
-	color: #fff;
+	color: #E7F0FD;
 	transition: 0.3s;
 	font-weight: 600;
 }
 .btn_one i{margin-right:5px;}
 .btn_one:hover{
-background:#f26b65;
-color:#fff;
-border: 1px solid #f26b65;
+background:#2BB49A;
+color:#E7F0FD;
+border: 1px solid #2BB49A;
 }
 @media only screen and (max-width:960px){
 .btn_one{
@@ -239,6 +239,12 @@ margin-top: 0px;
 * 02.START NAVIGATION
 * ----------------------------------------------------------------------------------------
 */
+
+body #navigation {
+	color: #BED5F9;
+	background: #0E4695;
+}
+
 .col-20{
 	width: 20%;
 }
@@ -259,7 +265,7 @@ margin-top: 0px;
 }
 #navigation{
 	padding: 20px 65px;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #0D4087;
 }
 .navigation2{
 	border-bottom: 0px !important;
@@ -279,7 +285,7 @@ margin-top: 0px;
     animation: fadeInDown 800ms;
     -webkit-backface-visibility: hidden;
     border-radius: 0px;
-    background: #fff;
+    background: #0E4695;
 	box-shadow: 10px 15px 18px rgba(23, 23, 36, 0.03);
 }
 
@@ -301,17 +307,17 @@ margin-top: 0px;
 @media only screen and (max-width:1024px){
 #main-menu ul li {padding: 0 6px;}
 }	
-#main-menu ul li a {
+#main-menu ul li a { /*opciones de la navbar*/
 	position: relative;
 	text-transform: uppercase;
-	color: #0b104a;
+	color: #E7F0FD; 
 	font-weight: 600;
 	transition: .5s;
 	font-size: 16px;
 }
 #main-menu ul li a:hover,
 #main-menu ul li a:focus{
-	color: #525fe1;
+	color: #4087EC; /*poner el mouse en la opción*/
 }
 #navigation .header-btn {
 	padding-right:20px;
@@ -325,7 +331,7 @@ margin-top: 0px;
 
 #navigation #main-menu ul li ul ,
 #navigation #main-menu ul li ul li ul {	
-	background: #525fe1;
+	background: #166EE8;
 	-webkit-box-shadow: 0 0 10px 3px rgba(0,0,0,.05);
 	box-shadow: 0 0 10px 3px rgba(0,0,0,.05);
 	left: -55px;
@@ -344,7 +350,7 @@ margin-top: 0px;
 	width: 210px;
 	z-index: 999;
 	border-radius: 4px;
-	border-top: 2px solid #525fe1;
+	border-top: 5px solid #619DF0;
 }
 #navigation #main-menu .menu-item-has-children {
 	position: relative;
@@ -359,7 +365,7 @@ margin-top: 0px;
 	font-size: 10px;
 	right: -10px;
 	top: 0px;
-	color: #0b104a;
+	color: #E7F0FD;
 	font-size: 13px;
 	font-weight: 600;
 }
@@ -399,7 +405,7 @@ margin-top: 0px;
 
 #navigation #main-menu ul li ul li a:hover{
 	color: #fff;
-	background-color: #525fe1;
+	background-color: #1259BE;
 	text-decoration: none;
 }
 @media only screen and (max-width: 991px){
@@ -441,12 +447,12 @@ top: 40px;
 	display: inline-block;
 	font-weight: 600;
 	font-size: 18px;
-	color: #0b104a;
+	color: #E7F0FD;
 	transition: .5s;	
 }
 .header-btn:hover,
 .header-btn:focus{
-	color: #525fe1;
+	color: #4087EC;
 	
 }
 /*

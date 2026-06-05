@@ -94,9 +94,10 @@
 					</div><!--- END Col -->
 					
 					<div class="col-20 d-none d-xl-block text-end align-self-center">
-						<a href="#" class="header-btn">Sign In</a>
+						<a href="../admin/html/index.php" class="header-btn">Sign In</a>
 						<a href="contact.php" class="btn_one">Sign Up</a>
 					</div><!--- END Col -->
+					
 					
 					<ul class="mobile_menu">						
 						<li><a href="#">Home</a>
@@ -329,7 +330,7 @@
 	<!-- countTo js -->
 		<script src="../assets/js/jquery.inview.min.js"></script>								
 	<!-- scrolltopcontrol js -->
-		<script src="../assets/js/scrolltopcontrol.js"></script>			
+		<!--	<script src="../assets/js/scrolltopcontrol.js"></script> -->			
 	<!-- WOW - Reveal Animations When You Scroll -->
 		<script src="../assets/js/wow.min.js"></script>				
 	<!-- scripts js -->
