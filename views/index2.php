@@ -18,7 +18,7 @@
 		 ?>		
 
 		<!-- START HOME -->
-		<section class="home_bg hb_height" style="background-image: url(assets/img/bg/home-bg2.jpg);  background-size:cover; background-position: center center;">
+		<section class="home_bg hb_height" style="background-image: url(../assets/img/bg/home-bg2.jpg);  background-size:cover; background-position: center center;">
 			<div class="container">
 				<div class="row">
 				  <div class="col-lg-6 col-sm-12 col-xs-12">
