@@ -22,10 +22,10 @@
 			<div class="container">
 				<div class="col-lg-10 offset-lg-1 text-center">
 					<div class="section-top-title wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
-						<h1>Our instructor</h1>
+						<h1>Nuestros instructores</h1>
 						<ul>
-							<li><a href="index.php">Home</a></li>
-							<li> / instructor</li>
+							<li><a href="index.php">Inicio</a></li>
+							<li> / Instructores</li>
 						</ul>
 					</div><!-- //.HERO-TEXT -->
 				</div><!--- END COL -->
@@ -37,8 +37,8 @@
 		<section class="team_area section-padding">
 			<div class="container">									
 				<div class="section-title text-center">
-					<h2>Meet our Instructors</h2>
-					<p>We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
+					<h2>Conoce a nuestros instructores</h2>
+					<p>Ofrecemos un enfoque completamente nuevo a los paradigmas de aprendizaje más básicos. ¡Elige entre una amplia variedad de opciones de aprendizaje y adquiere nuevas habilidades! Nuestra escuela es conocida.</p>
 				</div>						
 				<div class="row">													
 					<div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
@@ -53,11 +53,11 @@
 							</div>
 							<div class="team-prof">
 								<h3>Bilkis Vabi</h3>
-								<span>Web designer</span>
+								<span>Diseñadora Web</span>
 							</div>
 							<div class="sth_det2">
-								<span class="ti-file"> <u>04 Course</u></span>
-								<span class="ti-user"> <u>27 Student</u></span>
+								<span class="ti-file"> <u>04 Cursos</u></span>
+								<span class="ti-user"> <u>27 Estudiantes</u></span>
 							</div>									
 						</div>
 					</div><!--- END COL -->										
@@ -73,11 +73,11 @@
 							</div>
 							<div class="team-prof">
 								<h3>Mood Wasim</h3>
-								<span>TemplateMonster company</span>
+								<span>Empresa TemplateMonster</span>
 							</div>
 							<div class="sth_det2">
-								<span class="ti-file"> <u>06 Course</u></span>
-								<span class="ti-user"> <u>41 Student</u></span>
+								<span class="ti-file"> <u>06 Cursos</u></span>
+								<span class="ti-user"> <u>41 Estudiantes</u></span>
 							</div>							
 						</div>
 					</div><!--- END COL -->										
@@ -93,11 +93,11 @@
 							</div>
 							<div class="team-prof">
 								<h3>Shyinn tim</h3>
-								<span>Codecanyou</span>
+								<span>Codecanyon</span>
 							</div>
 							<div class="sth_det2">
-								<span class="ti-file"> <u>13 Course</u></span>
-								<span class="ti-user"> <u>31 Student</u></span>
+								<span class="ti-file"> <u>13 Cursos</u></span>
+								<span class="ti-user"> <u>31 Estudiantes</u></span>
 							</div>
 						</div>
 					</div><!--- END COL -->										
@@ -116,8 +116,8 @@
 								<span>Tsc chottor</span>
 							</div>
 							<div class="sth_det2">
-								<span class="ti-file"> <u>07 Course</u></span>
-								<span class="ti-user"> <u>24 Student</u></span>
+								<span class="ti-file"> <u>07 Cursos</u></span>
+								<span class="ti-user"> <u>24 Estudiantes</u></span>
 							</div>
 						</div>
 					</div><!--- END COL -->							  
