@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"> 
 
 	<?php 
     include'layout/head.php'
