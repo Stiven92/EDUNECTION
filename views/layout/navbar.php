@@ -17,14 +17,14 @@
 										<li><a href="index2.php">Home 02</a></li>
 									</ul>
 								</li>
-								<li><a href="about.php">About</a></li>				  				  
-								<li class="menu-item-has-children"><a href="course.php">Course</a>
+								<li><a href="about.php">Sobre Nosotros</a></li>				  				  
+								<li class="menu-item-has-children"><a href="course.php">Colegios</a>
 									<ul>										
-										<li><a href="course.php">Course</a></li>
-										<li><a href="course_details.php">Course Details</a></li>
+										<li><a href="course.php">Colegios</a></li>
+										<li><a href="course_details.php">Detalle de Colegios</a></li>
 									</ul>
 								</li>								
-								<li class="menu-item-has-children"><a href="#">Pages</a>
+								<!--<li class="menu-item-has-children"><a href="#">Pages</a>
 									<ul>										
 										<li><a href="instructor.php">Instructor</a></li>
 										<li><a href="ins_details.php">Instructor Details</a></li>
@@ -32,22 +32,21 @@
 										<li><a href="faq.php">Faq Page</a></li>			
 										<li><a href="404.php">404</a></li>				
 									</ul>
-								</li>							
+								</li>-->						
 								<li class="menu-item-has-children"><a href="blog.php">Blog</a>
 									<ul>										
 										<li><a href="blog.php">Blog</a></li>
-										<li><a href="blog_single.php">Blog Details</a></li>
+										<li><a href="blog_single.php">Detalles de Blog</a></li>
 									</ul>
 								</li>							  
-								<li><a href="contact.php">Contact</a></li>
+								<li><a href="contact.php">Contacto</a></li>
 							</ul>
 						</nav>
 					</div><!--- END Col -->
 					
-					<div class="col-20 d-none d-xl-block text-end align-self-center">
-						<a href="../admin/html/index.php" class="header-btn">Sign In</a>
-						<a href="contact.php" class="btn_one">Sign Up</a>
-					</div><!--- END Col -->
+					<div class="col-20 d-none d-xl-flex justify-content-end align-items-center gap-3">
+					    <a href="contact.php" class="btn_one">Iniciar Sesión</a>
+					</div>
 					
 					
 					<ul class="mobile_menu">						
