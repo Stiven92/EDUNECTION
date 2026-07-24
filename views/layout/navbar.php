@@ -45,7 +45,7 @@
 					</div><!--- END Col -->
 					
 					<div class="col-20 d-none d-xl-flex justify-content-end align-items-center gap-3">
-					    <a href="contact.php" class="btn_one">Iniciar Sesión</a>
+					    <a href="login.php" class="btn_one">Iniciar Sesión</a>
 					</div>
 					
 					
