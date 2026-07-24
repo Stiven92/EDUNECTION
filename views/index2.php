@@ -28,20 +28,20 @@
 				  </div><!--- END COL -->					  
 				  <div class="col-lg-6 col-sm-12 col-xs-12">
 					<div class="hero-text2 ht_top">
-						<h1>Explore Our <span>14000+</span> Online courses for all</h1>
+						<h1>Explora nuestros más de <span>14.000</span> cursos en línea para todos</h1>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, consectetur adipiscing elit tempor ut labore</p>
 					</div>
 					<div class="home_sb2">
 						<form action="#" class="banner_subs2">
-							<input type="text" class="form-control home_si2" placeholder="Search your course here" required="required">
-							<button type="button" class="subscribe__btn">Search <i class="fa fa-paper-plane-o"></i></button>
+							<input type="text" class="form-control home_si2" placeholder="Busca tu curso aquí" required="required">
+							<button type="button" class="subscribe__btn">Buscar <i class="fa fa-paper-plane-o"></i></button>
 						</form>
 					</div>	
 					<div class="home_tag">
-						<span>Popular Topic:</span>
-						<a href="#">Design, </a>
-						<a href="#">Development, </a>
-						<a href="#">Graphics, </a>
+						<span>Temas populares:</span>
+						<a href="#">Diseño, </a>
+						<a href="#">Desarrollo, </a>
+						<a href="#">Gráficos, </a>
 						<a href="#">Marketing </a>
 					</div>					
 				  </div><!--- END COL -->					  
@@ -56,20 +56,20 @@
 				<div class="row part_bg">
 					<div class="col-lg-4 col-sm-4 col-xs-12">
 						<div class="partner_title">
-							<h3>Helping <span>86,000+</span> global companies take the gloves off </h3>
+							<h3>Ayudando a más de <span>86.000</span> empresas globales a dar el siguiente paso </h3>
 						</div>					
 					</div><!-- END COL  -->
 					<div class="col-lg-8 col-sm-8 col-xs-12 text-center">
 						<div class="partner">
-							<a href="#"><img src="../assets/img/clients/1.png" alt="image"></a>
-							<a href="#"><img src="../assets/img/clients/2.png" alt="image"></a>
-							<a href="#"><img src="../assets/img/clients/3.png" alt="image"></a>
-							<a href="#"><img src="../assets/img/clients/4.png" alt="image"></a>
-							<a href="#"><img src="../assets/img/clients/5.png" alt="image"></a>
-							<a href="#"><img src="../assets/img/clients/2.png" alt="image"></a>
-							<a href="#"><img src="../assets/img/clients/1.png" alt="image"></a>
-							<a href="#"><img src="../assets/img/clients/3.png" alt="image"></a>
-							<a href="#"><img src="../assets/img/clients/4.png" alt="image"></a>
+							<a href="#"><img src="../assets/img/clients/1.png" alt="imagen"></a>
+							<a href="#"><img src="../assets/img/clients/2.png" alt="imagen"></a>
+							<a href="#"><img src="../assets/img/clients/3.png" alt="imagen"></a>
+							<a href="#"><img src="../assets/img/clients/4.png" alt="imagen"></a>
+							<a href="#"><img src="../assets/img/clients/5.png" alt="imagen"></a>
+							<a href="#"><img src="../assets/img/clients/2.png" alt="imagen"></a>
+							<a href="#"><img src="../assets/img/clients/1.png" alt="imagen"></a>
+							<a href="#"><img src="../assets/img/clients/3.png" alt="imagen"></a>
+							<a href="#"><img src="../assets/img/clients/4.png" alt="imagen"></a>
 						</div>
 					</div><!-- END COL  -->
 				</div><!--END  ROW  -->
@@ -81,72 +81,72 @@
 		<section class="category_two_area section-padding">
 			<div class="container">									
 				<div class="section-title text-center">
-					<h2>Popular Courses by category</h2>
-					<p>We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
+					<h2>Cursos populares por categoría</h2>
+					<p>Ofrecemos un enfoque completamente nuevo a los paradigmas de aprendizaje más básicos. ¡Elige entre una amplia variedad de opciones de aprendizaje y adquiere nuevas habilidades! Nuestra escuela es conocida.</p>
 				</div>						
 				<div class="row">													
 					<div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
 						<div class="cat_list_two">
 							<img src="../assets/img/cat1.jpg" alt="" />
-							<span>02 Courses</span>
-							<h4><a href="#">Digital Marketing</a></h4>
-							<p>We offer a brand new approach to the most basic learning paradigms.</p>
+							<span>02 Cursos</span>
+							<h4><a href="#">Marketing Digital</a></h4>
+							<p>Ofrecemos un enfoque completamente nuevo a los paradigmas de aprendizaje más básicos.</p>
 						</div>
 					</div><!--- END COL -->										
 					<div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
 						<div class="cat_list_two">
 							<img src="../assets/img/cat2.jpg" alt="" />
-							<span>04 Courses</span>
-							<h4><a href="#">Ui/UX Design</a></h4>
-							<p>We offer a brand new approach to the most basic learning paradigms.</p>
+							<span>04 Cursos</span>
+							<h4><a href="#">Diseño UI/UX</a></h4>
+							<p>Ofrecemos un enfoque completamente nuevo a los paradigmas de aprendizaje más básicos.</p>
 						</div>
 					</div><!--- END COL -->										
 					<div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
 						<div class="cat_list_two">
 							<img src="../assets/img/cat3.jpg" alt="" />
-							<span>01 Courses</span>
-							<h4><a href="#">Content Marketing</a></h4>
-							<p>We offer a brand new approach to the most basic learning paradigms.</p>
+							<span>01 Curso</span>
+							<h4><a href="#">Marketing de Contenidos</a></h4>
+							<p>Ofrecemos un enfoque completamente nuevo a los paradigmas de aprendizaje más básicos.</p>
 						</div>
 					</div><!--- END COL -->										
 					<div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
 						<div class="cat_list_two">
 							<img src="../assets/img/cat4.jpg" alt="" />
-							<span>05 Courses</span>
-							<h4><a href="#">Photo lifestyle</a></h4>
-							<p>We offer a brand new approach to the most basic learning paradigms.</p>
+							<span>05 Cursos</span>
+							<h4><a href="#">Estilo de Vida y Fotografía</a></h4>
+							<p>Ofrecemos un enfoque completamente nuevo a los paradigmas de aprendizaje más básicos.</p>
 						</div>
 					</div><!--- END COL -->										
 					<div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
 						<div class="cat_list_two">
 							<img src="../assets/img/cat5.jpg" alt="" />
-							<span>03 Courses</span>
-							<h4><a href="#">Graphic Design</a></h4>
-							<p>We offer a brand new approach to the most basic learning paradigms.</p>
+							<span>03 Cursos</span>
+							<h4><a href="#">Diseño Gráfico</a></h4>
+							<p>Ofrecemos un enfoque completamente nuevo a los paradigmas de aprendizaje más básicos.</p>
 						</div>
 					</div><!--- END COL -->										
 					<div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
 						<div class="cat_list_two">
 							<img src="../assets/img/cat6.jpg" alt="" />
-							<span>04 Courses</span>
-							<h4><a href="#">Interior Design</a></h4>
-							<p>We offer a brand new approach to the most basic learning paradigms.</p>
+							<span>04 Cursos</span>
+							<h4><a href="#">Diseño de Interiores</a></h4>
+							<p>Ofrecemos un enfoque completamente nuevo a los paradigmas de aprendizaje más básicos.</p>
 						</div>
 					</div><!--- END COL -->										
 					<div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
 						<div class="cat_list_two">
 							<img src="../assets/img/cat7.jpg" alt="" />
-							<span>02 Courses</span>
-							<h4><a href="#">Arts & Design</a></h4>
-							<p>We offer a brand new approach to the most basic learning paradigms.</p>
+							<span>02 Cursos</span>
+							<h4><a href="#">Arte y Diseño</a></h4>
+							<p>Ofrecemos un enfoque completamente nuevo a los paradigmas de aprendizaje más básicos.</p>
 						</div>
 					</div><!--- END COL -->										
 					<div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
 						<div class="cat_list_two">
 							<img src="../assets/img/cat8.jpg" alt="" />
-							<span>01 Courses</span>
-							<h4><a href="#">Visual design</a></h4>
-							<p>We offer a brand new approach to the most basic learning paradigms.</p>
+							<span>01 Curso</span>
+							<h4><a href="#">Diseño Visual</a></h4>
+							<p>Ofrecemos un enfoque completamente nuevo a los paradigmas de aprendizaje más básicos.</p>
 						</div>
 					</div><!--- END COL -->							  
 				</div><!--- END ROW -->
@@ -160,12 +160,12 @@
 				<div class="row">
 					<div class="col-lg-8 col-sm-6 col-xs-12">
 						<div class="section-title">
-							<h2>Join with more than <b>80,000+ </b> <br />Courses & Learning creators.</h2>
+							<h2>Únete a más de <b>80.000+ </b> <br />creadores de cursos y aprendizaje.</h2>
 						</div>					
 					</div><!--- END COL -->
 					<div class="col-lg-4 col-sm-6 col-xs-12">
 						<div class="cour_btn">
-							<a href="course.php" class="btn_one">View all Courses <i class="ti-arrow-top-right"></i></a>
+							<a href="course.php" class="btn_one">Ver todos los cursos <i class="ti-arrow-top-right"></i></a>
 						</div>
 					</div><!--- END COL -->
 				</div><!--- END ROW -->				
@@ -174,13 +174,13 @@
 						<div class="single_course">
 							<div class="single_c_img">
 								<img src="../assets/img/course/1.png" class="img-fluid" alt="course-image" />
-								<span>Education</span>
+								<span>Educación</span>
 							</div>
 							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-							<h4><a href="course.php">Complete User fundamentals beginners to advanced</a></h4>
-							<p><span class="ti-book"> </span> 12 Course</p>
-							<p><span class="ti-alarm-clock"> </span>2 Hrs 32 Min</p>
-							<div class="price">Course Fee - 99$</div>
+							<h4><a href="course.php">Fundamentos de usuario completos para principiantes y avanzados</a></h4>
+							<p><span class="ti-book"> </span> 12 Cursos</p>
+							<p><span class="ti-alarm-clock"> </span>2 Horas 32 Min</p>
+							<div class="price">Precio del curso - $99</div>
 						</div>
 					</div><!-- END COL -->
 					<div class="col-lg-4 col-sm-6 col-xs-12">
@@ -190,49 +190,49 @@
 								<span>UI/UX</span>
 							</div>
 							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-							<h4><a href="course.php">Advanced Android 12 & Kotlin Development Course</a></h4>
-							<p><span class="ti-book"> </span> 41 Course</p>
-							<p><span class="ti-alarm-clock"> </span>3 Hrs 32 Min</p>
-							<div class="price">Course Fee - 49$</div>
+							<h4><a href="course.php">Curso avanzado de desarrollo en Android 12 y Kotlin</a></h4>
+							<p><span class="ti-book"> </span> 41 Cursos</p>
+							<p><span class="ti-alarm-clock"> </span>3 Horas 32 Min</p>
+							<div class="price">Precio del curso - $49</div>
 						</div>
 					</div><!-- END COL -->
 					<div class="col-lg-4 col-sm-6 col-xs-12">
 						<div class="single_course">
 							<div class="single_c_img">
 								<img src="../assets/img/course/3.png" class="img-fluid" alt="course-image" />
-								<span>Lifestyle</span>
+								<span>Estilo de vida</span>
 							</div>
 							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-							<h4><a href="course.php">Complete HTML, CSS and Javascript Course</a></h4>
-							<p><span class="ti-book"> </span> 32 Course</p>
-							<p><span class="ti-alarm-clock"> </span>2 Hrs 32 Min</p>
-							<div class="price">Course Fee - Free</div>
+							<h4><a href="course.php">Curso completo de HTML, CSS y Javascript</a></h4>
+							<p><span class="ti-book"> </span> 32 Cursos</p>
+							<p><span class="ti-alarm-clock"> </span>2 Horas 32 Min</p>
+							<div class="price">Precio del curso - Gratis</div>
 						</div>
 					</div><!-- END COL -->
 					<div class="col-lg-4 col-sm-6 col-xs-12">
 						<div class="single_course">
 							<div class="single_c_img">
 								<img src="../assets/img/course/4.png" class="img-fluid" alt="course-image" />
-								<span>Science</span>
+								<span>Ciencia</span>
 							</div>
 							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-							<h4><a href="course.php">IOS and Swift Complete iOS Application Development</a></h4>
-							<p><span class="ti-book"> </span> 19 Course</p>
-							<p><span class="ti-alarm-clock"> </span>2 Hrs 32 Min</p>
-							<div class="price">Course Fee - 59$</div>
+							<h4><a href="course.php">Desarrollo completo de aplicaciones iOS con Swift</a></h4>
+							<p><span class="ti-book"> </span> 19 Cursos</p>
+							<p><span class="ti-alarm-clock"> </span>2 Horas 32 Min</p>
+							<div class="price">Precio del curso - $59</div>
 						</div>
 					</div><!-- END COL -->
 					<div class="col-lg-4 col-sm-6 col-xs-12">
 						<div class="single_course">
 							<div class="single_c_img">
 								<img src="../assets/img/course/5.png" class="img-fluid" alt="course-image" />
-								<span>Modern</span>
+								<span>Moderno</span>
 							</div>
 							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-							<h4><a href="course.php">Learn graphics design with a best IT Trainer</a></h4>
-							<p><span class="ti-book"> </span> 22 Course</p>
-							<p><span class="ti-alarm-clock"> </span>2 Hrs 32 Min</p>
-							<div class="price">Course Fee - 79$</div>
+							<h4><a href="course.php">Aprende diseño gráfico con un excelente instructor IT</a></h4>
+							<p><span class="ti-book"> </span> 22 Cursos</p>
+							<p><span class="ti-alarm-clock"> </span>2 Horas 32 Min</p>
+							<div class="price">Precio del curso - $79</div>
 						</div>
 					</div><!-- END COL -->
 					<div class="col-lg-4 col-sm-6 col-xs-12">
@@ -242,10 +242,10 @@
 								<span>Marketing</span>
 							</div>
 							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-							<h4><a href="course.php">Complete data science for your next business</a></h4>
-							<p><span class="ti-book"> </span> 11 Course</p>
-							<p><span class="ti-alarm-clock"> </span>2 Hrs 32 Min</p>
-							<div class="price">Course Fee - 39$</div>
+							<h4><a href="course.php">Ciencia de datos completa para tu próximo negocio</a></h4>
+							<p><span class="ti-book"> </span> 11 Cursos</p>
+							<p><span class="ti-alarm-clock"> </span>2 Horas 32 Min</p>
+							<div class="price">Precio del curso - $39</div>
 						</div>
 					</div><!-- END COL -->						
 				</div><!--- END ROW -->
@@ -275,28 +275,28 @@
 						<div class="single-counter">
 							<span class="ti-folder sc_one"></span>
 							<h2 class="counter-num">134</h2>
-							<p>Our Online Course</p>
+							<p>Nuestros cursos en línea</p>
 						</div>							
 					</div>
 					<div class="col-lg-3 col-sm-6 col-xs-12">
 						<div class="single-counter">
 							<span class="ti-medall-alt sc_two"></span>
 							<h2 class="counter-num">299</h2>
-							<p>Academic Programs</p>
+							<p>Programas académicos</p>
 						</div>
 					</div><!-- END COL -->
 					<div class="col-lg-3 col-sm-6 col-xs-12">
 						<div class="single-counter">
 							<span class="ti-id-badge sc_three"></span>
 							<h2 class="counter-num">684</h2>
-							<p>Certified Students</p>
+							<p>Estudiantes certificados</p>
 						</div>
 					</div><!-- END COL -->
 					<div class="col-lg-3 col-sm-6 col-xs-12">
 						<div class="single-counter">
 							<span class="ti-user sc_four"></span>
 							<h2 class="counter-num">941</h2>
-							<p>Enrolled Students</p>
+							<p>Estudiantes inscritos</p>
 						</div>
 					</div><!-- END COL -->						
 				</div><!--- END ROW -->
@@ -310,20 +310,20 @@
 				<div class="row">								
 					<div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
 						<div class="ab_img">
-							<img src="../assets/img/about1.png" class="img-fluid" alt="image">
+							<img src="../assets/img/about1.png" class="img-fluid" alt="imagen">
 						</div>
 					</div><!--- END COL -->						
 					<div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
 						<div class="ab_content">
-							<h2>We Are Providing The Online Course In Global World</h2>
-							<p>We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
-							<p>We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
+							<h2>Ofrecemos cursos en línea a nivel global</h2>
+							<p>Ofrecemos un enfoque completamente nuevo a los paradigmas de aprendizaje más básicos. ¡Elige entre una amplia variedad de opciones de aprendizaje y adquiere nuevas habilidades! Nuestra escuela es conocida.</p>
+							<p>Ofrecemos un enfoque completamente nuevo a los paradigmas de aprendizaje más básicos. ¡Elige entre una amplia variedad de opciones de aprendizaje y adquiere nuevas habilidades! Nuestra escuela es conocida.</p>
 							<ul>
-								<li><span class="ti-check"></span> Get access to <b>12,000+</b> of our top courses</li>
-								<li><span class="ti-check"></span> Popular topic to learn now in our online courses for student</li>
-								<li><span class="ti-check"></span> Find the right instructor for you</li>
+								<li><span class="ti-check"></span> Obtén acceso a más de <b>12.000</b> de nuestros mejores cursos</li>
+								<li><span class="ti-check"></span> Temas populares para aprender ahora en nuestros cursos en línea para estudiantes</li>
+								<li><span class="ti-check"></span> Encuentra al instructor adecuado para ti</li>
 							</ul>
-							<a class="btn_one" href="course.php">View All Courses <i class="ti-arrow-top-right"></i></a>
+							<a class="btn_one" href="course.php">Ver todos los cursos <i class="ti-arrow-top-right"></i></a>
 						</div>
 					</div><!--- END COL -->							  
 				</div><!--- END ROW -->
@@ -335,8 +335,8 @@
 		<section class="team_area section-padding">
 			<div class="container">									
 				<div class="section-title text-center">
-					<h2>Meet our Instructors</h2>
-					<p>We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
+					<h2>Conoce a nuestros instructores</h2>
+					<p>Ofrecemos un enfoque completamente nuevo a los paradigmas de aprendizaje más básicos. ¡Elige entre una amplia variedad de opciones de aprendizaje y adquiere nuevas habilidades! Nuestra escuela es conocida.</p>
 				</div>						
 				<div class="row">													
 					<div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
@@ -351,11 +351,11 @@
 							</div>
 							<div class="team-prof">
 								<h3>Bilkis Vabi</h3>
-								<span>Web designer</span>
+								<span>Diseñadora Web</span>
 							</div>
 							<div class="sth_det2">
-								<span class="ti-file"> <u>04 Course</u></span>
-								<span class="ti-user"> <u>27 Student</u></span>
+								<span class="ti-file"> <u>04 Cursos</u></span>
+								<span class="ti-user"> <u>27 Estudiantes</u></span>
 							</div>									
 						</div>
 					</div><!--- END COL -->										
@@ -371,11 +371,11 @@
 							</div>
 							<div class="team-prof">
 								<h3>Mood Wasim</h3>
-								<span>TemplateMonster company</span>
+								<span>Empresa TemplateMonster</span>
 							</div>
 							<div class="sth_det2">
-								<span class="ti-file"> <u>06 Course</u></span>
-								<span class="ti-user"> <u>41 Student</u></span>
+								<span class="ti-file"> <u>06 Cursos</u></span>
+								<span class="ti-user"> <u>41 Estudiantes</u></span>
 							</div>							
 						</div>
 					</div><!--- END COL -->										
@@ -391,11 +391,11 @@
 							</div>
 							<div class="team-prof">
 								<h3>Shyinn tim</h3>
-								<span>Codecanyou</span>
+								<span>Codecanyan</span>
 							</div>
 							<div class="sth_det2">
-								<span class="ti-file"> <u>13 Course</u></span>
-								<span class="ti-user"> <u>31 Student</u></span>
+								<span class="ti-file"> <u>13 Cursos</u></span>
+								<span class="ti-user"> <u>31 Estudiantes</u></span>
 							</div>
 						</div>
 					</div><!--- END COL -->										
@@ -414,8 +414,8 @@
 								<span>Tsc chottor</span>
 							</div>
 							<div class="sth_det2">
-								<span class="ti-file"> <u>07 Course</u></span>
-								<span class="ti-user"> <u>24 Student</u></span>
+								<span class="ti-file"> <u>07 Cursos</u></span>
+								<span class="ti-user"> <u>24 Estudiantes</u></span>
 							</div>
 						</div>
 					</div><!--- END COL -->							  
@@ -431,20 +431,20 @@
 				<div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
 					<div class="single_ins" style="background-image: url(assets/img/ins1.png);  background-size:cover; background-position: center center;">
 						<div class="single_ins_content">
-							<h4>Build Your Career</h4>
-							<h1>Become an Instructor</h1>
-							<p>Learn at your own pace, move the between multiple courses. </p>
-							<a class="btn_one" href="#">Apply now <i class="ti-arrow-top-right"></i></a>
+							<h4>Construye tu carrera</h4>
+							<h1>Conviértete en instructor</h1>
+							<p>Aprende a tu propio ritmo, muévete entre múltiples cursos.</p>
+							<a class="btn_one" href="#">Postúlate ahora <i class="ti-arrow-top-right"></i></a>
 						</div>
 					</div>
 				</div><!--- END COL -->				
 				<div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
 					<div class="single_ins" style="background-image: url(assets/img/ins2.png);  background-size:cover; background-position: center center;">
 						<div class="single_ins_content">
-							<h4>Build Your Career</h4>
-							<h1>Get Free Courses</h1>
-							<p>Learn at your own pace, move the between multiple courses. </p>
-							<a class="btn_one" href="#">Contact now <i class="ti-arrow-top-right"></i></a>
+							<h4>Construye tu carrera</h4>
+							<h1>Obtén cursos gratis</h1>
+							<p>Aprende a tu propio ritmo, muévete entre múltiples cursos.</p>
+							<a class="btn_one" href="#">Contactar ahora <i class="ti-arrow-top-right"></i></a>
 						</div>
 					</div>
 				</div><!--- END COL -->								  
@@ -457,7 +457,7 @@
 		<section class="testi_area section-padding">
 			<div class="container">
 				<div class="section-title">
-					<h2>What Student’s Say To Do <br />Their Online Course</h2>
+					<h2>Lo que dicen los estudiantes sobre <br />sus cursos en línea</h2>
 				</div>						
 				<div class="row">					
 					<div class="col-lg-12 col-sm-12 col-xs-12">
@@ -553,37 +553,37 @@
 		<section id="blog" class="blog_area section-padding">
 			<div class="container">
 				<div class="section-title text-center">
-					<h2>Latest Blog & news</h2>
-					<p>We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
+					<h2>Últimas publicaciones y noticias</h2>
+					<p>Ofrecemos un enfoque completamente nuevo a los paradigmas de aprendizaje más básicos. ¡Elige entre una amplia variedad de opciones de aprendizaje y adquiere nuevas habilidades! Nuestra escuela es conocida.</p>
 				</div>	
 				<div class="row">		
 					<div class="col-lg-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
 						<div class="single_blog">
-							<img src="../assets/img/blog/1.jpg" class="img-fluid" alt="image" />
+							<img src="../assets/img/blog/1.jpg" class="img-fluid" alt="imagen" />
 							<div class="content_box">
-								<span>May 10, 2024 | <a href="blog.php">Education</a></span>
-								<h2><a href="blog.php">Professional Mobile Painting and Sculpting</a></h2>
-								<a class="btn_one" href="blog.php">Read More <i class="ti-arrow-top-right"></i></a>
+								<span>10 de mayo, 2024 | <a href="blog.php">Educación</a></span>
+								<h2><a href="blog.php">Pintura y escultura móvil profesional</a></h2>
+								<a class="btn_one" href="blog.php">Leer más <i class="ti-arrow-top-right"></i></a>
 							</div>
 						</div>
 					</div><!-- END COL-->				
 					<div class="col-lg-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
 						<div class="single_blog">
-							<img src="../assets/img/blog/2.jpg" class="img-fluid" alt="image" />
+							<img src="../assets/img/blog/2.jpg" class="img-fluid" alt="imagen" />
 							<div class="content_box">
-								<span>May 16, 2024 | <a href="blog.php">Education</a></span>
-								<h2><a href="blog.php">Professional Ceramic Moulding for Beginner</a></h2>
-								<a class="btn_one" href="blog.php">Read More <i class="ti-arrow-top-right"></i></a>							
+								<span>16 de mayo, 2024 | <a href="blog.php">Educación</a></span>
+								<h2><a href="blog.php">Moldeado profesional en cerámica para principiantes</a></h2>
+								<a class="btn_one" href="blog.php">Leer más <i class="ti-arrow-top-right"></i></a>							
 							</div>
 						</div>
 					</div><!-- END COL-->
 					<div class="col-lg-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
 						<div class="single_blog">
-							<img src="../assets/img/blog/3.jpg" class="img-fluid" alt="image" />
+							<img src="../assets/img/blog/3.jpg" class="img-fluid" alt="imagen" />
 							<div class="content_box">
-								<span>May 18, 2024 | <a href="blog.php">Programing</a></span>
-								<h2><a href="blog.php">Education Is About Create Leaders For Tomorrow </a></h2>
-								<a class="btn_one" href="blog.php">Read More <i class="ti-arrow-top-right"></i></a>
+								<span>18 de mayo, 2024 | <a href="blog.php">Programación</a></span>
+								<h2><a href="blog.php">La educación consiste en formar a los líderes del mañana</a></h2>
+								<a class="btn_one" href="blog.php">Leer más <i class="ti-arrow-top-right"></i></a>
 							</div>
 						</div>
 					</div><!-- END COL-->						

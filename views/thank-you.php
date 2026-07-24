@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en-US">
+<html lang="es">
 
 	<?php 
     include'layout/head.php'
@@ -11,8 +11,8 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 col-sm-12 col-xs-12 text-center">
 					<div class="hero-text">
-						<h1>Your Mail Has Been Send Successfully.</h1>
-						<a class="back-home" href="index.php">Back To Home</a>
+						<h1>Tu correo ha sido enviado con éxito.</h1>
+						<a class="back-home" href="index.php">Volver al inicio</a>
 					</div>
 				</div>
 			</div>

@@ -22,10 +22,10 @@
 			<div class="container">
 				<div class="col-lg-10 offset-lg-1 text-center">
 					<div class="section-top-title wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
-						<h1>Instructor Details</h1>
+						<h1>Detalles del instructor</h1>
 						<ul>
-							<li><a href="index.php">Home</a></li>
-							<li> / instructor details</li>
+							<li><a href="index.php">Inicio</a></li>
+							<li> / detalles del instructor</li>
 						</ul>
 					</div><!-- //.HERO-TEXT -->
 				</div><!--- END COL -->
@@ -44,8 +44,8 @@
 						</div>
 						<div class="single_agent_content">
 							<h4>Khela hobe ahy hay</h4>
-							<h5>Science Instructor</h5>
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever type book.</p>
+							<h5>Instructor de Ciencias</h5>
+							<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.</p>
 							<ul>
 								<li><i class="fa fa-envelope-o"></i>contact@gmail.com</li>
 								<li><i class="fa fa-phone"></i>(+123) 425 857 954 148</li>
