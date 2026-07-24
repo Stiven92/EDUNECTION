@@ -4,7 +4,7 @@
 				<div class="row">
 					<div class="col-20 align-self-center">
 						<div class="site-logo">
-							<a href="index.php"><img src="../assets/img/logo.png" alt=""></a>          				
+							<a href="index.php"><img src="../assets/img/logo_blanco.svg" alt=""></a>          				
 						</div>
 					</div><!--- END Col -->
 					
