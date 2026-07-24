@@ -18,140 +18,206 @@
 		 ?>			
 
 		<!-- START HOME -->
-		<section class="home_bg hb_height" style="background-image: url(assets/img/bg/home-bg.jpg);  background-size:cover; background-position: center center;">
-			<div class="container">
-				<div class="row">
-				  <div class="col-lg-6 col-sm-12 col-xs-12">
-					<div class="hero-text ht_top">
-						<h1><span>Smart Study</span> Where Knowledge Meets the Web</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, consectetur adipiscing elit tempor ut labore</p>
-					</div>
-					<div class="home_sb">
-						<form action="#" class="banner_subs">
-							<input type="text" class="form-control home_si" placeholder="Search your course here" required="required">
-							<button type="button" class="subscribe__btn">Search <i class="fa fa-paper-plane-o"></i></button>
-						</form>
-					</div>					
-				  </div><!--- END COL -->
-				  <div class="col-lg-6 col-sm-12 col-xs-12">
-					<div class="hero-text-img">
-						<img src="../assets/img/home-img2.png" class="img-fluid" alt="" />
-						<div class="home_ps">
-							<span class="ti-user"></span>
-							<h2>4500+</h2>
-							<p>Active student</p>
-						</div>
-					</div>					
-				  </div><!--- END COL -->						  
-				</div><!--- END ROW -->
-			</div><!--- END CONTAINER -->
+		<section class="home_bg hb_height" style="background-image: url(assets/img/bg/home-bg.jpg); background-size:cover; background-position: center center;">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-lg-6 col-sm-12 col-xs-12">
+		                <div class="hero-text ht_top">
+		                    <h1><span>Edunection, </span>la plataforma que conecta a la comunidad educativa</h1>
+		                    <p>
+		                        Edunection es un software académico diseñado para facilitar la gestión escolar mediante herramientas modernas que fortalecen la comunicación, la organización y el seguimiento del proceso educativo.
+		                    </p>
+		                </div>
+
+		                <div class="home_sb">
+		                    <form action="#" class="banner_subs">
+		                        <input type="text" class="form-control home_si" placeholder="Buscar Institución Educativa" required="required">
+		                        <button type="button" class="subscribe__btn">
+		                            Explorar <i class="fa fa-paper-plane-o"></i>
+		                        </button>
+		                    </form>
+		                </div>
+		            </div>
+
+		            <div class="col-lg-6 col-sm-12 col-xs-12">
+		                <div class="hero-text-img">
+		                    <img src="../assets/img/home-img2.png" class="img-fluid" alt="" />
+
+		                    <div class="home_ps">
+		                        <span class="ti-layout-grid2"></span>
+		                        <h2>6+</h2>
+		                        <p>Módulos integrados</p>
+		                    </div>
+
+		                </div>
+		            </div>
+
+		        </div>
+		    </div>
 		</section>
-		<!-- END  HOME -->			
+		<!-- END HOME -->
+
 
 		<!-- START COUNTER -->
 		<section class="count_area counter_feature">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-3 col-sm-6 col-xs-12">
-						<div class="single-counter">
-							<span class="ti-folder sc_one"></span>
-							<h2 class="counter-num">134</h2>
-							<p>Our Online Course</p>
-						</div>							
-					</div>
-					<div class="col-lg-3 col-sm-6 col-xs-12">
-						<div class="single-counter">
-							<span class="ti-medall-alt sc_two"></span>
-							<h2 class="counter-num">299</h2>
-							<p>Academic Programs</p>
-						</div>
-					</div><!-- END COL -->
-					<div class="col-lg-3 col-sm-6 col-xs-12">
-						<div class="single-counter">
-							<span class="ti-id-badge sc_three"></span>
-							<h2 class="counter-num">684</h2>
-							<p>Certified Students</p>
-						</div>
-					</div><!-- END COL -->
-					<div class="col-lg-3 col-sm-6 col-xs-12">
-						<div class="single-counter">
-							<span class="ti-user sc_four"></span>
-							<h2 class="counter-num">941</h2>
-							<p>Enrolled Students</p>
-						</div>
-					</div><!-- END COL -->						
-				</div><!--- END ROW -->
-			</div><!--- END CONTAINER -->		
+		    <div class="container">
+		        <div class="row">
+
+		            <div class="col-lg-3 col-sm-6 col-xs-12">
+		                <div class="single-counter">
+		                    <span class="ti-user sc_one"></span>
+		                    <h2 class="counter-num">3</h2>
+		                    <p>Roles del sistema</p>
+		                </div>
+		            </div>
+
+		            <div class="col-lg-3 col-sm-6 col-xs-12">
+		                <div class="single-counter">
+		                    <span class="ti-book sc_two"></span>
+		                    <h2 class="counter-num">6</h2>
+		                    <p>Módulos principales</p>
+		                </div>
+		            </div>
+
+		            <div class="col-lg-3 col-sm-6 col-xs-12">
+		                <div class="single-counter">
+		                    <span class="ti-world sc_three"></span>
+		                    <h2 class="counter-num">24/7</h2>
+		                    <p>Acceso desde cualquier lugar</p>
+		                </div>
+		            </div>
+
+		            <div class="col-lg-3 col-sm-6 col-xs-12">
+		                <div class="single-counter">
+		                    <span class="ti-comments sc_four"></span>
+		                    <h2 class="counter-num">100%</h2>
+		                    <p>Comunicación integrada</p>
+		                </div>
+		            </div>
+
+		        </div>
+		    </div>
 		</section>
 		<!-- END COUNTER -->
 
-	<!-- START CATEGORY -->
-	<section class="top_cat__area section-padding" style="background-image: url(assets/img/bg/shape-1.png);  background-size:cover; background-position: center center;">
-		<div class="container">									
-			<div class="section-title text-center">
-				<h2>Start your journey With us</h2>
-				<p>We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
-			</div>						
-			<div class="row">					
-				<div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
-					<div class="single_tp">
-						<span class="sc_one">01</span>
-						<h3>Expert <br />Teacher</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur notted adipisicing elit ut labore.</p>
-					</div>
-				</div><!-- END COL -->			
-				<div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
-					<div class="single_tp">
-						<span class="sc_two">02</span>
-						<h3>Quality <br />Education</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur notted adipisicing elit ut labore.</p>
-					</div>
-				</div><!-- END COL -->			
-				<div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
-					<div class="single_tp">
-						<span class="sc_three">03</span>
-						<h3>Remote <br />Learning</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur notted adipisicing elit ut labore.</p>
-					</div>
-				</div><!-- END COL -->	
-				<div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
-					<div class="single_tp">
-						<span class="sc_four">04</span>
-						<h3>Life Time <br />Support</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur notted adipisicing elit ut labore.</p>
-					</div>
-				</div><!-- END COL -->							
-			</div><!-- END ROW -->
-		</div><!--- END CONTAINER -->
-	</section>
-	<!-- END CATEGORY -->		
-		
-	<!-- START ABOUT US -->
-	<section class="ab_area section-padding">
-		<div class="container">									
-			<div class="row">								
-				<div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
-					<div class="ab_img">
-						<img src="../assets/img/about1.png" class="img-fluid" alt="image">
-					</div>
-				</div><!--- END COL -->						
-				<div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
-					<div class="ab_content">
-						<h2>We Are Providing The Online Course In Global World</h2>
-						<p>We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
-						<p>We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
-						<ul>
-							<li><span class="ti-check"></span> Get access to <b>12,000+</b> of our top courses</li>
-							<li><span class="ti-check"></span> Popular topic to learn now in our online courses for student</li>
-							<li><span class="ti-check"></span> Find the right instructor for you</li>
-						</ul>
-						<a class="btn_one" href="course.php">View All Courses <i class="ti-arrow-top-right"></i></a>
-					</div>
-				</div><!--- END COL -->							  
-			</div><!--- END ROW -->
-		</div><!--- END CONTAINER -->
-	</section>
-	<!-- END ABOUT US -->	
+
+		<!-- START CATEGORY -->
+		<section class="top_cat__area section-padding" style="background-image: url(assets/img/bg/shape-1.png); background-size:cover; background-position: center center;">
+		    <div class="container">
+
+		        <div class="section-title text-center">
+		            <h2>¿Por qué elegir Edunection?</h2>
+		            <p>
+		                Somos una plataforma creada para simplificar la gestión académica y ofrecer una experiencia
+		                más organizada, eficiente y accesible para toda la comunidad educativa.
+		            </p>
+		        </div>
+
+		        <div class="row">
+
+		            <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+		                <div class="single_tp">
+		                    <span class="sc_one">01</span>
+		                    <h3>Gestión<br>Académica</h3>
+		                    <p>
+		                        Administra actividades, tareas y procesos escolares desde un único lugar.
+		                    </p>
+		                </div>
+		            </div>
+
+		            <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
+		                <div class="single_tp">
+		                    <span class="sc_two">02</span>
+		                    <h3>Calificaciones<br>Digitales</h3>
+		                    <p>
+		                        Consulta, registra y realiza seguimiento al desempeño académico fácilmente.
+		                    </p>
+		                </div>
+		            </div>
+
+		            <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
+		                <div class="single_tp">
+		                    <span class="sc_three">03</span>
+		                    <h3>Comunicación<br>Efectiva</h3>
+		                    <p>
+		                        Facilita la interacción entre docentes, estudiantes y acudientes mediante mensajería integrada.
+		                    </p>
+		                </div>
+		            </div>
+
+		            <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
+		                <div class="single_tp">
+		                    <span class="sc_four">04</span>
+		                    <h3>Boletines<br>Virtuales</h3>
+		                    <p>
+		                        Publica y consulta boletines académicos de manera rápida y segura.
+		                    </p>
+		                </div>
+		            </div>
+
+		        </div>
+		    </div>
+		</section>
+		<!-- END CATEGORY -->
+
+
+		<!-- START ABOUT US -->
+		<section class="ab_area section-padding">
+		    <div class="container">
+
+		        <div class="row">
+
+		            <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+		                <div class="ab_img">
+		                    <img src="../assets/img/about1.png" class="img-fluid" alt="image">
+		                </div>
+		            </div>
+
+		            <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+		                <div class="ab_content">
+
+		                    <h2>Una solución creada para modernizar la gestión de los colegios</h2>
+
+		                    <p>
+		                        Edunection es un proyecto desarrollado por cuatro aprendices del Servicio Nacional de Aprendizaje (SENA),
+		                        cuyo propósito es fortalecer la administración académica mediante una plataforma web intuitiva,
+		                        segura y de fácil acceso.
+		                    </p>
+
+		                    <p>
+		                        Nuestro software integra diferentes herramientas que ayudan a docentes, estudiantes y acudientes
+		                        a mantenerse conectados, facilitando el seguimiento del proceso educativo y optimizando la
+		                        comunicación dentro de la institución.
+		                    </p>
+
+		                    <ul>
+		                        <li>
+		                            <span class="ti-check"></span>
+		                            Gestión centralizada de actividades y procesos académicos.
+		                        </li>
+
+		                        <li>
+		                            <span class="ti-check"></span>
+		                            Comunicación directa entre estudiantes, docentes y acudientes.
+		                        </li>
+
+		                        <li>
+		                            <span class="ti-check"></span>
+		                            Consulta de calificaciones, boletines y novedades desde cualquier dispositivo.
+		                        </li>
+		                    </ul>
+
+		                    <a class="btn_one" href="about.php">
+		                        Conoce más <i class="ti-arrow-top-right"></i>
+		                    </a>
+
+		                </div>
+		            </div>
+
+		        </div>
+		    </div>
+		</section>
+		<!-- END ABOUT US -->
 	
 	<!-- START CATEGORY -->
 	<section class="top_cat__area section-padding" style="background-image: url(assets/img/bg/section-2.jpg);  background-size:cover; background-position: center center;">
