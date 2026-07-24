@@ -23,7 +23,7 @@
 		        <div class="row">
 		            <div class="col-lg-6 col-sm-12 col-xs-12">
 		                <div class="hero-text ht_top">
-		                    <h1><span>Edunection, </span>la plataforma que conecta a la comunidad educativa</h1>
+		                    <h1><span>Edunection </span><br>Conectando a la comunidad educativa</h1>
 		                    <p>
 		                        Edunection es un software académico diseñado para facilitar la gestión escolar mediante herramientas modernas que fortalecen la comunicación, la organización y el seguimiento del proceso educativo.
 		                    </p>
@@ -140,7 +140,7 @@
 		                    <span class="sc_three">03</span>
 		                    <h3>Comunicación<br>Efectiva</h3>
 		                    <p>
-		                        Facilita la interacción entre docentes, estudiantes y acudientes mediante mensajería integrada.
+		                        Facilita la interacción entre docentes, estudiantes y acudientes.
 		                    </p>
 		                </div>
 		            </div>
@@ -179,7 +179,7 @@
 		                    <h2>Una solución creada para modernizar la gestión de los colegios</h2>
 
 		                    <p>
-		                        Edunection es un proyecto desarrollado por cuatro aprendices del Servicio Nacional de Aprendizaje (SENA),
+		                        Edunection es un proyecto desarrollado por aprendices del Servicio Nacional de Aprendizaje (SENA),
 		                        cuyo propósito es fortalecer la administración académica mediante una plataforma web intuitiva,
 		                        segura y de fácil acceso.
 		                    </p>
@@ -219,163 +219,186 @@
 		</section>
 		<!-- END ABOUT US -->
 	
-	<!-- START CATEGORY -->
-	<section class="top_cat__area section-padding" style="background-image: url(assets/img/bg/section-2.jpg);  background-size:cover; background-position: center center;">
-		<div class="container">									
-			<div class="section-title text-center">
-				<h2>Find out by popular Categories</h2>
-				<p>We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
-			</div>						
-			<div class="row">													
-				<div class="col-lg-12 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
-					<div class="cat_list">
-						<ul>
-							<li><a href="#"><img src="../assets/img/e1.png" alt="category-image" /> Digital Marketing</a></li>
-							<li><a href="#"><img src="../assets/img/e2.png" alt="category-image" /> UI/UX Design</a></li>
-							<li><a href="#"><img src="../assets/img/e3.png" alt="category-image" /> 3D Visual Design</a></li>
-							<li><a href="#"><img src="../assets/img/e4.png" alt="category-image" /> Content Marketing</a></li>
-							<li><a href="#"><img src="../assets/img/e5.png" alt="category-image" /> Photography</a></li>
-							<li><a href="#"><img src="../assets/img/e6.png" alt="category-image" /> Photo Lifestyle</a></li>
-							<li><a href="#"><img src="../assets/img/e7.png" alt="category-image" /> Art & Design</a></li>
-							<li><a href="#"><img src="../assets/img/e8.png" alt="category-image" /> Finance & Banking</a></li>
-							<li><a href="#"><img src="../assets/img/e9.png" alt="category-image" /> Graphic Design</a></li>
-							<li><a href="#"><img src="../assets/img/e2.png" alt="category-image" /> Interior Design</a></li>
-							<li><a href="#"><img src="../assets/img/e3.png" alt="category-image" /> 3D Visual Design</a></li>	
-							<li><a href="#"><img src="../assets/img/e7.png" alt="category-image" /> Art & Design</a></li>							
-						</ul>
-					</div>
-				</div><!--- END COL -->							  
-			</div><!--- END ROW -->
-		</div><!--- END CONTAINER -->
-	</section>
-	<!-- END CATEGORY -->			
+		<!-- START CATEGORY -->
+		<section class="top_cat__area section-padding" style="background-image: url(assets/img/bg/section-2.jpg); background-size:cover; background-position: center center;">
+		    <div class="container">
+
+		        <div class="section-title text-center">
+		            <h2>Herramientas que impulsan la educación</h2>
+		            <p>
+		                Edunection integra en una sola plataforma las funcionalidades necesarias para
+		                optimizar la gestión académica y fortalecer la comunicación entre todos los
+		                miembros de la comunidad educativa.
+		            </p>
+		        </div>
+
+		        <div class="row">
+		            <div class="col-lg-12 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+		                <div class="cat_list">
+		                    <ul>
+		                        <li><a href="#"><img src="../assets/img/e1.png" alt="category-image" /> Actividades Académicas</a></li>
+		                        <li><a href="#"><img src="../assets/img/e2.png" alt="category-image" /> Calificaciones</a></li>
+		                        <li><a href="#"><img src="../assets/img/e3.png" alt="category-image" /> Mensajería</a></li>
+		                        <li><a href="#"><img src="../assets/img/e4.png" alt="category-image" /> Boletines</a></li>
+		                        <li><a href="#"><img src="../assets/img/e5.png" alt="category-image" /> Asistencia</a></li>
+		                        <li><a href="#"><img src="../assets/img/e6.png" alt="category-image" /> Horarios</a></li>
+		                        <li><a href="#"><img src="../assets/img/e7.png" alt="category-image" /> Comunicados</a></li>
+		                        <li><a href="#"><img src="../assets/img/e8.png" alt="category-image" /> Seguimiento Académico</a></li>
+		                        <li><a href="#"><img src="../assets/img/e9.png" alt="category-image" /> Gestión de Usuarios</a></li>
+		                        <li><a href="#"><img src="../assets/img/e2.png" alt="category-image" /> Reportes</a></li>
+		                        <li><a href="#"><img src="../assets/img/e3.png" alt="category-image" /> Panel Administrativo</a></li>
+		                        <li><a href="#"><img src="../assets/img/e7.png" alt="category-image" /> Configuración</a></li>
+		                    </ul>
+		                </div>
+		            </div><!--- END COL -->
+		        </div><!--- END ROW -->
+
+		    </div><!--- END CONTAINER -->
+		</section>
+		<!-- END CATEGORY -->	
 
 		<!-- START COURSE -->
 		<section class="home_course section-padding">
 			<div class="container">
+
 				<div class="row">
 					<div class="col-lg-8 col-sm-6 col-xs-12">
 						<div class="section-title">
-							<h2>Join with more than <b>80,000+ </b> <br />Courses & Learning creators.</h2>
-						</div>					
+							<h2>Explora todas nuestras <b>Instituciones Educativas</b> asociadas</h2>
+						</div>
 					</div><!--- END COL -->
+
 					<div class="col-lg-4 col-sm-6 col-xs-12">
 						<div class="cour_btn">
-							<a href="course.php" class="btn_one">View all Courses <i class="ti-arrow-top-right"></i></a>
+							<a href="institutions.php" class="btn_one">
+								Ver instituciones <i class="ti-arrow-top-right"></i>
+							</a>
 						</div>
 					</div><!--- END COL -->
-				</div><!--- END ROW -->				
-				<div class="row">
-					<div class="col-lg-4 col-sm-6 col-xs-12">
-						<div class="single_course">
-							<div class="single_c_img">
-								<img src="../assets/img/course/1.png" class="img-fluid" alt="course-image" />
-								<span>Education</span>
-							</div>
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-							<h4><a href="course.php">Complete User fundamentals beginners to advanced</a></h4>
-							<p><span class="ti-book"> </span> 12 Course</p>
-							<p><span class="ti-alarm-clock"> </span>2 Hrs 32 Min</p>
-							<div class="price">Course Fee - 99$</div>
-						</div>
-					</div><!-- END COL -->
-					<div class="col-lg-4 col-sm-6 col-xs-12">
-						<div class="single_course">
-							<div class="single_c_img">
-								<img src="../assets/img/course/2.png" class="img-fluid" alt="course-image" />
-								<span>UI/UX</span>
-							</div>
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-							<h4><a href="course.php">Advanced Android 12 & Kotlin Development Course</a></h4>
-							<p><span class="ti-book"> </span> 41 Course</p>
-							<p><span class="ti-alarm-clock"> </span>3 Hrs 32 Min</p>
-							<div class="price">Course Fee - 49$</div>
-						</div>
-					</div><!-- END COL -->
-					<div class="col-lg-4 col-sm-6 col-xs-12">
-						<div class="single_course">
-							<div class="single_c_img">
-								<img src="../assets/img/course/3.png" class="img-fluid" alt="course-image" />
-								<span>Lifestyle</span>
-							</div>
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-							<h4><a href="course.php">Complete HTML, CSS and Javascript Course</a></h4>
-							<p><span class="ti-book"> </span> 32 Course</p>
-							<p><span class="ti-alarm-clock"> </span>2 Hrs 32 Min</p>
-							<div class="price">Course Fee - Free</div>
-						</div>
-					</div><!-- END COL -->
-					<div class="col-lg-4 col-sm-6 col-xs-12">
-						<div class="single_course">
-							<div class="single_c_img">
-								<img src="../assets/img/course/4.png" class="img-fluid" alt="course-image" />
-								<span>Science</span>
-							</div>
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-							<h4><a href="course.php">IOS and Swift Complete iOS Application Development</a></h4>
-							<p><span class="ti-book"> </span> 19 Course</p>
-							<p><span class="ti-alarm-clock"> </span>2 Hrs 32 Min</p>
-							<div class="price">Course Fee - 59$</div>
-						</div>
-					</div><!-- END COL -->
-					<div class="col-lg-4 col-sm-6 col-xs-12">
-						<div class="single_course">
-							<div class="single_c_img">
-								<img src="../assets/img/course/5.png" class="img-fluid" alt="course-image" />
-								<span>Modern</span>
-							</div>
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-							<h4><a href="course.php">Learn graphics design with a best IT Trainer</a></h4>
-							<p><span class="ti-book"> </span> 22 Course</p>
-							<p><span class="ti-alarm-clock"> </span>2 Hrs 32 Min</p>
-							<div class="price">Course Fee - 79$</div>
-						</div>
-					</div><!-- END COL -->
-					<div class="col-lg-4 col-sm-6 col-xs-12">
-						<div class="single_course">
-							<div class="single_c_img">
-								<img src="../assets/img/course/6.png" class="img-fluid" alt="course-image" />
-								<span>Marketing</span>
-							</div>
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-							<h4><a href="course.php">Complete data science for your next business</a></h4>
-							<p><span class="ti-book"> </span> 11 Course</p>
-							<p><span class="ti-alarm-clock"> </span>2 Hrs 32 Min</p>
-							<div class="price">Course Fee - 39$</div>
-						</div>
-					</div><!-- END COL -->						
-				</div><!--- END ROW -->
-			</div><!--- END CONTAINER -->		
-		</section>
-		<!-- END COURSE -->	
-		
-		<!-- START COMPANY PARTNER LOGO  -->
-		<div class="partner-logo section-padding">
-			<div class="container">
-				<div class="row part_bg">
-					<div class="col-lg-4 col-sm-4 col-xs-12">
-						<div class="partner_title">
-							<h3>Helping <span>86,000+</span> global companies take the gloves off </h3>
-						</div>					
-					</div><!-- END COL  -->
-					<div class="col-lg-8 col-sm-8 col-xs-12 text-center">
-						<div class="partner">
-							<a href="#"><img src="../assets/img/clients/1.png" alt="image"></a>
-							<a href="#"><img src="../assets/img/clients/2.png" alt="image"></a>
-							<a href="#"><img src="../assets/img/clients/3.png" alt="image"></a>
-							<a href="#"><img src="../assets/img/clients/4.png" alt="image"></a>
-							<a href="#"><img src="../assets/img/clients/5.png" alt="image"></a>
-							<a href="#"><img src="../assets/img/clients/2.png" alt="image"></a>
-							<a href="#"><img src="../assets/img/clients/1.png" alt="image"></a>
-							<a href="#"><img src="../assets/img/clients/3.png" alt="image"></a>
-							<a href="#"><img src="../assets/img/clients/4.png" alt="image"></a>
-						</div>
-					</div><!-- END COL  -->
-				</div><!--END  ROW  -->
-			</div><!-- END CONTAINER  -->
-		</div>
-		<!-- END COMPANY PARTNER LOGO -->	
 
+				</div><!--- END ROW -->
+
+				<div class="row">
+
+					<div class="col-lg-4 col-sm-6 col-xs-12">
+						<div class="single_course">
+							<div class="single_c_img">
+								<img src="../assets/img/course/1.png" class="img-fluid" alt="institution-image" />
+								<span>Oficial</span>
+							</div>
+
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+
+							<h4><a href="institutions.php">Institución Educativa San José</a></h4>
+
+							<p><span class="ti-book"></span> Educación Básica y Media</p>
+							<p><span class="ti-world"></span> Gestión académica digital</p>
+
+							<div class="price">Institución Pública</div>
+						</div>
+					</div><!-- END COL -->
+
+
+					<div class="col-lg-4 col-sm-6 col-xs-12">
+						<div class="single_course">
+							<div class="single_c_img">
+								<img src="../assets/img/course/2.png" class="img-fluid" alt="institution-image" />
+								<span>Privada</span>
+							</div>
+
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+
+							<h4><a href="institutions.php">Colegio Nueva Esperanza</a></h4>
+
+							<p><span class="ti-book"></span> Primaria y Bachillerato</p>
+							<p><span class="ti-world"></span> Comunicación escolar</p>
+
+							<div class="price">Institución Privada</div>
+						</div>
+					</div><!-- END COL -->
+
+
+					<div class="col-lg-4 col-sm-6 col-xs-12">
+						<div class="single_course">
+							<div class="single_c_img">
+								<img src="../assets/img/course/3.png" class="img-fluid" alt="institution-image" />
+								<span>Técnica</span>
+							</div>
+
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+
+							<h4><a href="institutions.php">Institución Técnica Industrial</a></h4>
+
+							<p><span class="ti-book"></span> Formación Técnica</p>
+							<p><span class="ti-world"></span> Seguimiento académico</p>
+
+							<div class="price">Educación Técnica</div>
+						</div>
+					</div><!-- END COL -->
+
+
+					<div class="col-lg-4 col-sm-6 col-xs-12">
+						<div class="single_course">
+							<div class="single_c_img">
+								<img src="../assets/img/course/4.png" class="img-fluid" alt="institution-image" />
+								<span>Rural</span>
+							</div>
+
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+
+							<h4><a href="institutions.php">Centro Educativo Rural</a></h4>
+
+							<p><span class="ti-book"></span> Educación Rural</p>
+							<p><span class="ti-world"></span> Acceso desde cualquier lugar</p>
+
+							<div class="price">Cobertura Rural</div>
+						</div>
+					</div><!-- END COL -->
+
+
+					<div class="col-lg-4 col-sm-6 col-xs-12">
+						<div class="single_course">
+							<div class="single_c_img">
+								<img src="../assets/img/course/5.png" class="img-fluid" alt="institution-image" />
+								<span>Urbana</span>
+							</div>
+
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+
+							<h4><a href="institutions.php">Colegio Ciudad del Saber</a></h4>
+
+							<p><span class="ti-book"></span> Gestión Institucional</p>
+							<p><span class="ti-world"></span> Plataforma colaborativa</p>
+
+							<div class="price">Educación Urbana</div>
+						</div>
+					</div><!-- END COL -->
+
+
+					<div class="col-lg-4 col-sm-6 col-xs-12">
+						<div class="single_course">
+							<div class="single_c_img">
+								<img src="../assets/img/course/6.png" class="img-fluid" alt="institution-image" />
+								<span>Bilingüe</span>
+							</div>
+
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+
+							<h4><a href="institutions.php">Colegio Internacional Futuro</a></h4>
+
+							<p><span class="ti-book"></span> Educación Bilingüe</p>
+							<p><span class="ti-world"></span> Innovación educativa</p>
+
+							<div class="price">Formación Internacional</div>
+						</div>
+					</div><!-- END COL -->
+
+				</div><!--- END ROW -->
+
+			</div><!--- END CONTAINER -->
+		</section>
+		<!-- END COURSE -->
+				
 		<!-- START VIDEO -->
 		<section class="vid_area section-padding">
 			<div class="container">																
@@ -392,272 +415,236 @@
 		
 		<!-- START TEAM -->
 		<section class="team_area section-padding">
-			<div class="container">									
+			<div class="container">
+
 				<div class="section-title text-center">
-					<h2>Meet our Instructors</h2>
-					<p>We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
-				</div>						
-				<div class="row">													
-					<div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
-						<div class="our-team">
-							<div class="team-content">
-								<a href="#"><img src="../assets/img/team/team1.jpg" alt=""></a>
-								<ul class="social-links">
-									<li><a href="#"><i class="fa-solid fa-x"></i></a></li>
-									<li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-								</ul>
-							</div>
-							<div class="team-prof">
-								<h3>Bilkis Vabi</h3>
-								<span>Web designer</span>
-							</div>
-							<div class="sth_det2">
-								<span class="ti-file"> <u>04 Course</u></span>
-								<span class="ti-user"> <u>27 Student</u></span>
-							</div>									
-						</div>
-					</div><!--- END COL -->										
-					<div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+					<h2>Conoce a nuestro equipo</h2>
+					<p>
+						Edunection es un proyecto desarrollado por tres aprendices del Servicio Nacional
+						de Aprendizaje (SENA), comprometidos con crear una plataforma que facilite la
+						gestión académica y fortalezca la comunicación en las instituciones educativas.
+					</p>
+				</div>
+
+				<div class="row justify-content-center">
+
+					<!-- Integrante 1 -->
+					<div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
 						<div class="our-team">
 							<div class="team-content">
 								<a href="#"><img src="../assets/img/team/team2.jpg" alt=""></a>
 								<ul class="social-links">
-									<li><a href="#"><i class="fa-solid fa-x"></i></a></li>
-									<li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+									<li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
+									<li><a href="#"><i class="fa-brands fa-github"></i></a></li>
 									<li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
 								</ul>
 							</div>
+
 							<div class="team-prof">
-								<h3>Mood Wasim</h3>
-								<span>TemplateMonster company</span>
+								<h3>Stiven Mendieta</h3>
+								<span>Desarrollador Full Stack</span>
 							</div>
-							<div class="sth_det2">
-								<span class="ti-file"> <u>06 Course</u></span>
-								<span class="ti-user"> <u>41 Student</u></span>
-							</div>							
+
 						</div>
-					</div><!--- END COL -->										
-					<div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+					</div><!-- END COL -->
+
+
+					<!-- Integrante 2 -->
+					<div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
 						<div class="our-team">
 							<div class="team-content">
-								<a href="#"><img src="../assets/img/team/team3.jpg" alt=""></a>
+								<a href="#"><img src="../assets/img/team/team2.jpg" alt=""></a>
 								<ul class="social-links">
-									<li><a href="#"><i class="fa-solid fa-x"></i></a></li>
-									<li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+									<li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
+									<li><a href="#"><i class="fa-brands fa-github"></i></a></li>
 									<li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
 								</ul>
 							</div>
+
 							<div class="team-prof">
-								<h3>Shyinn tim</h3>
-								<span>Codecanyou</span>
+								<h3>José Fernando Gonzalez</h3>
+								<span>Desarrollador Backend</span>
 							</div>
-							<div class="sth_det2">
-								<span class="ti-file"> <u>13 Course</u></span>
-								<span class="ti-user"> <u>31 Student</u></span>
-							</div>
+
 						</div>
-					</div><!--- END COL -->										
-					<div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+					</div><!-- END COL -->
+
+
+					<!-- Integrante 3 -->
+					<div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
 						<div class="our-team">
 							<div class="team-content">
-								<a href="#"><img src="../assets/img/team/team4.jpg" alt=""></a>
+								<a href="#"><img src="../assets/img/team/team2.jpg" alt=""></a>
 								<ul class="social-links">
-									<li><a href="#"><i class="fa-solid fa-x"></i></a></li>
-									<li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+									<li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
+									<li><a href="#"><i class="fa-brands fa-github"></i></a></li>
 									<li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
 								</ul>
 							</div>
+
 							<div class="team-prof">
-								<h3>Shorif shorifa</h3>
-								<span>Tsc chottor</span>
+								<h3>Juan David Gonzalez</h3>
+								<span>Diseñador UI/UX</span>
 							</div>
-							<div class="sth_det2">
-								<span class="ti-file"> <u>07 Course</u></span>
-								<span class="ti-user"> <u>24 Student</u></span>
-							</div>
+
 						</div>
-					</div><!--- END COL -->							  
-				</div><!--- END ROW -->
-			</div><!--- END CONTAINER -->
+					</div><!-- END COL -->
+
+				</div><!-- END ROW -->
+
+			</div><!-- END CONTAINER -->
 		</section>
-		<!-- END TEAM -->	
+		<!-- END TEAM -->
 
-	<!-- START PROMO -->
-	<section class="ab_area section-padding">
-		<div class="container">									
-			<div class="row">													
-				<div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
-					<div class="ab_content">
-						<h2>Why Choose Us For Your Online Education Courses</h2>
-						<p>We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
-						<p>We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
-						<ul>
-							<li><span class="ti-check"></span> Get access to <b>12,000+</b> of our top courses</li>
-							<li><span class="ti-check"></span> Popular topic to learn now in our online courses for student</li>
-							<li><span class="ti-check"></span> Find the right instructor for you</li>
-						</ul>
-						<a class="btn_one" href="course.php">View All Courses <i class="ti-arrow-top-right"></i></a>
-					</div>
-				</div><!--- END COL -->	
-				<div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
-					<div class="ab_img">
-						<img src="../assets/img/about3.png" class="img-fluid" alt="image">
-						<div class="home_ps2">
-							<span class="ti-book"></span>
-							<h2>3300+</h2>
-							<p>Online Course</p>
-						</div>
-					</div>
-				</div><!--- END COL -->					
-			</div><!--- END ROW -->
-		</div><!--- END CONTAINER -->
-	</section>
-	<!-- END PROMO -->			
-
-		<!-- START TESTIMONIALS -->
-		<section class="testi_area section-padding">
+		<!-- START PROMO -->
+		<section class="ab_area section-padding">
 			<div class="container">
-				<div class="section-title">
-					<h2>What Student’s Say To Do <br />Their Online Course</h2>
-				</div>						
 				<div class="row">
-					<div class="col-lg-6 col-sm-12 col-xs-12">
+
+					<div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+						<div class="ab_content">
+
+							<h2>¿Por qué elegir Edunection para tu institución educativa?</h2>
+
+							<p>
+								Edunection es una plataforma desarrollada para simplificar la gestión académica,
+								mejorar la comunicación entre los diferentes actores de la comunidad educativa y
+								facilitar el acceso a la información desde cualquier lugar.
+							</p>
+
+							<p>
+								Nuestro objetivo es brindar una solución moderna, intuitiva y segura que permita
+								a docentes, estudiantes y acudientes optimizar sus procesos diarios mediante una
+								experiencia digital eficiente.
+							</p>
+
+							<ul>
+								<li>
+									<span class="ti-check"></span>
+									Gestiona actividades, calificaciones y boletines desde una sola plataforma.
+								</li>
+
+								<li>
+									<span class="ti-check"></span>
+									Fortalece la comunicación entre docentes, estudiantes y acudientes.
+								</li>
+
+								<li>
+									<span class="ti-check"></span>
+									Accede a la información académica de forma rápida, segura y organizada.
+								</li>
+							</ul>
+
+							<a class="btn_one" href="services.php">
+								Conocer las funciones <i class="ti-arrow-top-right"></i>
+							</a>
+
+						</div>
+					</div><!-- END COL -->
+
+
+					<div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
 						<div class="ab_img">
-							<img src="../assets/img/review.png" class="img-fluid" alt="image">
-						</div>					
-					</div><!-- END COL -->						
-					<div class="col-lg-6 col-sm-12 col-xs-12">
-						<div id="testimonial-slider" class="owl-carousel">
-							<div class="testimonial">
-								<img src="../assets/img/quote.png" alt="" />
-								<div class="testimonial_content">													
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<p>Aqestic optio amet a ququam saepe aliquid voluate dicta fuga dolor saerror sed earum a magni soluta quam minus dolor dolor sed earum a magni soluta autem dolor error error sit quam minus sint rem a rerum dolobus veritatis delectus.</p>
-								</div>
-								<div class="testi_pic_title">
-									<img src="../assets/img/testimonial/1.png" alt="">
-									<h4>Ajmain Adil</h4>
-									<p>Groton Inc</p>
-								</div>
-							</div><!-- END TESTIMONIAL -->
-							<div class="testimonial">
-							<img src="../assets/img/quote.png" alt="" />
-								<div class="testimonial_content">													
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<p>Aqestic optio amet a ququam saepe aliquid voluate dicta fuga dolor saerror sed earum a magni soluta quam minus dolor dolor sed earum a magni soluta autem dolor error error sit quam minus sint rem a rerum dolobus veritatis delectus.</p>
-								</div>
-								<div class="testi_pic_title">
-									<img src="../assets/img/testimonial/2.png" alt="">
-									<h4>Sharukh Khan</h4>
-									<p>Red Chili Inc</p>
-								</div>
-							</div><!-- END TESTIMONIAL -->
-							<div class="testimonial">
-								<img src="../assets/img/quote.png" alt="" />
-								<div class="testimonial_content">													
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<p>Aqestic optio amet a ququam saepe aliquid voluate dicta fuga dolor saerror sed earum a magni soluta quam minus dolor dolor sed earum a magni soluta autem dolor error error sit quam minus sint rem a rerum dolobus veritatis delectus.</p>
-								</div>
-								<div class="testi_pic_title">
-									<img src="../assets/img/testimonial/3.png" alt="">
-									<h4>Anushka sharma</h4>
-									<p>Naika Company</p>
-								</div>
-							</div><!-- END TESTIMONIAL -->
-							<div class="testimonial">
-								<img src="../assets/img/quote.png" alt="" />
-								<div class="testimonial_content">													
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<p>Aqestic optio amet a ququam saepe aliquid voluate dicta fuga dolor saerror sed earum a magni soluta quam minus dolor dolor sed earum a magni soluta autem dolor error error sit quam minus sint rem a rerum dolobus veritatis delectus.</p>
-								</div>
-								<div class="testi_pic_title">
-									<img src="../assets/img/testimonial/4.png" alt="">
-									<h4>Ajmain Adil</h4>
-									<p>Groton Inc</p>
-								</div>
-							</div><!-- END TESTIMONIAL -->
-							<div class="testimonial">
-								<img src="../assets/img/quote.png" alt="" />
-								<div class="testimonial_content">													
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<i class="ti-star"></i>
-									<p>Aqestic optio amet a ququam saepe aliquid voluate dicta fuga dolor saerror sed earum a magni soluta quam minus dolor dolor sed earum a magni soluta autem dolor error error sit quam minus sint rem a rerum dolobus veritatis delectus.</p>
-								</div>
-								<div class="testi_pic_title">
-									<img src="../assets/img/testimonial/5.png" alt="">
-									<h4>Ajmain Adil</h4>
-									<p>Groton Inc</p>
-								</div>
-							</div><!-- END TESTIMONIAL -->
-						</div><!-- END TESTIMONIAL SLIDER -->
-					</div><!-- END COL -->		
-				</div><!--- END ROW -->
-			</div><!--- END CONTAINER -->		
+
+							<img src="../assets/img/about3.png" class="img-fluid" alt="Edunection">
+
+						</div>
+					</div><!-- END COL -->
+
+				</div><!-- END ROW -->
+			</div><!-- END CONTAINER -->
 		</section>
-		<!-- END TESTINUNIALS -->
+		<!-- END PROMO -->
 
 		<!-- START BLOG -->
 		<section id="blog" class="blog_area section-padding">
 			<div class="container">
+
 				<div class="section-title text-center">
-					<h2>Latest Blog & news</h2>
-					<p>We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
-				</div>	
-				<div class="row">		
+					<h2>Novedades y artículos</h2>
+					<p>
+						Mantente informado sobre las últimas novedades de Edunection, consejos para la
+						transformación digital de las instituciones educativas y noticias relacionadas
+						con la innovación en la gestión académica.
+					</p>
+				</div>
+
+				<div class="row">
+
+					<!-- Artículo 1 -->
 					<div class="col-lg-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
 						<div class="single_blog">
 							<img src="../assets/img/blog/1.jpg" class="img-fluid" alt="image" />
+
 							<div class="content_box">
-								<span>May 10, 2024 | <a href="blog.php">Education</a></span>
-								<h2><a href="blog.php">Professional Mobile Painting and Sculpting</a></h2>
-								<a class="btn_one" href="blog.php">Read More <i class="ti-arrow-top-right"></i></a>
+								<span>Julio 2026 | <a href="blog.php">Edunection</a></span>
+
+								<h2>
+									<a href="blog.php">
+										¿Cómo una plataforma académica optimiza la gestión y la comunicación escolar?
+
+									</a>
+								</h2>
+
+								<a class="btn_one" href="blog.php">
+									Leer más <i class="ti-arrow-top-right"></i>
+								</a>
 							</div>
+
 						</div>
-					</div><!-- END COL-->				
-					<div class="col-lg-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+					</div><!-- END COL -->
+
+
+					<!-- Artículo 2 -->
+					<div class="col-lg-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
 						<div class="single_blog">
 							<img src="../assets/img/blog/2.jpg" class="img-fluid" alt="image" />
+
 							<div class="content_box">
-								<span>May 16, 2024 | <a href="blog.php">Education</a></span>
-								<h2><a href="blog.php">Professional Ceramic Moulding for Beginner</a></h2>
-								<a class="btn_one" href="blog.php">Read More <i class="ti-arrow-top-right"></i></a>							
+								<span>Julio 2026 | <a href="blog.php">Innovación</a></span>
+
+								<h2>
+									<a href="blog.php">
+										La importancia de la comunicación entre docentes, estudiantes y acudientes
+									</a>
+								</h2>
+
+								<a class="btn_one" href="blog.php">
+									Leer más <i class="ti-arrow-top-right"></i>
+								</a>
 							</div>
+
 						</div>
-					</div><!-- END COL-->
+					</div><!-- END COL -->
+
+
+					<!-- Artículo 3 -->
 					<div class="col-lg-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
 						<div class="single_blog">
 							<img src="../assets/img/blog/3.jpg" class="img-fluid" alt="image" />
+
 							<div class="content_box">
-								<span>May 18, 2024 | <a href="blog.php">Programing</a></span>
-								<h2><a href="blog.php">Education Is About Create Leaders For Tomorrow </a></h2>
-								<a class="btn_one" href="blog.php">Read More <i class="ti-arrow-top-right"></i></a>
+								<span>Julio 2026 | <a href="blog.php">Tecnología</a></span>
+
+								<h2>
+									<a href="blog.php">
+										Edunection: una solución desarrollada por aprendices del SENA
+									</a>
+								</h2>
+
+								<a class="btn_one" href="blog.php">
+									Leer más <i class="ti-arrow-top-right"></i>
+								</a>
 							</div>
+
 						</div>
-					</div><!-- END COL-->						
-				</div><!-- / END ROW -->
-			</div><!-- END CONTAINER  -->
-		</section>	
-		<!-- END BLOG -->	
+					</div><!-- END COL -->
+
+				</div><!-- END ROW -->
+
+			</div><!-- END CONTAINER -->
+		</section>
+		<!-- END BLOG -->
 		
 		<?php 
         include'layout/foother_last_jquery.php'

@@ -2476,6 +2476,14 @@ padding:20px 0;
 	font-weight: 500;
 	color: #629df0;
 }
+.footer-logo{
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
 /*
 * ----------------------------------------------------------------------------------------
 * 12.END FOOTER DESIGN
