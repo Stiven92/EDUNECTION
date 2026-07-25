@@ -16,8 +16,8 @@
     <!-- Header & Navegación -->
     <header class="navbar">
         <div class="container nav-container">
-            <a href="dashboard.html" class="logo">
-                <img src="img/pulpo.png" alt="Logo" class="logo-icon" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3069/3069172.png'">
+            <a href="dashboardDocente.php" class="logo">
+                <img src="../../assets/img/logos/logo_azul.png" alt="Logo Pulpo" class="logo-icon">
                 <span>EDUNECTION</span>
             </a>
             

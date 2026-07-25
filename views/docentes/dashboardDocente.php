@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +8,26 @@
     <!-- Cargamos la tipografía moderna Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
     <!-- Íconos simples -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../assets/css/styleDashboard.css">
 </head>
+
 <body>
 
     <!-- Header & Navegación -->
     <header class="navbar">
         <div class="container nav-container">
-            <a href="dashboard.html" class="logo">
-                <!-- Reemplaza 'img/pulpo.png' por tu archivo real -->
-                <img src="img/pulpo.png" alt="Logo" class="logo-icon" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3069/3069172.png'">
+            <a href="dashboardDocente.php" class="logo">
+                <img src="../../assets/img/logos/logo_azul.png" alt="Logo Pulpo" class="logo-icon">
                 <span>EDUNECTION</span>
             </a>
-            
+
             <nav class="nav-links">
                 <a href="dashboard.html" class="nav-item active">Inicio</a>
-                <a href="cursos.html" class="nav-item">Cursos</a>
+                <a href="cursos.php" class="nav-item">Cursos</a>
                 <a href="estudiantes.html" class="nav-item">Estudiantes</a>
                 <a href="actividades.html" class="nav-item">Actividades</a>
             </nav>
@@ -40,7 +42,7 @@
 
     <!-- Main Content -->
     <main class="container dashboard-layout">
-        
+
         <!-- Sidebar Perfil -->
         <aside class="profile-card">
             <div class="profile-header">
@@ -49,7 +51,7 @@
                 </div>
                 <h3 class="profile-name">Pepito Pérez Rodríguez</h3>
             </div>
-            
+
             <div class="profile-info">
                 <div class="info-group">
                     <label>ID Documento</label>
@@ -83,7 +85,8 @@
             <!-- Card de Bienvenida -->
             <div class="dash-card welcome-card">
                 <h2>¡Bienvenido de nuevo, Pepito!</h2>
-                <p>Desde aquí puedes gestionar tus asignaturas, registrar calificaciones, consultar estudiantes y comunicarte con la comunidad.</p>
+                <p>Desde aquí puedes gestionar tus asignaturas, registrar calificaciones, consultar estudiantes y
+                    comunicarte con la comunidad.</p>
             </div>
 
             <!-- Grilla 2 columnas (Cursos y Actividades) -->
@@ -94,7 +97,7 @@
                         <span>Mis Cursos</span>
                         <i class="fa-solid fa-chevron-right card-title-icon"></i>
                     </div>
-                    
+
                     <div class="item-row">
                         <div class="item-left">
                             <div class="badge-icon"><i class="fa-solid fa-folder"></i></div>
@@ -126,7 +129,7 @@
                         <span>Actividades Publicadas</span>
                         <i class="fa-solid fa-chevron-right card-title-icon"></i>
                     </div>
-                    
+
                     <div class="item-row">
                         <div class="item-left">
                             <div class="badge-icon"><i class="fa-solid fa-file-lines"></i></div>
@@ -165,7 +168,7 @@
                     <span>Evidencias Recibidas</span>
                     <i class="fa-solid fa-chevron-right card-title-icon"></i>
                 </div>
-                
+
                 <div class="item-row">
                     <div class="item-left">
                         <div class="badge-icon"><i class="fa-solid fa-id-card"></i></div>
@@ -207,4 +210,5 @@
     </footer>
 
 </body>
+
 </html>

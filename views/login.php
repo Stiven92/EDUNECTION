@@ -21,7 +21,7 @@
         <div class="auth-card">
             <div class="logo">
                 <!-- Si usas una imagen tag: -->
-                <img src="../assets/img/logo_blanco.svg" alt="Logo Pulpo" class="logo-icon">
+                <img src="../assets/img/logos/logo_blanco.svg" alt="Logo Pulpo" class="logo-icon">
                 
             </div>
             <br>
