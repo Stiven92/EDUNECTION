@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,12 @@
     <!-- Tipografía y FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../assets/css/styleDashboard.css">
 </head>
+
 <body>
 
     <!-- Header & Navegación -->
@@ -20,18 +23,41 @@
                 <img src="../../assets/img/logos/logo_azul.png" alt="Logo Pulpo" class="logo-icon">
                 <span>EDUNECTION</span>
             </a>
-            
+
             <nav class="nav-links">
                 <a href="dashboardDocente.php" class="nav-item">Inicio</a>
                 <a href="cursos.php" class="nav-item">Cursos</a>
                 <a href="estudiantes.php" class="nav-item active">Estudiantes</a>
                 <a href="actividades.php" class="nav-item">Actividades</a>
+
+                <div class="nav-dropdown">
+                    <button class="dropdown-btn">
+                        <span>Más</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="asistencias.php" class="dropdown-item">
+                            <i class="fa-solid fa-star"></i> Asistencias
+                        </a>
+                        <a href="boletines.php" class="dropdown-item">
+                            <i class="fa-solid fa-file-invoice"></i> Boletines
+                        </a>
+                        <a href="calificar.php" class="dropdown-item">
+                            <i class="fa-solid fa-star"></i> Calificar
+                        </a>
+                        <a href="horario.php" class="dropdown-item">
+                            <i class="fa-solid fa-file-invoice"></i> Horario
+                        </a>
+                        <a href="observador.php" class="dropdown-item">
+                            <i class="fa-solid fa-eye"></i> Observador del Estudiante
+                        </a>
+                    </div>
             </nav>
 
             <div class="nav-icons">
-<a href="mensajes.php" class="icon-btn active"><i class="fa-regular fa-envelope"></i></a>
-<a href="notificaciones.php" class="icon-btn"><i class="fa-regular fa-bell"></i></a>
-<a href="perfil.php" class="icon-btn"><i class="fa-regular fa-user"></i></a>
+                <a href="mensajes.php" class="icon-btn active"><i class="fa-regular fa-envelope"></i></a>
+                <a href="notificaciones.php" class="icon-btn"><i class="fa-regular fa-bell"></i></a>
+                <a href="perfil.php" class="icon-btn"><i class="fa-regular fa-user"></i></a>
             </div>
         </div>
     </header>
@@ -45,7 +71,7 @@
                 <h2>Listado de Estudiantes</h2>
                 <p>Consulta el estado académico y las observaciones del grupo seleccionado.</p>
             </div>
-            
+
             <div class="filter-pills">
                 <div class="filter-pill">
                     <span class="label">Curso:</span>
@@ -68,7 +94,7 @@
                 <button class="btn-search">Buscar</button>
             </div>
 
-            <a href="actividades.html" class="btn-secondary-action">
+            <a href="actividades.php" class="btn-secondary-action">
                 <i class="fa-solid fa-pen-to-square"></i>
                 <span>Ver Actividades</span>
             </a>
@@ -192,4 +218,5 @@
     </footer>
 
 </body>
+
 </html>

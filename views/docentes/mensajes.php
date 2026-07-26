@@ -29,6 +29,29 @@
                 <a href="cursos.php" class="nav-item">Cursos</a>
                 <a href="estudiantes.php" class="nav-item">Estudiantes</a>
                 <a href="actividades.php" class="nav-item active">Actividades</a>
+
+                <div class="nav-dropdown">
+                    <button class="dropdown-btn">
+                        <span>Más</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="asistencias.php" class="dropdown-item">
+                            <i class="fa-solid fa-star"></i> Asistencias
+                        </a>
+                        <a href="boletines.php" class="dropdown-item">
+                            <i class="fa-solid fa-file-invoice"></i> Boletines
+                        </a>
+                        <a href="calificar.php" class="dropdown-item">
+                            <i class="fa-solid fa-star"></i> Calificar
+                        </a>
+                        <a href="horario.php" class="dropdown-item">
+                            <i class="fa-solid fa-file-invoice"></i> Horario
+                        </a>
+                        <a href="observador.php" class="dropdown-item">
+                            <i class="fa-solid fa-eye"></i> Observador del Estudiante
+                        </a>
+                    </div>
             </nav>
 
             <div class="nav-icons">
@@ -53,10 +76,10 @@
 
             <!-- COLUMNA IZQUIERDA: Menú y Lista de Mensajes -->
             <aside class="inbox-sidebar">
-                <button class="btn-compose">
+                <a href="enviarMensaje.php" class="btn-compose">
                     <i class="fa-solid fa-pen"></i>
                     <span>Redactar Mensaje</span>
-                </button>
+                </a>
 
                 <!-- Menú de Navegación del Mail -->
                 <div class="inbox-nav">

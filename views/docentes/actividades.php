@@ -29,6 +29,29 @@
                 <a href="cursos.php" class="nav-item">Cursos</a>
                 <a href="estudiantes.php" class="nav-item">Estudiantes</a>
                 <a href="actividades.php" class="nav-item active">Actividades</a>
+
+                <div class="nav-dropdown">
+                    <button class="dropdown-btn">
+                        <span>Más</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="asistencias.php" class="dropdown-item">
+                            <i class="fa-solid fa-star"></i> Asistencias
+                        </a>
+                        <a href="boletines.php" class="dropdown-item">
+                            <i class="fa-solid fa-file-invoice"></i> Boletines
+                        </a>
+                        <a href="calificar.php" class="dropdown-item">
+                            <i class="fa-solid fa-star"></i> Calificar
+                        </a>
+                        <a href="horario.php" class="dropdown-item">
+                            <i class="fa-solid fa-file-invoice"></i> Horario
+                        </a>
+                        <a href="observador.php" class="dropdown-item">
+                            <i class="fa-solid fa-eye"></i> Observador del Estudiante
+                        </a>
+                    </div>
             </nav>
 
             <div class="nav-icons">
@@ -80,10 +103,10 @@
 
         <!-- Barra de Acciones: Botón Crear + Búsqueda -->
         <div class="activities-action-bar">
-            <button class="btn-create-activity">
+            <a href="publicarActividad.php" class="btn-create-activity">
                 <i class="fa-solid fa-plus"></i>
                 <span>Nueva Actividad</span>
-            </button>
+            </a>
 
             <div class="search-box-container search-activity">
                 <div class="search-input-wrapper">
