@@ -26,16 +26,16 @@
             </a>
 
             <nav class="nav-links">
-                <a href="dashboard.html" class="nav-item active">Inicio</a>
+                <a href="dashboardDocente.php" class="nav-item">Inicio</a>
                 <a href="cursos.php" class="nav-item">Cursos</a>
-                <a href="estudiantes.html" class="nav-item">Estudiantes</a>
-                <a href="actividades.html" class="nav-item">Actividades</a>
+                <a href="estudiantes.php" class="nav-item">Estudiantes</a>
+                <a href="actividades.php" class="nav-item active">Actividades</a>
             </nav>
 
             <div class="nav-icons">
-                <button class="icon-btn"><i class="fa-regular fa-envelope"></i></button>
-                <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
-                <button class="icon-btn"><i class="fa-regular fa-user"></i></button>
+                <a href="mensajes.php" class="icon-btn active"><i class="fa-regular fa-envelope"></i></a>
+                <a href="notificacionesDocente.php" class="icon-btn"><i class="fa-regular fa-bell"></i></a>
+                <a href="perfil.php" class="icon-btn"><i class="fa-regular fa-user"></i></a>
             </div>
         </div>
     </header>

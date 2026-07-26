@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,12 @@
     <!-- Tipografía y FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../assets/css/styleDashboard.css">
 </head>
+
 <body>
 
     <!-- Header & Navegación -->
@@ -20,18 +23,18 @@
                 <img src="../../assets/img/logos/logo_azul.png" alt="Logo Pulpo" class="logo-icon">
                 <span>EDUNECTION</span>
             </a>
-            
+
             <nav class="nav-links">
-                <a href="dashboard.html" class="nav-item">Inicio</a>
-                <a href="cursos.html" class="nav-item">Cursos</a>
-                <a href="estudiantes.html" class="nav-item">Estudiantes</a>
-                <a href="actividades.html" class="nav-item">Actividades</a>
+                <a href="dashboardDocente.php" class="nav-item">Inicio</a>
+                <a href="cursos.php" class="nav-item">Cursos</a>
+                <a href="estudiantes.php" class="nav-item">Estudiantes</a>
+                <a href="actividades.php" class="nav-item active">Actividades</a>
             </nav>
 
             <div class="nav-icons">
-                <button class="icon-btn"><i class="fa-regular fa-envelope"></i></button>
-                <button class="icon-btn active-notification"><i class="fa-regular fa-bell"></i></button>
-                <button class="icon-btn"><i class="fa-regular fa-user"></i></button>
+                <a href="mensajes.php" class="icon-btn active"><i class="fa-regular fa-envelope"></i></a>
+                <a href="notificacionesDocente.php" class="icon-btn"><i class="fa-regular fa-bell"></i></a>
+                <a href="perfil.php" class="icon-btn"><i class="fa-regular fa-user"></i></a>
             </div>
         </div>
     </header>
@@ -56,7 +59,7 @@
 
         <!-- Contenedor Principal de Lista -->
         <div class="notifications-card">
-            
+
             <div class="notification-item">
                 <div class="notification-left">
                     <div class="badge-icon"><i class="fa-solid fa-users"></i></div>
@@ -148,7 +151,8 @@
             <div class="notification-item">
                 <div class="notification-left">
                     <div class="badge-icon"><i class="fa-solid fa-check-to-slot"></i></div>
-                    <span class="notification-title">Tu actividad “Guía_03_Investigación” de ECONOMÍA ha sido calificada</span>
+                    <span class="notification-title">Tu actividad “Guía_03_Investigación” de ECONOMÍA ha sido
+                        calificada</span>
                 </div>
                 <a href="#" class="btn-details">
                     <span>Ver detalles</span>
@@ -174,4 +178,5 @@
     </footer>
 
 </body>
+
 </html>

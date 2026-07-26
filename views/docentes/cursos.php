@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,13 @@
     <!-- Tipografía y FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../assets/css/styleDashboard.css">
 
 </head>
+
 <body>
 
     <!-- Header & Navegación -->
@@ -21,18 +24,18 @@
                 <img src="../../assets/img/logos/logo_azul.png" alt="Logo Pulpo" class="logo-icon">
                 <span>EDUNECTION</span>
             </a>
-            
+
             <nav class="nav-links">
-                <a href="dashboard.html" class="nav-item">Inicio</a>
-                <a href="cursos.html" class="nav-item active">Cursos</a>
-                <a href="estudiantes.html" class="nav-item">Estudiantes</a>
-                <a href="actividades.html" class="nav-item">Actividades</a>
+                <a href="dashboardDocente.php" class="nav-item">Inicio</a>
+                <a href="cursos.php" class="nav-item active">Cursos</a>
+                <a href="estudiantes.php" class="nav-item">Estudiantes</a>
+                <a href="actividades.php" class="nav-item">Actividades</a>
             </nav>
 
             <div class="nav-icons">
-                <button class="icon-btn"><i class="fa-regular fa-envelope"></i></button>
-                <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
-                <button class="icon-btn"><i class="fa-regular fa-user"></i></button>
+                <a href="mensajes.php" class="icon-btn active"><i class="fa-regular fa-envelope"></i></a>
+                <a href="notificacionesDocente.php" class="icon-btn"><i class="fa-regular fa-bell"></i></a>
+                <a href="perfil.php" class="icon-btn"><i class="fa-regular fa-user"></i></a>
             </div>
         </div>
     </header>
@@ -57,7 +60,7 @@
 
         <!-- Grid de Tarjetas de Cursos (3 Columnas) -->
         <div class="courses-grid">
-            
+
             <!-- Curso 1 -->
             <div class="course-card">
                 <div class="course-header">
@@ -220,4 +223,5 @@
     </footer>
 
 </body>
+
 </html>
