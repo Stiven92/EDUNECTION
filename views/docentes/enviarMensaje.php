@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
  <?php 
-include'layout/Headocentes.php'
+include'layout/Headdocentes.php'
   ?>
     <title>Enviar Mensaje - EDUNECTION</title>
 
