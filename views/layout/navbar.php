@@ -18,10 +18,10 @@
 									</ul>
 								</li>
 								<li><a href="about.php">Sobre Nosotros</a></li>				  				  
-								<li class="menu-item-has-children"><a href="course.php">Colegios</a>
+								<li class="menu-item-has-children"><a href="course.php">Instituciones</a>
 									<ul>										
-										<li><a href="course.php">Colegios</a></li>
-										<li><a href="course_details.php">Detalle de Colegios</a></li>
+										<li><a href="course.php">Instituciones</a></li>
+										<li><a href="course_details.php">Detalles de Institución</a></li>
 									</ul>
 								</li>								
 								<!--<li class="menu-item-has-children"><a href="#">Pages</a>
@@ -35,7 +35,7 @@
 								</li>-->						
 								<li class="menu-item-has-children"><a href="blog.php">Blog</a>
 									<ul>										
-										<li><a href="blog.php">Blog</a></li>
+										<li><a href="blog.php">Nuestro Blog</a></li>
 										<li><a href="blog_single.php">Detalles de Blog</a></li>
 									</ul>
 								</li>							  
