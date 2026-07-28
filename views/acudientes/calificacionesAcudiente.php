@@ -2,9 +2,8 @@
 <html lang="es">
 
 <?php 
-include'../docentes/layout/Headdocentes.php'
- ?>
-    <title>Calificaciones Detalladas - EDUNECTION</title>
+include'../layoutRol/HeadRol.php'
+ ?>    <title>Calificaciones Detalladas - EDUNECTION</title>
 </head>
 <body>
 
@@ -20,7 +19,7 @@ include'../docentes/layout/Headdocentes.php'
                 <a href="dashboardAcudiente.php" class="nav-item">Inicio</a>
                 <a href="estudiantes.php" class="nav-item">Mi Acudido</a>
                 <a href="actividades.php" class="nav-item">Tareas</a>
-                <a href="boletines.php" class="nav-item">Boletines</a>
+                <a href="boletinesAcudiente.php" class="nav-item">Boletines</a>
 
                 <div class="nav-dropdown">
                     <button class="dropdown-btn">
@@ -179,7 +178,7 @@ include'../docentes/layout/Headdocentes.php'
     </main>
 
 <?php 
-include'../docentes/layout/footerdocentes.php'
+include'../layoutRol/footerRol.php'
  ?>
 
 </body>

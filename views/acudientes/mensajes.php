@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
- <?php 
-include'../docentes/layout/Headdocentes.php'
-  ?>
-    <title>Enviar Mensaje - EDUNECTION</title>
+<?php 
+include'../layoutRol/HeadRol.php'
+ ?>    <title>Enviar Mensaje - EDUNECTION</title>
 
 </head>
 <body>
@@ -21,7 +20,7 @@ include'../docentes/layout/Headdocentes.php'
                 <a href="dashboardAcudiente.php" class="nav-item">Inicio</a>
                 <a href="estudiantes.php" class="nav-item">Mi Acudido</a>
                 <a href="actividades.php" class="nav-item">Tareas</a>
-                <a href="boletines.php" class="nav-item">Boletines</a>
+                <a href="boletinesAcudiente.php" class="nav-item">Boletines</a>
 
                 <!-- Desplegable Más -->
                 <div class="nav-dropdown">
@@ -127,7 +126,7 @@ include'../docentes/layout/Headdocentes.php'
     </main>
 
 <?php 
-include'layout/footerdocentes.php'
+include'../layoutRol/footerRol.php'
  ?>
 
 </body>

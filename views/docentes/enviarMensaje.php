@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
- <?php 
-include'layout/Headdocentes.php'
-  ?>
+<?php 
+include'../layoutRol/HeadRol.php'
+ ?>
     <title>Enviar Mensaje - EDUNECTION</title>
 
 </head>
@@ -121,7 +121,7 @@ include'layout/Headdocentes.php'
     </main>
 
 <?php 
-include'layout/footerdocentes.php'
+include'../layoutRol/footerRol.php'
  ?>
 
 </body>

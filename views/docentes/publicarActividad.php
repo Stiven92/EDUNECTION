@@ -2,9 +2,8 @@
 <html lang="es">
 
 <?php 
-include'layout/Headdocentes.php'
- ?>
-    <title>Publicar Actividad - EDUNECTION</title>
+include'../layoutRol/HeadRol.php'
+ ?>    <title>Publicar Actividad - EDUNECTION</title>
 
 <body>
 
@@ -146,7 +145,7 @@ include'layout/Headdocentes.php'
     </main>
 
    <?php 
-include'layout/footerdocentes.php'
+include'../layoutRol/footerRol.php'
  ?>
 
 </body>
