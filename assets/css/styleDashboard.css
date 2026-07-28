@@ -3099,3 +3099,40 @@ body {
         align-items: flex-start;
     }
 }
+
+/* ==========================================================================
+   EDUNECTION - Cambio menor para la vista de admins
+   ========================================================================== */
+
+/* Subtítulos de sección dentro de formularios */
+.form-section-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.form-divider {
+    border: 0;
+    border-top: 1px dashed #e2e8f0;
+    margin: 8px 0;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.2s ease;
+}
+
+.btn-back:hover {
+    color: var(--primary-blue);
+}
