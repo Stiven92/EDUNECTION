@@ -19,10 +19,10 @@ include'layout/Headdocentes.php'
             </a>
 
             <nav class="nav-links">
-                <a href="dashboardDocente.php" class="nav-item">Inicio</a>
+                <a href="dashboardDocente.php" class="nav-item active">Inicio</a>
                 <a href="cursos.php" class="nav-item">Cursos</a>
                 <a href="estudiantes.php" class="nav-item">Estudiantes</a>
-                <a href="actividades.php" class="nav-item active">Actividades</a>
+                <a href="actividades.php" class="nav-item">Actividades</a>
 
                 <div class="nav-dropdown">
                     <button class="dropdown-btn">
