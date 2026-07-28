@@ -11,8 +11,7 @@
 		<!-- Latest Bootstrap min CSS -->
 		<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">		
 		<!-- Google Font -->
-		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 		<!-- Font Awesome CSS -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 		<link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
@@ -27,7 +26,8 @@
 		<!-- animate CSS -->
 		<link rel="stylesheet" href="../assets/css/animate.css">	
 		<!-- Style CSS -->					
-		<link rel="stylesheet" href="../assets/css/style.css">					
+		<link rel="stylesheet" href="../assets/css/style.css">
+
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>

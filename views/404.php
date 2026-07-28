@@ -41,9 +41,9 @@
 					<div class="error_page">
 						<img src="../assets/img/404.svg" class="img-fluid" alt="404 error" />
 						<h2>Oops! Página no encontrada</h2>
-						<p>Mmm. Tenemos problemas para encontrar ese sitio. Inténtalo de nuevo más tarde o comprueba tu conexión a la red..</p>
+						<p>Tenemos problemas para encontrar ese sitio. Inténtalo de nuevo más tarde o comprueba tu conexión a la red.</p>
 						<div class="home_btn">
-							<a href="index.php" class="btn_one">volver a casa </a>
+							<a href="index.php" class="btn_one">volver a Inicio</a>
 						</div>	
 					</div>
 			  </div><!--- END COL -->				  
