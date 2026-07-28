@@ -18,7 +18,7 @@
     <!-- Header & Navegación Administrador -->
     <header class="navbar">
         <div class="container nav-container">
-            <a href="dashboardAdmin.php" class="logo">
+            <a href="#" class="logo">
                 <img src="../../assets/img/logos/logo_azul.png" alt="Logo Pulpo" class="logo-icon">
                 <span>EDUNECTION</span>
             </a>
@@ -64,8 +64,18 @@
             <h2>Matricular Estudiante</h2>
         </div>
 
-        <!-- Formulario de Matrícula -->
-        <div class="publish-card">
+        <!-- Pestañas de Selección (Individual vs Carga Masiva) -->
+        <div class="tab-container">
+            <button class="tab-btn active" onclick="switchTab('individual')">
+                <i class="fa-solid fa-user"></i> Matrícula Individual
+            </button>
+            <button class="tab-btn" onclick="switchTab('masiva')">
+                <i class="fa-solid fa-file-csv"></i> Carga Masiva (Archivo Plano)
+            </button>
+        </div>
+
+        <!-- OPCIÓN 1: Formulario Individual de Matrícula -->
+        <div id="tab-individual" class="publish-card tab-content active">
             <form class="publish-form" action="procesarMatricula.php" method="POST">
                 
                 <!-- Sección 1: Datos de Identificación -->
@@ -194,15 +204,50 @@
                     </div>
                 </div>
 
-                <!-- Campos ocultos/por defecto para los estados del sistema -->
+                <!-- Campos ocultos/por defecto -->
                 <input type="hidden" name="activo_inactivo" value="1">
-                <input type="hidden" name="id_perfil" value="3"> <!-- Suponiendo 3 = Estudiante -->
+                <input type="hidden" name="id_perfil" value="3">
 
                 <!-- Botones de Acción -->
                 <div class="publish-actions">
                     <a href="estudiantes.php" class="btn-cancel">Cancelar</a>
                     <button type="submit" class="btn-publish">
                         <i class="fa-solid fa-user-check"></i> Registrar Estudiante
+                    </button>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- OPCIÓN 2: Carga Masiva mediante Archivo Plano -->
+        <div id="tab-masiva" class="publish-card tab-content" style="display: none;">
+            <form class="publish-form" action="procesarMatriculaMasiva.php" method="POST" enctype="multipart/form-data">
+                
+                <div class="form-section-title">
+                    <i class="fa-solid fa-file-import"></i> Carga Masiva de Estudiantes
+                </div>
+
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">
+                    Sube un archivo plano (CSV o TXT) con la lista de nuevos estudiantes. Asegúrate de seguir la estructura de columnas correspondiente.
+                </p>
+
+                <!-- Área Dropzone para Archivo Plano -->
+                <div class="file-upload-dropzone">
+                    <i class="fa-solid fa-cloud-arrow-up dropzone-icon"></i>
+                    <div class="dropzone-text">
+                        <span id="file-name-display">Arrastra y suelta tu archivo plano aquí o haz clic para buscar</span>
+                        <small>Formatos permitidos: .csv, .txt, .xlsx (Máx. 10MB)</small>
+                    </div>
+                    <input type="file" name="archivo_estudiantes" id="archivo_estudiantes" class="file-input-hidden" accept=".csv, .txt, .xlsx" required onchange="showFileName(this)">
+                </div>
+
+
+
+                <!-- Botones de Acción -->
+                <div class="publish-actions">
+                    <a href="estudiantes.php" class="btn-cancel">Cancelar</a>
+                    <button type="submit" class="btn-publish">
+                        <i class="fa-solid fa-upload"></i> Subir y Procesar Archivo
                     </button>
                 </div>
 
@@ -223,6 +268,34 @@
             </div>
         </div>
     </footer>
+
+    <!-- Script de interacción de pestañas y nombre de archivo -->
+    <script>
+        function switchTab(tabName) {
+            const tabIndividual = document.getElementById('tab-individual');
+            const tabMasiva = document.getElementById('tab-masiva');
+            const btns = document.querySelectorAll('.tab-btn');
+
+            btns.forEach(btn => btn.classList.remove('active'));
+
+            if (tabName === 'individual') {
+                tabIndividual.style.display = 'block';
+                tabMasiva.style.display = 'none';
+                btns[0].classList.add('active');
+            } else {
+                tabIndividual.style.display = 'none';
+                tabMasiva.style.display = 'block';
+                btns[1].classList.add('active');
+            }
+        }
+
+        function showFileName(input) {
+            const fileNameDisplay = document.getElementById('file-name-display');
+            if (input.files && input.files[0]) {
+                fileNameDisplay.innerHTML = `<strong>Archivo seleccionado:</strong> ${input.files[0].name}`;
+            }
+        }
+    </script>
 
 </body>
 </html>
