@@ -23,20 +23,20 @@
 		        <div class="row">
 		            <div class="col-lg-6 col-sm-12 col-xs-12">
 		                <div class="hero-text ht_top">
-		                    <h1><span>Edunection </span><br>Conectando a la comunidad educativa</h1>
+		                	<br>
+		                	<br>
+		                    <h1><span>Edunection </span>Conectando a la comunidad educativa</h1>
 		                    <p>
 		                        Edunection es un software académico diseñado para facilitar la gestión escolar mediante herramientas modernas que fortalecen la comunicación, la organización y el seguimiento del proceso educativo.
 		                    </p>
 		                </div>
 
-		                <div class="home_sb">
-		                    <form action="#" class="banner_subs">
-		                        <input type="text" class="form-control home_si" placeholder="Buscar Institución Educativa" required="required">
-		                        <button type="button" class="subscribe__btn">
-		                            Explorar <i class="fa fa-paper-plane-o"></i>
-		                        </button>
-		                    </form>
-		                </div>
+					<div class="home_sb2">
+						<form action="#" class="banner_subs2">
+							<input type="text" class="form-control home_si2" placeholder="Buscar Institución Educativa" required="required">
+							<button type="button" class="subscribe__btn">Buscar <i class="fa fa-paper-plane-o"></i></button>
+						</form>
+					</div>	
 		            </div>
 
 		            <div class="col-lg-6 col-sm-12 col-xs-12">
@@ -45,8 +45,8 @@
 
 		                    <div class="home_ps">
 		                        <span class="ti-layout-grid2"></span>
-		                        <h2>6+</h2>
-		                        <p>Módulos integrados</p>
+		                        <h2>+10</h2>
+		                        <p>Módulos</p>
 		                    </div>
 
 		                </div>
@@ -66,23 +66,23 @@
 		            <div class="col-lg-3 col-sm-6 col-xs-12">
 		                <div class="single-counter">
 		                    <span class="ti-user sc_one"></span>
-		                    <h2 class="counter-num">3</h2>
+		                    <h2>4</h2>
 		                    <p>Roles del sistema</p>
 		                </div>
 		            </div>
 
-		            <div class="col-lg-3 col-sm-6 col-xs-12">
-		                <div class="single-counter">
-		                    <span class="ti-book sc_two"></span>
-		                    <h2 class="counter-num">6</h2>
-		                    <p>Módulos principales</p>
-		                </div>
-		            </div>
+					<div class="col-lg-3 col-sm-6 col-xs-12">
+						<div class="single-counter">
+							<span class="ti-mobile sc_four"></span>
+							<h2>2</h2>
+							<p>Versiones disponibles</p>
+						</div>
+					</div>
 
 		            <div class="col-lg-3 col-sm-6 col-xs-12">
 		                <div class="single-counter">
 		                    <span class="ti-world sc_three"></span>
-		                    <h2 class="counter-num">24/7</h2>
+		                    <h2>24/7</h2>
 		                    <p>Acceso desde cualquier lugar</p>
 		                </div>
 		            </div>
@@ -90,7 +90,7 @@
 		            <div class="col-lg-3 col-sm-6 col-xs-12">
 		                <div class="single-counter">
 		                    <span class="ti-comments sc_four"></span>
-		                    <h2 class="counter-num">100%</h2>
+		                    <h2>100%</h2>
 		                    <p>Comunicación integrada</p>
 		                </div>
 		            </div>
@@ -336,63 +336,6 @@
 						</div>
 					</div><!-- END COL -->
 
-
-					<div class="col-lg-4 col-sm-6 col-xs-12">
-						<div class="single_course">
-							<div class="single_c_img">
-								<img src="../assets/img/course/4.png" class="img-fluid" alt="institution-image" />
-								<span>Rural</span>
-							</div>
-
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-
-							<h4><a href="institutions.php">Centro Educativo Rural</a></h4>
-
-							<p><span class="ti-book"></span> Educación Rural</p>
-							<p><span class="ti-world"></span> Acceso desde cualquier lugar</p>
-
-							<div class="price">Cobertura Rural</div>
-						</div>
-					</div><!-- END COL -->
-
-
-					<div class="col-lg-4 col-sm-6 col-xs-12">
-						<div class="single_course">
-							<div class="single_c_img">
-								<img src="../assets/img/course/5.png" class="img-fluid" alt="institution-image" />
-								<span>Urbana</span>
-							</div>
-
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-
-							<h4><a href="institutions.php">Colegio Ciudad del Saber</a></h4>
-
-							<p><span class="ti-book"></span> Gestión Institucional</p>
-							<p><span class="ti-world"></span> Plataforma colaborativa</p>
-
-							<div class="price">Educación Urbana</div>
-						</div>
-					</div><!-- END COL -->
-
-
-					<div class="col-lg-4 col-sm-6 col-xs-12">
-						<div class="single_course">
-							<div class="single_c_img">
-								<img src="../assets/img/course/6.png" class="img-fluid" alt="institution-image" />
-								<span>Bilingüe</span>
-							</div>
-
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-
-							<h4><a href="institutions.php">Colegio Internacional Futuro</a></h4>
-
-							<p><span class="ti-book"></span> Educación Bilingüe</p>
-							<p><span class="ti-world"></span> Innovación educativa</p>
-
-							<div class="price">Formación Internacional</div>
-						</div>
-					</div><!-- END COL -->
-
 				</div><!--- END ROW -->
 
 			</div><!--- END CONTAINER -->
@@ -435,8 +378,8 @@
 								<a href="#"><img src="../assets/img/team/team2.jpg" alt=""></a>
 								<ul class="social-links">
 									<li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
-									<li><a href="#"><i class="fa-brands fa-github"></i></a></li>
-									<li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+									<li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
 								</ul>
 							</div>
 
@@ -456,8 +399,8 @@
 								<a href="#"><img src="../assets/img/team/team2.jpg" alt=""></a>
 								<ul class="social-links">
 									<li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
-									<li><a href="#"><i class="fa-brands fa-github"></i></a></li>
-									<li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+									<li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
 								</ul>
 							</div>
 
@@ -477,8 +420,8 @@
 								<a href="#"><img src="../assets/img/team/team2.jpg" alt=""></a>
 								<ul class="social-links">
 									<li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
-									<li><a href="#"><i class="fa-brands fa-github"></i></a></li>
-									<li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+									<li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
 								</ul>
 							</div>
 

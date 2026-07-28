@@ -5,8 +5,12 @@ Version      : 1.0
 */
 (function($) {
 	'use strict';
+
+	console.log("scripts.js cargado");
 	
 	jQuery(document).on('ready', function(){
+
+		console.log("Inicializando testimonial");
 	
 		/*PRELOADER JS*/
 		$(window).on('load', function() { 
