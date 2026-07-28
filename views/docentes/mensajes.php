@@ -2,9 +2,8 @@
 <html lang="es">
 
 <?php 
-include'layout/Headdocentes.php'
- ?>
-    <title>Mensajes - EDUNECTION</title>
+include'../layoutRol/HeadRol.php'
+ ?>    <title>Mensajes - EDUNECTION</title>
  
 </head>
 
@@ -197,7 +196,7 @@ include'layout/Headdocentes.php'
     </main>
 
 <?php 
-include'layout/footerdocentes.php'
+include'../layoutRol/footerRol.php'
  ?>
 
 </body>

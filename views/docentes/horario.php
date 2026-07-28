@@ -3,9 +3,8 @@
 
 
 <?php 
-include'layout/Headdocentes.php'
+include'../layoutRol/HeadRol.php'
  ?>
-
     <title>Horario Docente - EDUNECTION</title>
  
 
@@ -138,7 +137,7 @@ include'layout/Headdocentes.php'
     </main>
 
 <?php 
-include'layout/footerdocentes.php'
+include'../layoutRol/footerRol.php'
  ?>
 </body>
 </html>

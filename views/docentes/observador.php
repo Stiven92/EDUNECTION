@@ -2,9 +2,8 @@
 <html lang="es">
 
 <?php 
-include'layout/Headdocentes.php'
- ?>
-    <title>Observador del Estudiante - EDUNECTION</title>
+include'../layoutRol/HeadRol.php'
+ ?>    <title>Observador del Estudiante - EDUNECTION</title>
 </head>
 <body>
 
@@ -152,7 +151,7 @@ include'layout/Headdocentes.php'
     </main>
 
 <?php 
-include'layout/footerdocentes.php'
+include'../layoutRol/footerRol.php'
  ?>
 
 </body>
