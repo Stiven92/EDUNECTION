@@ -17,33 +17,34 @@
             </a>
 
             <nav class="nav-links">
-                <a href="dashboardEstudiante.php" class="nav-item active">Inicio</a>
-                <a href="misCursos.php" class="nav-item">Mis Cursos</a>
-                <a href="misActividades.php" class="nav-item">Actividades</a>
+              <a href="dashboardEstudiante.php" class="nav-item">Inicio</a>
+              <a href="actividades.php" class="nav-item">Actividades</a>
+              <a href="asistencias.php" class="nav-item">Asistencias</a>
+              <a href="boletines.php" class="nav-item">Boletines</a>
 
-                <div class="nav-dropdown">
-                    <button class="dropdown-btn">
-                        <span>Más</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div class="dropdown-menu">
-                        <a href="misAsistencias.php" class="dropdown-item">
-                            <i class="fa-solid fa-calendar-user"></i> Mis Asistencias
-                        </a>
-                        <a href="misBoletines.php" class="dropdown-item">
-                            <i class="fa-solid fa-file-invoice"></i> Mis Boletines
-                        </a>
-                        <a href="misCalificaciones.php" class="dropdown-item">
-                            <i class="fa-solid fa-star"></i> Mis Calificaciones
-                        </a>
-                        <a href="miHorario.php" class="dropdown-item">
-                            <i class="fa-solid fa-clock"></i> Mi Horario
-                        </a>
-                        <a href="miObservador.php" class="dropdown-item">
-                            <i class="fa-solid fa-eye"></i> Mi Observador
-                        </a>
-                    </div>
+              <div class="nav-dropdown">
+                <button class="dropdown-btn">
+                  <span>Más</span>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a href="calificar.php" class="dropdown-item">
+                    <i class="fa-solid fa-star"></i> Calificaciones
+                  </a>
+                  <a href="horario.php" class="dropdown-item">
+                    <i class="fa-solid fa-clock"></i> Horario
+                  </a>
+                  <a href="observador.php" class="dropdown-item">
+                    <i class="fa-solid fa-eye"></i> Observador
+                  </a>
+                  <a href="mensajes.php" class="dropdown-item">
+                    <i class="fa-solid fa-envelope"></i> Mensajes
+                  </a>
+                  <a href="notificacionesEstudiantes.php" class="dropdown-item">
+                    <i class="fa-solid fa-bell"></i> Notificaciones
+                  </a>
                 </div>
+              </div>
             </nav>
 
             <div class="nav-icons">

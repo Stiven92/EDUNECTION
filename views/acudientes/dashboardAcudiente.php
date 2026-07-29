@@ -18,34 +18,11 @@ include'../layoutRol/HeadRol.php'
             </a>
 
             <nav class="nav-links">
-                <a href="dashboardAcudiente.php" class="nav-item active">Inicio</a>
-                <a href="estudiantes.php" class="nav-item">Mi Acudido</a>
-                <a href="actividades.php" class="nav-item">Tareas</a>
-                <a href="boletinesAcudiente.php" class="nav-item">Boletines</a>
-
-                <div class="nav-dropdown">
-                    <button class="dropdown-btn">
-                        <span>Más</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div class="dropdown-menu">
-                        <a href="asistencias.php" class="dropdown-item">
-                            <i class="fa-solid fa-calendar-check"></i> Asistencias
-                        </a>
-                        <a href="calificaciones.php" class="dropdown-item">
-                            <i class="fa-solid fa-star"></i> Calificaciones
-                        </a>
-                        <a href="horario.php" class="dropdown-item">
-                            <i class="fa-solid fa-clock"></i> Horario
-                        </a>
-                        <a href="observador.php" class="dropdown-item">
-                            <i class="fa-solid fa-eye"></i> Observador
-                        </a>
-                        <a href="docentes.php" class="dropdown-item">
-                            <i class="fa-solid fa-chalkboard-user"></i> Profesores
-                        </a>
-                    </div>
-                </div>
+              <a href="dashboardAcudiente.php" class="nav-item">Inicio</a>
+              <a href="boletinesAcudiente.php" class="nav-item">Boletines</a>
+              <a href="calificacionesAcudiente.php" class="nav-item">Calificaciones</a>
+              <a href="observador.php" class="nav-item">Observador</a>
+              <a href="mensajes.php" class="nav-item">Mensajes</a>
             </nav>
 
             <div class="nav-icons">
