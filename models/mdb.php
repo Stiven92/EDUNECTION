@@ -6,7 +6,7 @@
 		public function get_conexion(){
 
 			$host = "localhost";
-			$db = "automarket";
+			$db = "edunection";
 			$user = "root"; 
 			$pass = "";
 
