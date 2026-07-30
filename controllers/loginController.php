@@ -44,21 +44,21 @@
 
 		switch ($rol) {
 		    case 1:
-		        $buscarUsuario = $getUser->getUserAdministrador($email);
+		        $buscarUsuario = $getUser->getUserUsuario($email);
 		        break;
 
 		    case 2:
-		        $buscarUsuario = $getUser->getUserDirectivo($email);
+		        $buscarUsuario = $getUser->getUserUsuario($email);
 		        break;
 		    case 3:
 		       
-		        $buscarUsuario = $getUser->getUserDocente($email);
+		        $buscarUsuario = $getUser->getUserUsuario($email);
 		        break;
 		    case 4 :
-		   		$buscarUsuario = $getUser->getUserEstudiente($email);
+		   		$buscarUsuario = $getUser->getUserUsuario($email);
 		        break;
 		    case 5:
-		    	$buscarUsuario = $getUser->getUserAcudiente($email);
+		    	$buscarUsuario = $getUser->getUserUsuario($email);
 		        break;
 		    	
 		    	break;

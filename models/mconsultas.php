@@ -11,7 +11,7 @@
 
 
 		//login of entrance or main 
-		public function getUserAcudiente($email){
+		public function getUserUsuario($email){
 			$sql = 'SELECT * FROM clientes WHERE email=:email';
 			$res = $this->conexion->prepare($sql);
 			$res->bindParam(':email', $email);
@@ -27,69 +27,6 @@
 		}
 
 		
-
-		public function getUserAdministrador($email){
-			$sql = 'SELECT * FROM clientes WHERE email=:email';
-			$res = $this->conexion->prepare($sql);
-			$res->bindParam(':email', $email);
-
-			try {
-				$res->execute();
-			    $f = $res->fetch();
-			    return $f;
-			} catch (Exception $e) {
-				echo "<script>alert('Error al buscar usuario!!')</script>";
-				echo "<script>location.href='../views/login.php'</script>";
-			}
-		}
-
-
-		public function getUserEstudiente($email){
-			$sql = 'SELECT * FROM clientes WHERE email=:email';
-			$res = $this->conexion->prepare($sql);
-			$res->bindParam(':email', $email);
-
-			try {
-				$res->execute();
-			    $f = $res->fetch();
-			    return $f;
-			} catch (Exception $e) {
-				echo "<script>alert('Error al buscar usuario!!')</script>";
-				echo "<script>location.href='../views/login.php'</script>";
-			}
-		}
-
-
-		public function getUserDirectivo($email){
-			$sql = 'SELECT * FROM clientes WHERE email=:email';
-			$res = $this->conexion->prepare($sql);
-			$res->bindParam(':email', $email);
-
-			try {
-				$res->execute();
-			    $f = $res->fetch();
-			    return $f;
-			} catch (Exception $e) {
-				echo "<script>alert('Error al buscar usuario!!')</script>";
-				echo "<script>location.href='../views/login.php'</script>";
-			}
-		}
-
-
-		public function getUserDocente($email){
-			$sql = 'SELECT * FROM clientes WHERE email=:email';
-			$res = $this->conexion->prepare($sql);
-			$res->bindParam(':email', $email);
-
-			try {
-				$res->execute();
-			    $f = $res->fetch();
-			    return $f;
-			} catch (Exception $e) {
-				echo "<script>alert('Error al buscar usuario!!')</script>";
-				echo "<script>location.href='../views/login.php'</script>";
-			}
-		}
 
 
 
