@@ -26,6 +26,26 @@
 			}
 		}
 
+		public function obtenerUsuarioPorCredenciales($correo, $id_rol, $id_institucion) {
+		    // Ejemplo usando PDO con sentencias preparadas
+		    $sql = "SELECT u.*, i.estado AS estado_institucion 
+		            FROM usuario u
+		            INNER JOIN institucion i ON u.id_institucion = i.id_institucion
+		            WHERE u.correo = :correo 
+		              AND u.id_rol = :id_rol 
+		              AND u.id_institucion = :id_institucion
+		              AND u.estado = 'Activo'
+		              AND i.estado = 'Activa'";
+
+		    $stmt = $this->conexion->prepare($sql);
+		    $stmt->bindParam(':correo', $correo);
+		    $stmt->bindParam(':id_rol', $id_rol);
+		    $stmt->bindParam(':id_institucion', $id_institucion);
+		    $stmt->execute();
+
+		    return $stmt->fetch(PDO::FETCH_ASSOC);
+		}
+
 		
 
 
