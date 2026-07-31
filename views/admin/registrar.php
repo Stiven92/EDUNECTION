@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar Usuario - EDUNECTION</title>
+    <title>Gestión y Registro de Usuarios - EDUNECTION</title>
     <!-- Tipografía y FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,13 +20,13 @@
     <header class="navbar">
         <div class="container nav-container">
             <a href="dashboardAdmin.php" class="logo">
-                <img src="../../assets/img/logos/logo_azul.png" alt="Logo Pulpo" class="logo-icon">
+                <img src="../../assets/img/logos/logo_azul.png" alt="Logo EDUNECTION" class="logo-icon">
                 <span>EDUNECTION</span>
             </a>
 
             <nav class="nav-links">
                 <a href="dashboardAdmin.php" class="nav-item">Inicio</a>
-                <a href="estudiantes.php" class="nav-item active">Usuarios</a>
+                <a href="usuarios.php" class="nav-item active">Usuarios</a>
                 <a href="docentes.php" class="nav-item">Docentes</a>
                 <a href="cursosAdmin.php" class="nav-item">Cursos</a>
 
@@ -37,7 +37,7 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="dropdown-menu">
-                        <a href="matricularEstudiante.php" class="dropdown-item active">
+                        <a href="matricularEstudiante.php" class="dropdown-item">
                             <i class="fa-solid fa-user-plus"></i> Nuevo Registro
                         </a>
                         <a href="reportes.php" class="dropdown-item">
@@ -62,45 +62,71 @@
             <a href="dashboardAdmin.php" class="btn-back">
                 <i class="fa-solid fa-arrow-left"></i> Volver al Inicio
             </a>
-            <h2 id="page-title">Registrar Nuevo Usuario</h2>
+            <h2 id="page-title">Gestión de Usuarios del Sistema</h2>
         </div>
 
-        <!-- Pestañas de Selección (Individual vs Carga Masiva) -->
+        <!-- Pestañas de Selección -->
         <div class="tab-container">
-            <button class="tab-btn active" onclick="switchTab('individual')">
-                <i class="fa-solid fa-user"></i> Registro Individual
+            <button class="tab-btn active" onclick="switchTab('registro')">
+                <i class="fa-solid fa-user-plus"></i> Registrar Usuario
             </button>
             <button class="tab-btn" onclick="switchTab('masiva')">
-                <i class="fa-solid fa-file-csv"></i> Carga Masiva (Archivo Plano)
+                <i class="fa-solid fa-file-csv"></i> Carga Masiva
+            </button>
+            <button class="tab-btn" onclick="switchTab('listado')">
+                <i class="fa-solid fa-users"></i> Lista de Usuarios
             </button>
         </div>
 
         <!-- OPCIÓN 1: Formulario Individual de Registro -->
-        <div id="tab-individual" class="publish-card tab-content active">
-            <form class="publish-form" action="../controller/registrarEstudianteController.php" method="POST">
-                <!-- Selección de Rol Principal -->
+        <div id="tab-registro" class="publish-card tab-content active">
+            <form class="publish-form" action="../controller/usuarioController.php?action=crear" method="POST">
+                
+                <!-- PASO 1: Datos de Cuenta e Institución -->
                 <div class="form-section-title">
-                    <i class="fa-solid fa-user-shield"></i> Rol en el Sistema
+                    <i class="fa-solid fa-key"></i> 1. Datos de Cuenta e Institución
                 </div>
 
-                <div class="form-group">
-                    <label for="id_perfil" class="input-label">Seleccione el Rol a Registrar</label>
-                    <select id="id_perfil" name="id_perfil" class="custom-select" required
-                        onchange="actualizarCamposPorRol(this.value)">
-                        <option value="" disabled selected>Seleccione un Rol...</option>
-                        <option value="1">Administrador</option>
-                        <option value="2">Directivo</option>
-                        <option value="3">Docente</option>
-                        <option value="4">Estudiante</option>
-                        <option value="5">Acudiente</option>
-                    </select>
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label for="correo" class="input-label">Correo Electrónico (Usuario)</label>
+                        <div class="input-with-icon">
+                            <i class="fa-regular fa-envelope input-icon"></i>
+                            <input type="email" id="correo" name="correo" class="form-input"
+                                placeholder="ejemplo@dominio.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_institucion" class="input-label">Institución Educativa</label>
+                        <select id="id_institucion" name="id_institucion" class="custom-select" required>
+                            <option value="" disabled selected>Seleccione Institución...</option>
+                            <option value="1">Institución Educativa Principal</option>
+                            <option value="2">Sede Secundaria</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label for="id_rol" class="input-label">Rol del Usuario</label>
+                        <select id="id_rol" name="id_rol" class="custom-select" required
+                            onchange="actualizarCamposPorRol(this.value)">
+                            <option value="" disabled selected>Seleccione Rol...</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Directivo</option>
+                            <option value="3">Docente</option>
+                            <option value="4">Estudiante</option>
+                            <option value="5">Acudiente</option>
+                        </select>
+                    </div>
                 </div>
 
                 <hr class="form-divider">
 
-                <!-- Sección 1: Datos de Identificación -->
+                <!-- PASO 2: Información Personal del Usuario -->
                 <div class="form-section-title">
-                    <i class="fa-solid fa-id-card"></i> Datos de Identificación
+                    <i class="fa-solid fa-id-card"></i> 2. Información Personal del Usuario
                 </div>
 
                 <div class="form-grid-2">
@@ -148,23 +174,27 @@
                 </div>
 
                 <div class="form-grid-2">
-                    <div class="form-group">
+                    <!-- Campo Fecha Nacimiento (Exclusivo Estudiantes) -->
+                    <div class="form-group" id="grupo-nacimiento" style="display: none;">
                         <label for="fecha_nacimiento" class="input-label">Fecha de Nacimiento</label>
-                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-input-date"
-                            required>
+                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-input-date">
                     </div>
 
-                    <div class="form-group">
+                    <!-- Campo Sexo (Exclusivo Estudiantes) -->
+                    <div class="form-group" id="grupo-sexo" style="display: none;">
                         <label for="sexo" class="input-label">Sexo</label>
-                        <select id="sexo" name="sexo" class="custom-select" required>
+                        <select id="sexo" name="sexo" class="custom-select">
+                            <option value="" disabled selected>Seleccione...</option>
                             <option value="M">Masculino</option>
                             <option value="F">Femenino</option>
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label for="sexo" class="input-label">Tipo de Sangre</label>
-                        <select id="sangre_id" name="tipo_sangre" class="custom-select" required>
+                    <!-- Campo Tipo de Sangre (Estudiante, Docente y Directivo) -->
+                    <div class="form-group" id="grupo-sangre" style="display: none;">
+                        <label for="sangre_id" class="input-label">Tipo de Sangre</label>
+                        <select id="sangre_id" name="tipo_sangre" class="custom-select">
+                            <option value="" disabled selected>Seleccione...</option>
                             <option value="1">O+</option>
                             <option value="2">O-</option>
                             <option value="3">A+</option>
@@ -173,12 +203,11 @@
                             <option value="6">B-</option>
                             <option value="7">AB+</option>
                             <option value="8">AB-</option>
-
                         </select>
                     </div>
                 </div>
 
-                <!-- SECCIÓN DINÁMICA: Campos específicos por rol según la base de datos -->
+                <!-- SECCIÓN DINÁMICA: Especialidad (Docente) y Cargo (Directivo) -->
                 <div id="campos-especificos" class="form-grid-2" style="display: none;">
 
                     <!-- Campo exclusivo para Docentes -->
@@ -205,7 +234,6 @@
 
                 <hr class="form-divider">
 
-                <!-- Sección 2: Contacto y Salud -->
                 <div class="form-section-title">
                     <i class="fa-solid fa-address-book"></i> Datos de Contacto y Salud
                 </div>
@@ -215,31 +243,21 @@
                         <label for="telefono" class="input-label">Teléfono</label>
                         <div class="input-with-icon">
                             <i class="fa-solid fa-phone input-icon"></i>
-                            <input type="tel" id="telefono" name="telefono" class="form-input"
-                                placeholder="Ej: 3001234567">
+                            <input type="tel" id="telefono" name="telefono" class="form-input" placeholder="Ej: 3001234567">
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="correo_electronico" class="input-label">Correo Electrónico</label>
-                        <div class="input-with-icon">
-                            <i class="fa-regular fa-envelope input-icon"></i>
-                            <input type="email" id="correo_electronico" name="correo_electronico" class="form-input"
-                                placeholder="usuario@correo.com" required>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-grid-2">
                     <div class="form-group">
                         <label for="direccion" class="input-label">Dirección de Residencia</label>
                         <div class="input-with-icon">
                             <i class="fa-solid fa-location-dot input-icon"></i>
-                            <input type="text" id="direccion" name="direccion" class="form-input"
-                                placeholder="Ej: Calle 12 # 34-56">
+                            <input type="text" id="direccion" name="direccion" class="form-input" placeholder="Ej: Calle 12 # 34-56">
                         </div>
                     </div>
+                </div>
 
+                <!-- Campo EPS (Estudiante, Docente y Directivo) -->
+                <div class="form-grid-2" id="grupo-eps" style="display: none;">
                     <div class="form-group">
                         <label for="id_eps" class="input-label">EPS</label>
                         <select id="id_eps" name="id_eps" class="custom-select">
@@ -263,10 +281,6 @@
                     </div>
                 </div>
 
-                <!-- Campos Ocultos Generales -->
-                <input type="hidden" name="activo_inactivo" value="1">
-                <input type="hidden" name="id_institucion" value="1">
-
                 <!-- Botones de Acción -->
                 <div class="publish-actions">
                     <a href="dashboardAdmin.php" class="btn-cancel">Cancelar</a>
@@ -278,40 +292,101 @@
             </form>
         </div>
 
-        <!-- OPCIÓN 2: Carga Masiva mediante Archivo Plano -->
+        <!-- OPCIÓN 2: Carga Masiva -->
         <div id="tab-masiva" class="publish-card tab-content" style="display: none;">
-            <form class="publish-form" action="procesarCargaMasiva.php" method="POST" enctype="multipart/form-data">
+            <form class="publish-form" action="../controller/usuarioController.php?action=carga_masiva" method="POST"
+                enctype="multipart/form-data">
 
                 <div class="form-section-title">
-                    <i class="fa-solid fa-file-import"></i> Carga Masiva de Usuarios
+                    <i class="fa-solid fa-file-import"></i> Carga Masiva de Cuentas de Usuario
                 </div>
 
                 <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">
-                    Sube un archivo plano (CSV o TXT) con la lista de nuevos usuarios. El archivo debe incluir la
-                    columna del rol correspondiente.
+                    Sube un archivo plano (CSV o TXT) que contenga la información de los usuarios.
                 </p>
 
-                <!-- Área Dropzone para Archivo Plano -->
                 <div class="file-upload-dropzone">
                     <i class="fa-solid fa-cloud-arrow-up dropzone-icon"></i>
                     <div class="dropzone-text">
-                        <span id="file-name-display">Arrastra y suelta tu archivo plano aquí o haz clic para
-                            buscar</span>
+                        <span id="file-name-display">Arrastra y suelta tu archivo aquí o haz clic para buscar</span>
                         <small>Formatos permitidos: .csv, .txt, .xlsx (Máx. 10MB)</small>
                     </div>
                     <input type="file" name="archivo_usuarios" id="archivo_usuarios" class="file-input-hidden"
                         accept=".csv, .txt, .xlsx" required onchange="showFileName(this)">
                 </div>
 
-                <!-- Botones de Acción -->
                 <div class="publish-actions">
                     <a href="dashboardAdmin.php" class="btn-cancel">Cancelar</a>
                     <button type="submit" class="btn-publish">
-                        <i class="fa-solid fa-upload"></i> Subir y Procesar Archivo
+                        <i class="fa-solid fa-upload"></i> Procesar Usuarios
                     </button>
                 </div>
 
             </form>
+        </div>
+
+        <!-- OPCIÓN 3: Listado de Usuarios Registrados -->
+        <div id="tab-listado" class="tab-content" style="display: none;">
+            <div class="students-action-bar">
+                <div class="search-input-wrapper search-student">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Buscar por correo o ID...">
+                </div>
+            </div>
+
+            <div class="table-card">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th># ID</th>
+                            <th>Correo / Usuario</th>
+                            <th>Institución</th>
+                            <th>Rol</th>
+                            <th>Fecha Creación</th>
+                            <th style="text-align: center;">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Ejemplo dinámico PHP -->
+                        <tr>
+                            <td class="font-bold">#1</td>
+                            <td>
+                                <div class="student-user-info">
+                                    <div class="avatar-small">
+                                        <i class="fa-regular fa-user"></i>
+                                    </div>
+                                    <span class="student-name">admin@edunection.edu.co</span>
+                                </div>
+                            </td>
+                            <td><span class="text-muted-cell">Institución Principal</span></td>
+                            <td><span class="type-tag purple">Administrador</span></td>
+                            <td><span class="date-text">2026-03-30 10:00</span></td>
+                            <td style="text-align: center;">
+                                <a href="editarUsuario.php?id=1" class="tool-btn" title="Editar"><i
+                                        class="fa-solid fa-pen"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">#2</td>
+                            <td>
+                                <div class="student-user-info">
+                                    <div class="avatar-small">
+                                        <i class="fa-regular fa-user"></i>
+                                    </div>
+                                    <span class="student-name">docente.mate@edunection.edu.co</span>
+                                </div>
+                            </td>
+                            <td><span class="text-muted-cell">Institución Principal</span></td>
+                            <td><span class="type-tag green">Docente</span></td>
+                            <td><span class="date-text">2026-03-30 10:15</span></td>
+                            <td style="text-align: center;">
+                                <a href="editarUsuario.php?id=2" class="tool-btn" title="Editar"><i
+                                        class="fa-solid fa-pen"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
     </main>
@@ -329,23 +404,31 @@
         </div>
     </footer>
 
-    <!-- Script de Interacción Dinámica y Pestañas -->
+    <!-- Script de Pestañas y Lógica de Filtrado Dinámico por Rol -->
     <script>
         function switchTab(tabName) {
-            const tabIndividual = document.getElementById('tab-individual');
-            const tabMasiva = document.getElementById('tab-masiva');
-            const btns = document.querySelectorAll('.tab-btn');
+            const tabs = {
+                'registro': document.getElementById('tab-registro'),
+                'masiva': document.getElementById('tab-masiva'),
+                'listado': document.getElementById('tab-listado')
+            };
 
+            const btns = document.querySelectorAll('.tab-btn');
             btns.forEach(btn => btn.classList.remove('active'));
 
-            if (tabName === 'individual') {
-                tabIndividual.style.display = 'block';
-                tabMasiva.style.display = 'none';
+            Object.keys(tabs).forEach(key => {
+                if (tabs[key]) tabs[key].style.display = 'none';
+            });
+
+            if (tabName === 'registro') {
+                tabs['registro'].style.display = 'block';
                 btns[0].classList.add('active');
-            } else {
-                tabIndividual.style.display = 'none';
-                tabMasiva.style.display = 'block';
+            } else if (tabName === 'masiva') {
+                tabs['masiva'].style.display = 'block';
                 btns[1].classList.add('active');
+            } else if (tabName === 'listado') {
+                tabs['listado'].style.display = 'block';
+                btns[2].classList.add('active');
             }
         }
 
@@ -356,18 +439,56 @@
             }
         }
 
-        // Función para mostrar/ocultar campos según las tablas (directivo, docente, etc.)
         function actualizarCamposPorRol(idRol) {
             const contenedorEspecifico = document.getElementById('campos-especificos');
             const camposRol = document.querySelectorAll('.campo-rol');
             const btnSubmit = document.getElementById('btn-submit-text');
 
-            // Ocultar todos los campos dinámicos
+            // Elementos condicionales
+            const grupoSangre = document.getElementById('grupo-sangre');
+            const selectSangre = document.getElementById('sangre_id');
+            const grupoEps = document.getElementById('grupo-eps');
+            
+            const grupoNacimiento = document.getElementById('grupo-nacimiento');
+            const inputNacimiento = document.getElementById('fecha_nacimiento');
+            
+            const grupoSexo = document.getElementById('grupo-sexo');
+            const selectSexo = document.getElementById('sexo');
+
+            // Ocultar campos específicos de roles por defecto
             camposRol.forEach(campo => campo.style.display = 'none');
             contenedorEspecifico.style.display = 'none';
 
-            // Mapeo según la tabla `rol` que tienes en MySQL:
-            // 1: Administrador, 2: Directivo, 3: Docente, 4: Estudiante, 5: Acudiente
+            // 1. FECHA DE NACIMIENTO Y SEXO: Solo visibles y obligatorios para Estudiantes ('4')
+            if (idRol === "4") {
+                grupoNacimiento.style.display = 'block';
+                inputNacimiento.setAttribute('required', 'required');
+
+                grupoSexo.style.display = 'block';
+                selectSexo.setAttribute('required', 'required');
+            } else {
+                grupoNacimiento.style.display = 'none';
+                inputNacimiento.removeAttribute('required');
+                inputNacimiento.value = '';
+
+                grupoSexo.style.display = 'none';
+                selectSexo.removeAttribute('required');
+                selectSexo.value = '';
+            }
+
+            // 2. TIPO DE SANGRE Y EPS: Visibles para Estudiantes ('4'), Docentes ('3') y Directivos ('2')
+            if (idRol === "2" || idRol === "3" || idRol === "4") {
+                grupoSangre.style.display = 'block';
+                selectSangre.setAttribute('required', 'required');
+                grupoEps.style.display = 'grid';
+            } else {
+                grupoSangre.style.display = 'none';
+                selectSangre.removeAttribute('required');
+                selectSangre.value = '';
+                grupoEps.style.display = 'none';
+            }
+
+            // 3. CAMPOS ESPECÍFICOS Y TEXTO DEL BOTÓN
             if (idRol === "2") { // Directivo
                 contenedorEspecifico.style.display = 'grid';
                 document.querySelector('.campo-directivo').style.display = 'block';
@@ -380,7 +501,7 @@
                 btnSubmit.innerHTML = '<i class="fa-solid fa-user-check"></i> Registrar Estudiante';
             } else if (idRol === "5") { // Acudiente
                 btnSubmit.innerHTML = '<i class="fa-solid fa-user-check"></i> Registrar Acudiente';
-            } else { // Administrador
+            } else { // Administrador ('1')
                 btnSubmit.innerHTML = '<i class="fa-solid fa-user-check"></i> Registrar Administrador';
             }
         }
