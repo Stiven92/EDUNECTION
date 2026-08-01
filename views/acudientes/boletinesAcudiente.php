@@ -1,3 +1,6 @@
+<?php include("../controllers/SessionAcudienteController.php"); ?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 

@@ -1,132 +1,76 @@
 <?php 
+session_start();
 
-	include("../models/mdb.php");
-	include("../models/mconsultas.php");
+include("../models/mdb.php");
+include("../models/mconsultas.php");
 
-	if ($_POST) {
-		$school = $_POST['school']
-		$email = $_POST['email'];
-		$password = $_POST['password'];
-		$rol = $_POST['rol'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-		$getUser = new Consultas();
+    // 1. Recepción y desinfección básica de datos
+    $school   = isset($_POST['school']) ? trim($_POST['school']) : null;
+    $email    = isset($_POST['email']) ? trim($_POST['email']) : null;
+    $password = isset($_POST['password']) ? trim($_POST['password']) : null;
+    $rol      = isset($_POST['rol']) ? intval($_POST['rol']) : null;
 
-		$colegioExiste = $getUser->verificarColegioExistente($school);
+    if (empty($school) || empty($email) || empty($password) || empty($rol)) {
+        echo "<script>alert('Por favor, llene todos los campos del formulario.');</script>";
+        echo "<script>location.href='../views/login.php';</script>";
+        exit();
+    }
 
+    $getUser = new Consultas();
 
+    // 2. Consulta combinada: Busca el usuario asociado exactamente a ese ROL y a esa INSTITUCIÓN
+    $buscarUsuario = $getUser->obtenerUsuarioPorCredenciales($email, $rol, $school);
 
-		//-------editar dependiendo el html---------------- 
-		// 1. Primero validas si el valor de la variable $school es un colegio del sistema
-		if ($school == 10 || $school == 20 || $school == 30) {
-		    
-		    // Si el colegio es válido, aquí adentro pones TODO tu código actual:
-		    // El switch de roles, el password_verify, las sesiones, etc.
-		    $buscarUsuario = $getUser->getUserCliente($email); 
-		    
-		} else {
-		    // Si la variable $school trae un número que no corresponde a ningún colegio
-		    echo "<script>alert('Error: Este colegio no existe en nuestro sistema.');</script>";
-		    echo "<script>location.href='../views/login.php';</script>";
-		}
+    if ($buscarUsuario) {
 
+        // 3. Verificación de la contraseña encriptada
+        if (password_verify($password, $buscarUsuario['password'])) {
+            
+            // Credenciales válidas: Guardar en sesión
+            $_SESSION['id']             = $buscarUsuario['id_usuario'];
+            $_SESSION['rol']            = $buscarUsuario['id_rol'];
+            $_SESSION['id_institucion'] = $buscarUsuario['id_institucion'];
 
+            // 4. Redirección según el rol
+            switch ($rol) {
+                case 1:
+                    echo "<script>location.href='../views/admin/';</script>";
+                    break;
+                case 2:
+                    echo "<script>location.href='../views/ConDashboard.php';</script>";
+                    break;
+                case 3:
+                    echo "<script>location.href='../views/docentes/dashboardDocente.php';</script>";
+                    break;
+                case 4:
+                    echo "<script>location.href='../views/estudiantes/dashboardEstudiante.php';</script>";
+                    break;
+                case 5:
+                    echo "<script>location.href='../views/acudiente/dasboardAcudiente.php';</script>";
+                    break;
+                default:
+                    echo "<script>location.href='../views/ClientDashboard.php';</script>";
+                    break;
+            }
+            exit();
 
+        } else {
+            echo "<script>alert('Error: Contraseña incorrecta.');</script>";
+            echo "<script>location.href='../views/login.php';</script>";
+            exit();
+        }
 
-
-
-
-
-
-
-
-
-		//-------editar dependiendo el html---------------- 
-
-		switch ($rol) {
-		    case 1:
-		        $buscarUsuario = $getUser->getUserAdministrador($email);
-		        break;
-
-		    case 2:
-		        $buscarUsuario = $getUser->getUserDirectivo($email);
-		        break;
-		    case 3:
-		       
-		        $buscarUsuario = $getUser->getUserDocente($email);
-		        break;
-		    case 4 :
-		   		$buscarUsuario = $getUser->getUserEstudiente($email);
-		        break;
-		    case 5:
-		    	$buscarUsuario = $getUser->getUserAcudiente($email);
-		        break;
-		    	
-		    	break;
-
-		    default:
-		        // Opcional: Código que se ejecuta si el rol no es ni 1, ni 2, ni 3
-		        $buscarUsuario = null; 
-		        break;
-		}//end of swith
-
-
-
-		if ($buscarUsuario) {
-
-		    // Cambiado a $passwordValida para no destruir tu variable $password original
-		    $passwordValida = password_verify($password, $buscarUsuario['password']);
-
-		    if ($passwordValida) {
-		        $_SESSION['rol'] = $rol;
-		        $_SESSION['id'] = $buscarUsuario['id'];
-
-		        //-----Switch aplicado a la redirección según el rol--------
-		        switch ($rol) {
-		        	case 1:
-		        		 echo "<script>location.href='../views/ConDashboard.php'</script>";
-		                break;
-
-		            case 2:
-		                echo "<script>location.href='../views/ConDashboard.php'</script>";
-		                break;
-
-		            case 3:
-		                echo "<script>location.href='../views/ConDashboard.php'</script>";
-		                break;
-
-		            case 4:
-		                echo "<script>location.href='../views/ConDashboard.php'</script>";
-		                break;
-
-		            case 5:
-		                echo "<script>location.href='../views/ConDashboard.php'</script>";
-		                break;
-
-		            default:
-		                // El rol 1 (o cualquier otro no especificado) va al Dashboard de Cliente
-		                echo "<script>location.href='../views/ClientDashboard.php'</script>";
-		                break;
-		        }
-
-		    } else {
-		        echo "<script>alert('Error al validar credenciales')</script>";
-		        echo "<script>location.href='../views/login.php'</script>";
-		    }
-
-		} else {
-		    echo "<script>alert('El usuario no existe!! ')</script>";
-		    echo "<script>location.href='../views/login.php'</script>";
-		}//end of if ($_buscarusuario)
-
-
-
-
-
-
-
-
-		
-	} // end of if($post)
-
-
- ?>
+    } else {
+        // Si no retorna ningún registro, significa que:
+        // - El usuario no existe.
+        // - El rol seleccionado no coincide con el usuario.
+        // - El usuario NO pertenece a la institución seleccionada.
+        // - La cuenta o la institución están inactivas.
+        echo "<script>alert('Error: Datos incorrectos o el usuario no está vinculado a esta institución.');</script>";
+        echo "<script>location.href='../views/login.php';</script>";
+        exit();
+    }
+}
+?>
