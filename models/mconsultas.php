@@ -1,78 +1,82 @@
 <?php
 
-	class Consultas{
+class Consultas
+{
 
-		private $conexion;
+	private $conexion;
 
-		public function __construct(){
-			$cnn = new Conexion();
-			$this->conexion = $cnn->get_conexion();
-		}
+	public function __construct()
+	{
+		$cnn = new Conexion();
+		$this->conexion = $cnn->get_conexion();
+	}
 
 
-		public function registrarUsuario($correo, $password, $id_perfil, $id_institucion){
+	public function registrarUsuario($correo, $password, $id_perfil, $id_institucion)
+	{
 
-			// Verificar si el correo ya existe
-			$sql = 'SELECT correo FROM usuario WHERE correo = :correo';
-			$res = $this->conexion->prepare($sql);
-			$res->bindParam(':correo', $correo);
+		// Verificar si el correo ya existe
+		$sql = 'SELECT correo FROM usuario WHERE correo = :correo';
+		$res = $this->conexion->prepare($sql);
+		$res->bindParam(':correo', $correo);
 
-			try {
+		try {
 
-				$res->execute();
-				$existe = $res->fetch();
+			$res->execute();
+			$existe = $res->fetch();
 
-				if($existe){
+			if ($existe) {
 
-					echo "<script>alert('El correo electrónico ya se encuentra registrado.')</script>";
-					echo "<script>history.back()</script>";
-					exit();
+				echo "<script>alert('El correo electrónico ya se encuentra registrado.')</script>";
+				echo "<script>history.back()</script>";
+				exit();
 
-				}else{
+			} else {
 
-					// Registrar usuario
-					$sql = 'INSERT INTO usuario
+				// Registrar usuario
+				$sql = 'INSERT INTO usuario
 							(id_institucion, id_rol, correo, password)
 							VALUES
 							(:id_institucion, :id_rol, :correo, :password)';
 
-					$res = $this->conexion->prepare($sql);
+				$res = $this->conexion->prepare($sql);
 
-					$res->bindParam(':id_institucion', $id_institucion);
-					$res->bindParam(':id_rol', $id_perfil);
-					$res->bindParam(':correo', $correo);
-					$res->bindParam(':password', $password);
+				$res->bindParam(':id_institucion', $id_institucion);
+				$res->bindParam(':id_rol', $id_perfil);
+				$res->bindParam(':correo', $correo);
+				$res->bindParam(':password', $password);
 
-					try {
+				try {
 
-						$res->execute();
+					$res->execute();
 
-						// Devuelve el ID del usuario recién registrado
-						return $this->conexion->lastInsertId();
+					// Devuelve el ID del usuario recién registrado
+					return $this->conexion->lastInsertId();
 
-					} catch (Exception $e) {
+				} catch (Exception $e) {
 
-						echo "<script>alert('Error al registrar el usuario.')</script>";
-						echo "<script>history.back()</script>";
-						exit();
-
-					}
+					echo "<script>alert('Error al registrar el usuario.')</script>";
+					echo "<script>history.back()</script>";
+					exit();
 
 				}
 
-			} catch (Exception $e) {
-
-				echo "<script>alert('Error al validar la información del usuario.')</script>";
-				echo "<script>history.back()</script>";
-				exit();
 			}
 
+		} catch (Exception $e) {
+
+			echo "<script>alert('Error al validar la información del usuario.')</script>";
+			echo "<script>history.back()</script>";
+			exit();
 		}
 
+	}
 
-		public function registrarAdministrador($idUsuario,$datos){
 
-			$sql = "INSERT INTO administrador
+	public function registrarAdministrador($idUsuario, $datos)
+	{
+
+		$sql = "INSERT INTO administrador
 					(
 						id_usuario,
 						id_institucion,
@@ -93,33 +97,34 @@
 						:numero_telefonico
 					)";
 
-			$res = $this->conexion->prepare($sql);
+		$res = $this->conexion->prepare($sql);
 
-			$res->bindParam(":id_usuario",$idUsuario);
-			$res->bindParam(":id_institucion",$datos["id_institucion"]);
-			$res->bindParam(":nombres",$datos["nombre"]);
-			$res->bindParam(":apellidos",$datos["apellido"]);
-			$res->bindParam(":id_tipo_documento",$datos["id_tipo_doc"]);
-			$res->bindParam(":numero_documento",$datos["documento_indentidad"]);
-			$res->bindParam(":numero_telefonico",$datos["telefono"]);
+		$res->bindParam(":id_usuario", $idUsuario);
+		$res->bindParam(":id_institucion", $datos["id_institucion"]);
+		$res->bindParam(":nombres", $datos["nombre"]);
+		$res->bindParam(":apellidos", $datos["apellido"]);
+		$res->bindParam(":id_tipo_documento", $datos["id_tipo_doc"]);
+		$res->bindParam(":numero_documento", $datos["documento_indentidad"]);
+		$res->bindParam(":numero_telefonico", $datos["telefono"]);
 
-			try{
+		try {
 
-				$res->execute();
+			$res->execute();
 
-			}catch(Exception $e){
+		} catch (Exception $e) {
 
-				echo "<script>alert('Error al registrar el administrador')</script>";
-				echo "<script>history.back()</script>";
-
-			}
+			echo "<script>alert('Error al registrar el administrador')</script>";
+			echo "<script>history.back()</script>";
 
 		}
 
+	}
 
-		public function registrarDirectivo($idUsuario,$datos){
 
-		    $sql = "INSERT INTO directivo
+	public function registrarDirectivo($idUsuario, $datos)
+	{
+
+		$sql = "INSERT INTO directivo
 		            (
 		                id_usuario,
 		                id_institucion,
@@ -146,36 +151,37 @@
 		                :id_tipo_sangre
 		            )";
 
-		    $res = $this->conexion->prepare($sql);
+		$res = $this->conexion->prepare($sql);
 
-		    $res->bindParam(":id_usuario",$idUsuario);
-		    $res->bindParam(":id_institucion",$datos["id_institucion"]);
-		    $res->bindParam(":nombres",$datos["nombre"]);
-		    $res->bindParam(":apellidos",$datos["apellido"]);
-		    $res->bindParam(":id_tipo_documento",$datos["id_tipo_doc"]);
-		    $res->bindParam(":numero_documento",$datos["documento_indentidad"]);
-		    $res->bindParam(":numero_telefonico",$datos["telefono"]);
-		    $res->bindParam(":cargo",$datos["cargo"]);
-		    $res->bindParam(":id_eps",$datos["id_eps"]);
-		    $res->bindParam(":id_tipo_sangre",$datos["tipo_sangre"]);
+		$res->bindParam(":id_usuario", $idUsuario);
+		$res->bindParam(":id_institucion", $datos["id_institucion"]);
+		$res->bindParam(":nombres", $datos["nombre"]);
+		$res->bindParam(":apellidos", $datos["apellido"]);
+		$res->bindParam(":id_tipo_documento", $datos["id_tipo_doc"]);
+		$res->bindParam(":numero_documento", $datos["documento_indentidad"]);
+		$res->bindParam(":numero_telefonico", $datos["telefono"]);
+		$res->bindParam(":cargo", $datos["cargo"]);
+		$res->bindParam(":id_eps", $datos["id_eps"]);
+		$res->bindParam(":id_tipo_sangre", $datos["tipo_sangre"]);
 
-		    try{
+		try {
 
-		        $res->execute();
+			$res->execute();
 
-		    }catch(Exception $e){
+		} catch (Exception $e) {
 
-		        echo "<script>alert('Error al registrar el directivo');</script>";
-		        echo "<script>history.back();</script>";
-
-		    }
+			echo "<script>alert('Error al registrar el directivo');</script>";
+			echo "<script>history.back();</script>";
 
 		}
 
+	}
 
-		public function registrarDocente($idUsuario,$datos){
 
-		    $sql = "INSERT INTO docente
+	public function registrarDocente($idUsuario, $datos)
+	{
+
+		$sql = "INSERT INTO docente
 		            (
 		                id_usuario,
 		                id_institucion,
@@ -202,78 +208,79 @@
 		                :id_tipo_sangre
 		            )";
 
-		    $res = $this->conexion->prepare($sql);
+		$res = $this->conexion->prepare($sql);
 
-		    $res->bindParam(":id_usuario", $idUsuario);
-		    $res->bindParam(":id_institucion", $datos["id_institucion"]);
-		    $res->bindParam(":nombres", $datos["nombre"]);
-		    $res->bindParam(":apellidos", $datos["apellido"]);
-		    $res->bindParam(":id_tipo_documento", $datos["id_tipo_doc"]);
-		    $res->bindParam(":numero_documento", $datos["documento_indentidad"]);
-		    $res->bindParam(":numero_telefonico", $datos["telefono"]);
-		    $res->bindParam(":especialidad", $datos["especialidad"]);
-		    $res->bindParam(":id_eps", $datos["id_eps"]);
-		    $res->bindParam(":id_tipo_sangre", $datos["tipo_sangre"]);
+		$res->bindParam(":id_usuario", $idUsuario);
+		$res->bindParam(":id_institucion", $datos["id_institucion"]);
+		$res->bindParam(":nombres", $datos["nombre"]);
+		$res->bindParam(":apellidos", $datos["apellido"]);
+		$res->bindParam(":id_tipo_documento", $datos["id_tipo_doc"]);
+		$res->bindParam(":numero_documento", $datos["documento_indentidad"]);
+		$res->bindParam(":numero_telefonico", $datos["telefono"]);
+		$res->bindParam(":especialidad", $datos["especialidad"]);
+		$res->bindParam(":id_eps", $datos["id_eps"]);
+		$res->bindParam(":id_tipo_sangre", $datos["tipo_sangre"]);
 
-		    try{
+		try {
 
-		        $res->execute();
-		        return true;
+			$res->execute();
+			return true;
 
-		    }catch(Exception $e){
+		} catch (Exception $e) {
 
-		        echo "<script>
+			echo "<script>
 		                alert('Error al registrar Docente');
 		                history.back();
 		              </script>";
 
-		        return false;
+			return false;
 
-
-		    }
 
 		}
 
+	}
 
-		public function registrarMatricula($idUsuario, $datos){
 
-		    // Buscar el año lectivo activo
-		    $sql = "SELECT id_anio_lectivo
+	public function registrarMatricula($idUsuario, $datos)
+	{
+
+		// Buscar el año lectivo activo
+		$sql = "SELECT id_anio_lectivo
 		            FROM anio_lectivo
 		            WHERE id_institucion = :institucion
 		            AND estado = 'Activo'
 		            LIMIT 1";
 
-		    $res = $this->conexion->prepare($sql);
-		    $res->bindParam(":institucion", $datos["id_institucion"]);
+		$res = $this->conexion->prepare($sql);
+		$res->bindParam(":institucion", $datos["id_institucion"]);
 
-		    try{
+		try {
 
-		        $res->execute();
-		        $anio = $res->fetch(PDO::FETCH_ASSOC);
+			$res->execute();
+			$anio = $res->fetch(PDO::FETCH_ASSOC);
 
-		        if(!$anio){
+			if (!$anio) {
 
-		            echo "<script>
+				echo "<script>
 		                    alert('No existe un año lectivo activo para esta institución');
 		                    history.back();
 		                  </script>";
-		            exit();
+				exit();
 
-		        }
+			}
 
-		        // Campos opcionales
-		        $idCurso = null;
+			// Campos opcionales
+			$idCurso = null;
 
-		        if(isset($datos["id_curso"]) && $datos["id_curso"] != ""){
-		            $idCurso = $datos["id_curso"];
-		        }
+			if (isset($datos["id_curso"]) && $datos["id_curso"] != "") {
+				$idCurso = $datos["id_curso"];
+			}
 
-		        $observaciones = !empty($datos["observaciones"])
-		            ? $datos["observaciones"]
-		            : null;
+			$observaciones = !empty($datos["observaciones"])
+				? $datos["observaciones"]
+				: null;
 
-		        $sql = "INSERT INTO matricula
+			$sql = "INSERT INTO matricula
 		                (
 		                    id_usuario,
 		                    id_institucion,
@@ -316,49 +323,50 @@
 		                    :observaciones
 		                )";
 
-		        $res = $this->conexion->prepare($sql);
+			$res = $this->conexion->prepare($sql);
 
-		        $res->bindParam(":id_usuario", $idUsuario);
-		        $res->bindParam(":id_institucion", $datos["id_institucion"]);
-		        $res->bindParam(":nombres", $datos["nombre"]);
-		        $res->bindParam(":apellidos", $datos["apellido"]);
-		        $res->bindParam(":id_tipo_documento", $datos["id_tipo_doc"]);
-		        $res->bindParam(":numero_documento", $datos["documento_indentidad"]);
-		        $res->bindParam(":fecha_nacimiento", $datos["fecha_nacimiento"]);
-		        $res->bindParam(":id_sexo", $datos["sexo"]);
-		        $res->bindParam(":direccion", $datos["direccion"]);
-		        $res->bindParam(":id_municipio", $datos["id_municipio"]);
-		        $res->bindParam(":id_zona", $datos["id_zona"]);
-		        $res->bindParam(":numero_telefonico", $datos["telefono"]);
-		        $res->bindParam(":id_eps", $datos["id_eps"]);
-		        $res->bindParam(":id_tipo_sangre", $datos["tipo_sangre"]);
-		        $res->bindParam(":id_anio_lectivo", $anio["id_anio_lectivo"]);
-		        $res->bindParam(":id_grado", $datos["id_grado"]);
+			$res->bindParam(":id_usuario", $idUsuario);
+			$res->bindParam(":id_institucion", $datos["id_institucion"]);
+			$res->bindParam(":nombres", $datos["nombre"]);
+			$res->bindParam(":apellidos", $datos["apellido"]);
+			$res->bindParam(":id_tipo_documento", $datos["id_tipo_doc"]);
+			$res->bindParam(":numero_documento", $datos["documento_indentidad"]);
+			$res->bindParam(":fecha_nacimiento", $datos["fecha_nacimiento"]);
+			$res->bindParam(":id_sexo", $datos["sexo"]);
+			$res->bindParam(":direccion", $datos["direccion"]);
+			$res->bindParam(":id_municipio", $datos["id_municipio"]);
+			$res->bindParam(":id_zona", $datos["id_zona"]);
+			$res->bindParam(":numero_telefonico", $datos["telefono"]);
+			$res->bindParam(":id_eps", $datos["id_eps"]);
+			$res->bindParam(":id_tipo_sangre", $datos["tipo_sangre"]);
+			$res->bindParam(":id_anio_lectivo", $anio["id_anio_lectivo"]);
+			$res->bindParam(":id_grado", $datos["id_grado"]);
 
-		        $res->bindValue(":id_curso", $idCurso, is_null($idCurso) ? PDO::PARAM_NULL : PDO::PARAM_INT);
-		        $res->bindValue(":observaciones", $observaciones, is_null($observaciones) ? PDO::PARAM_NULL : PDO::PARAM_STR);
+			$res->bindValue(":id_curso", $idCurso, is_null($idCurso) ? PDO::PARAM_NULL : PDO::PARAM_INT);
+			$res->bindValue(":observaciones", $observaciones, is_null($observaciones) ? PDO::PARAM_NULL : PDO::PARAM_STR);
 
-		        $res->execute();
+			$res->execute();
 
-		        return true;
+			return true;
 
-		    }catch(Exception $e){
+		} catch (Exception $e) {
 
-		        echo "<script>
+			echo "<script>
 		                alert('Error al registrar la matrícula');
 		                history.back();
 		              </script>";
 
-		        return false;
-
-		    }
+			return false;
 
 		}
 
+	}
 
-		public function registrarAcudiente($idUsuario,$datos){
 
-			$sql = "INSERT INTO acudiente
+	public function registrarAcudiente($idUsuario, $datos)
+	{
+
+		$sql = "INSERT INTO acudiente
 					(
 						id_usuario,
 						id_institucion,
@@ -383,55 +391,57 @@
 						:ocupacion
 					)";
 
-			$res = $this->conexion->prepare($sql);
+		$res = $this->conexion->prepare($sql);
 
-			$res->bindParam(":id_usuario",$idUsuario);
-			$res->bindParam(":id_institucion",$datos["id_institucion"]);
-			$res->bindParam(":nombres",$datos["nombre"]);
-			$res->bindParam(":apellidos",$datos["apellido"]);
-			$res->bindParam(":id_tipo_documento",$datos["id_tipo_doc"]);
-			$res->bindParam(":numero_documento",$datos["documento_indentidad"]);
-			$res->bindParam(":numero_telefonico",$datos["telefono"]);
-			$res->bindParam(":direccion",$datos["direccion"]);
-			$res->bindParam(":ocupacion",$datos["ocupacion"]);
+		$res->bindParam(":id_usuario", $idUsuario);
+		$res->bindParam(":id_institucion", $datos["id_institucion"]);
+		$res->bindParam(":nombres", $datos["nombre"]);
+		$res->bindParam(":apellidos", $datos["apellido"]);
+		$res->bindParam(":id_tipo_documento", $datos["id_tipo_doc"]);
+		$res->bindParam(":numero_documento", $datos["documento_indentidad"]);
+		$res->bindParam(":numero_telefonico", $datos["telefono"]);
+		$res->bindParam(":direccion", $datos["direccion"]);
+		$res->bindParam(":ocupacion", $datos["ocupacion"]);
 
-			try{
+		try {
 
-				$res->execute();
+			$res->execute();
 
-			}catch(Exception $e){
+		} catch (Exception $e) {
 
-				echo "<script>alert('Error al registrar el acudiente')</script>";
-				echo "<script>history.back()</script>";
-
-			}
+			echo "<script>alert('Error al registrar el acudiente')</script>";
+			echo "<script>history.back()</script>";
 
 		}
 
+	}
 
 
 
 
 
-		//login of entrance or main 
-		public function getUserUsuario($email){
-			$sql = 'SELECT * FROM clientes WHERE email=:email';
-			$res = $this->conexion->prepare($sql);
-			$res->bindParam(':email', $email);
 
-			try {
-				$res->execute();
-			    $f = $res->fetch();
-			    return $f;
-			} catch (Exception $e) {
-				echo "<script>alert('Error al buscar usuario!!')</script>";
-				echo "<script>location.href='../views/login.php'</script>";
-			}
+	//login of entrance or main 
+	public function getUserUsuario($email)
+	{
+		$sql = 'SELECT * FROM clientes WHERE email=:email';
+		$res = $this->conexion->prepare($sql);
+		$res->bindParam(':email', $email);
+
+		try {
+			$res->execute();
+			$f = $res->fetch();
+			return $f;
+		} catch (Exception $e) {
+			echo "<script>alert('Error al buscar usuario!!')</script>";
+			echo "<script>location.href='../views/login.php'</script>";
 		}
+	}
 
-		public function obtenerUsuarioPorCredenciales($correo, $id_rol, $id_institucion) {
-		    // Ejemplo usando PDO con sentencias preparadas
-		    $sql = "SELECT u.*, i.estado AS estado_institucion 
+	public function obtenerUsuarioPorCredenciales($correo, $id_rol, $id_institucion)
+	{
+		// Ejemplo usando PDO con sentencias preparadas
+		$sql = "SELECT u.*, i.estado AS estado_institucion 
 		            FROM usuario u
 		            INNER JOIN institucion i ON u.id_institucion = i.id_institucion
 		            WHERE u.correo = :correo 
@@ -440,19 +450,124 @@
 		              AND u.estado = 'Activo'
 		              AND i.estado = 'Activa'";
 
-		    $stmt = $this->conexion->prepare($sql);
-		    $stmt->bindParam(':correo', $correo);
-		    $stmt->bindParam(':id_rol', $id_rol);
-		    $stmt->bindParam(':id_institucion', $id_institucion);
-		    $stmt->execute();
+		$stmt = $this->conexion->prepare($sql);
+		$stmt->bindParam(':correo', $correo);
+		$stmt->bindParam(':id_rol', $id_rol);
+		$stmt->bindParam(':id_institucion', $id_institucion);
+		$stmt->execute();
 
-		    return $stmt->fetch(PDO::FETCH_ASSOC);
-		}
-
-		
+		return $stmt->fetch(PDO::FETCH_ASSOC);
+	}
 
 
+	//para quitar los datos quemados
 
-	} //CIERRE CLASE
+	// En mconsultas.php
+
+	public function obtenerInstituciones()
+	{
+		$sql = "SELECT id_institucion, nombre FROM institucion WHERE estado = 'Activa'";
+		$stmt = $this->conexion->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function obtenerRoles()
+	{
+		$sql = "SELECT id_rol, nombre FROM rol";
+		$stmt = $this->conexion->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function obtenerTiposDocumento()
+	{
+		$sql = "SELECT id_tipo_documento, nombre, abreviatura FROM tipo_documento";
+		$stmt = $this->conexion->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function obtenerSexos()
+	{
+		$sql = "SELECT id_sexo, nombre FROM sexo";
+		$stmt = $this->conexion->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function obtenerTiposSangre()
+	{
+		$sql = "SELECT id_tipo_sangre, tipo FROM tipo_sangre";
+		$stmt = $this->conexion->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function obtenerMunicipios()
+	{
+		$sql = "SELECT id_municipio, nombre FROM municipio";
+		$stmt = $this->conexion->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function obtenerZonas()
+	{
+		$sql = "SELECT id_zona, nombre FROM zona";
+		$stmt = $this->conexion->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function obtenerEPS()
+	{
+		$sql = "SELECT id_eps, nombre FROM eps";
+		$stmt = $this->conexion->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function obtenerAniosLectivos()
+	{
+		$sql = "SELECT id_anio_lectivo, anio FROM anio_lectivo WHERE estado = 'Activo'";
+		$stmt = $this->conexion->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function obtenerGrados()
+	{
+		$sql = "SELECT id_grado, id_nivel_educativo, nombre FROM grado";
+		$stmt = $this->conexion->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function obtenerCursos()
+	{
+		$sql = "SELECT id_curso, nombre FROM curso";
+		$stmt = $this->conexion->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+/* 	public function obtenerListaUsuarios()
+	{
+		$sql = "SELECT u.id_usuario, u.correo, u.fecha_creacion, r.nombre_rol, i.nombre AS institucion
+            FROM usuario u
+            INNER JOIN rol r ON u.id_rol = r.id_rol
+            INNER JOIN institucion i ON u.id_institucion = i.id_institucion
+            ORDER BY u.id_usuario DESC";
+		$stmt = $this->conexion->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	} */
+
+
+
+
+
+} //CIERRE CLASE
 
 ?>

@@ -1,3 +1,23 @@
+<?php
+require_once "../../models/mdb.php";
+require_once "../../models/mconsultas.php";
+
+$consultas = new Consultas();
+
+$instituciones = $consultas->obtenerInstituciones();
+$roles = $consultas->obtenerRoles();
+$tiposDoc = $consultas->obtenerTiposDocumento();
+$sexos = $consultas->obtenerSexos();
+$tiposSangre = $consultas->obtenerTiposSangre();
+$municipios = $consultas->obtenerMunicipios();
+$zonas = $consultas->obtenerZonas();
+$listaEPS = $consultas->obtenerEPS();
+$aniosLectivos = $consultas->obtenerAniosLectivos();
+$grados = $consultas->obtenerGrados();
+$cursos = $consultas->obtenerCursos();
+/* $usuarios      = $consultas->obtenerListaUsuarios(); */
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -102,25 +122,25 @@
                         <label for="id_institucion" class="input-label">Institución Educativa</label>
                         <select id="id_institucion" name="id_institucion" class="custom-select" required>
                             <option value="" disabled selected>Seleccione Institución...</option>
-                            <option value="1">Institución Educativa Principal</option>
-                            <option value="2">Sede Secundaria</option>
+                            <?php foreach ($instituciones as $inst): ?>
+                                <option value="<?= $inst['id_institucion'] ?>"><?= htmlspecialchars($inst['nombre']) ?>
+                                </option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
 
-                <div class="form-grid-2">
-                    <div class="form-group">
-                        <label for="id_perfil" class="input-label">Rol del Usuario</label>
-                        <select id="id_perfil" name="id_perfil" class="custom-select" required
-                            onchange="actualizarCamposPorRol(this.value)">
-                            <option value="" disabled selected>Seleccione Rol...</option>
-                            <option value="1">Administrador</option>
-                            <option value="2">Directivo</option>
-                            <option value="3">Docente</option>
-                            <option value="4">Estudiante</option>
-                            <option value="5">Acudiente</option>
-                        </select>
-                    </div>
+                <div class="form-group">
+                    <label for="id_perfil" class="input-label">Rol del Usuario</label>
+                    <select id="id_perfil" name="id_perfil" class="custom-select" required
+                        onchange="actualizarCamposPorRol(this.value)">
+                        <option value="" disabled selected>Seleccione Rol...</option>
+                        <?php foreach ($roles as $rol): ?>
+                            <option value="<?= $rol['id_rol'] ?>">
+                                <?= htmlspecialchars($rol['nombre']) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
 
                 <!-- CONTENEDOR DINÁMICO: Oculto por defecto hasta seleccionar un Rol -->
@@ -155,245 +175,242 @@
                         </div>
                     </div>
 
-                    <div class="form-grid-2">
-                        <div class="form-group">
-                            <label for="id_tipo_doc" class="input-label">Tipo de Documento</label>
-                            <select id="id_tipo_doc" name="id_tipo_doc" class="custom-select">
-                                <option value="" disabled selected>Seleccione...</option>
-                                <option value="1">Tarjeta de Identidad (T.I.)</option>
-                                <option value="2">Cédula de Ciudadanía (C.C.)</option>
-                                <option value="3">Registro Civil (R.C.)</option>
-                                <option value="4">Cédula de Extranjería (C.E.)</option>
-                                <option value="5">Pasaporte (P.A.)</option>
-                                <option value="6">Permiso por Protección Temporal (P.P.T.)</option>
-                            </select>
-                        </div>
+                    <div class="form-group">
+                        <label for="id_tipo_doc" class="input-label">Tipo de Documento</label>
+                        <select id="id_tipo_doc" name="id_tipo_doc" class="custom-select">
+                            <option value="" disabled selected>Seleccione...</option>
+                            <?php foreach ($tiposDoc as $td): ?>
+                                <option value="<?= $td['id_tipo_documento'] ?>">
+                                    <?= htmlspecialchars($td['nombre']) ?> (
+                                    <?= htmlspecialchars($td['abreviatura']) ?>)
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="documento_indentidad" class="input-label">Número de Documento</label>
-                            <div class="input-with-icon">
-                                <i class="fa-solid fa-hashtag input-icon"></i>
-                                <input type="text" id="documento_indentidad" name="documento_indentidad" class="form-input"
-                                    placeholder="Ej: 1098765432">
-                            </div>
+                    <div class="form-group">
+                        <label for="documento_indentidad" class="input-label">Número de Documento</label>
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-hashtag input-icon"></i>
+                            <input type="text" id="documento_indentidad" name="documento_indentidad" class="form-input"
+                                placeholder="Ej: 1098765432">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-grid-2">
+                    <!-- Campo Fecha Nacimiento (Exclusivo Estudiantes y Directivos) -->
+                    <div class="form-group" id="grupo-nacimiento" style="display: none;">
+                        <label for="fecha_nacimiento" class="input-label">Fecha de Nacimiento</label>
+                        <div class="input-with-icon">
+                            <i class="fa-regular fa-calendar input-icon"></i>
+                            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-input">
                         </div>
                     </div>
 
-                    <div class="form-grid-2">
-                        <!-- Campo Fecha Nacimiento (Exclusivo Estudiantes y Directivos) -->
-                        <div class="form-group" id="grupo-nacimiento" style="display: none;">
-                            <label for="fecha_nacimiento" class="input-label">Fecha de Nacimiento</label>
-                            <div class="input-with-icon">
-                                <i class="fa-regular fa-calendar input-icon"></i>
-                                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-input">
-                            </div>
-                        </div>
+                    <!-- Campo Sexo (Exclusivo Estudiantes) -->
+                    <div class="form-group" id="grupo-sexo" style="display: none;">
+                        <label for="sexo" class="input-label">Sexo</label>
+                        <select id="sexo" name="sexo" class="custom-select">
+                            <option value="" disabled selected>Seleccione...</option>
+                            <?php foreach ($sexos as $sexo): ?>
+                                <option value="<?= $sexo['id_sexo'] ?>">
+                                    <?= htmlspecialchars($sexo['nombre']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
 
-                        <!-- Campo Sexo (Exclusivo Estudiantes y Directivos) -->
-                        <div class="form-group" id="grupo-sexo" style="display: none;">
-                            <label for="sexo" class="input-label">Sexo</label>
-                            <select id="sexo" name="sexo" class="custom-select">
-                                <option value="" disabled selected>Seleccione...</option>
-                                <option value="1">Masculino</option>
-                                <option value="2">Femenino</option>
-                            </select>
-                        </div>
+                    <!-- Campo Tipo de Sangre (Estudiante, Docente y Directivo) -->
+                    <div class="form-group" id="grupo-sangre" style="display: none;">
+                        <label for="tipo_sangre" class="input-label">Tipo de Sangre</label>
+                        <select id="tipo_sangre" name="tipo_sangre" class="custom-select">
+                            <option value="" disabled selected>Seleccione...</option>
+                            <?php foreach ($tiposSangre as $ts): ?>
+                                <option value="<?= $ts['id_tipo_sangre'] ?>">
+                                    <?= htmlspecialchars($ts['tipo']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
 
-                        <!-- Campo Tipo de Sangre (Estudiante, Docente y Directivo) -->
-                        <div class="form-group" id="grupo-sangre" style="display: none;">
-                            <label for="tipo_sangre" class="input-label">Tipo de Sangre</label>
-                            <select id="tipo_sangre" name="tipo_sangre" class="custom-select">
-                                <option value="" disabled selected>Seleccione...</option>
-                                <option value="1">O+</option>
-                                <option value="2">O-</option>
-                                <option value="3">A+</option>
-                                <option value="4">A-</option>
-                                <option value="5">B+</option>
-                                <option value="6">B-</option>
-                                <option value="7">AB+</option>
-                                <option value="8">AB-</option>
-                            </select>
+                <!-- SECCIÓN DINÁMICA: Especialidad (Docente), Cargo (Directivo) u Ocupación (Acudiente) -->
+                <div id="campos-especificos" class="form-grid-2" style="display: none;">
+
+                    <!-- Campo exclusivo para Docentes -->
+                    <div class="form-group campo-rol campo-docente" style="display: none;">
+                        <label for="especialidad" class="input-label">Especialidad</label>
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-graduation-cap input-icon"></i>
+                            <input type="text" id="especialidad" name="especialidad" class="form-input"
+                                placeholder="Ej: Matemáticas, Ciencias...">
                         </div>
                     </div>
 
-                    <!-- SECCIÓN DINÁMICA: Especialidad (Docente), Cargo (Directivo) u Ocupación (Acudiente) -->
-                    <div id="campos-especificos" class="form-grid-2" style="display: none;">
-
-                        <!-- Campo exclusivo para Docentes -->
-                        <div class="form-group campo-rol campo-docente" style="display: none;">
-                            <label for="especialidad" class="input-label">Especialidad</label>
-                            <div class="input-with-icon">
-                                <i class="fa-solid fa-graduation-cap input-icon"></i>
-                                <input type="text" id="especialidad" name="especialidad" class="form-input"
-                                    placeholder="Ej: Matemáticas, Ciencias...">
-                            </div>
+                    <!-- Campo exclusivo para Directivos -->
+                    <div class="form-group campo-rol campo-directivo" style="display: none;">
+                        <label for="cargo" class="input-label">Cargo</label>
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-briefcase input-icon"></i>
+                            <input type="text" id="cargo" name="cargo" class="form-input"
+                                placeholder="Ej: Rector, Coordinador...">
                         </div>
-
-                        <!-- Campo exclusivo para Directivos -->
-                        <div class="form-group campo-rol campo-directivo" style="display: none;">
-                            <label for="cargo" class="input-label">Cargo</label>
-                            <div class="input-with-icon">
-                                <i class="fa-solid fa-briefcase input-icon"></i>
-                                <input type="text" id="cargo" name="cargo" class="form-input"
-                                    placeholder="Ej: Rector, Coordinador...">
-                            </div>
-                        </div>
-
-                        <!-- Campo exclusivo para Acudientes -->
-                        <div class="form-group campo-rol campo-acudiente" style="display: none;">
-                            <label for="ocupacion" class="input-label">Ocupación</label>
-                            <div class="input-with-icon">
-                                <i class="fa-solid fa-user-tie input-icon"></i>
-                                <input type="text" id="ocupacion" name="ocupacion" class="form-input"
-                                    placeholder="Ej: Ingeniero, Comerciante...">
-                            </div>
-                        </div>
-
                     </div>
 
+                    <!-- Campo exclusivo para Acudientes -->
+                    <div class="form-group campo-rol campo-acudiente" style="display: none;">
+                        <label for="ocupacion" class="input-label">Ocupación</label>
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-user-tie input-icon"></i>
+                            <input type="text" id="ocupacion" name="ocupacion" class="form-input"
+                                placeholder="Ej: Ingeniero, Comerciante...">
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr class="form-divider">
+
+                <!-- PASO 3: Datos de Contacto y Salud -->
+
+                <div class="form-section-title">
+                    <i class="fa-solid fa-address-book"></i> 3. Datos de Contacto y Salud
+                </div>
+
+                <br>
+
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label for="telefono" class="input-label">Teléfono</label>
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-phone input-icon"></i>
+                            <input type="tel" id="telefono" name="telefono" class="form-input"
+                                placeholder="Ej: 3001234567">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="direccion" class="input-label">Dirección de Residencia</label>
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-location-dot input-icon"></i>
+                            <input type="text" id="direccion" name="direccion" class="form-input"
+                                placeholder="Ej: Calle 12 # 34-56">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Municipio y Zona de Residencia (Exclusivos para Estudiantes y Directivos) -->
+                <div class="form-grid-2" id="grupo-residencia-estudiante" style="display: none;">
+                    <div class="form-group">
+                        <label for="id_municipio" class="input-label">Municipio de Residencia</label>
+                        <select id="id_municipio" name="id_municipio" class="custom-select">
+                            <option value="" disabled selected>Seleccione Municipio...</option>
+                            <option value="1">Villeta</option>
+                            <option value="2">Bogotá D.C.</option>
+                            <option value="3">Facatativá</option>
+                            <option value="4">Guaduas</option>
+                            <option value="5">Sasaima</option>
+                            <option value="6">Albán</option>
+                            <option value="7">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_zona" class="input-label">Zona de Residencia</label>
+                        <select id="id_zona" name="id_zona" class="custom-select">
+                            <option value="" disabled selected>Seleccione Zona...</option>
+                            <?php foreach ($zonas as $zona): ?>
+                                <option value="<?= $zona['id_zona'] ?>">
+                                    <?= htmlspecialchars($zona['nombre']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Campo EPS (Estudiante, Docente y Directivo) -->
+                <div class="form-grid-2" id="grupo-eps" style="display: none;">
+                    <div class="form-group">
+                        <label for="id_eps" class="input-label">EPS</label>
+                        <select id="id_eps" name="id_eps" class="custom-select">
+                            <option value="" disabled selected>Seleccione EPS...</option>
+                            <?php foreach ($listaEPS as $eps): ?>
+                                <option value="<?= $eps['id_eps'] ?>">
+                                    <?= htmlspecialchars($eps['nombre']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- PASO 4: Información Académica (Exclusivo para Estudiantes) -->
+                <div id="grupo-academico-estudiante" style="display: none;">
                     <hr class="form-divider">
-
-                    <!-- PASO 3: Datos de Contacto y Salud -->
                     <div class="form-section-title">
-                        <i class="fa-solid fa-address-book"></i> 3. Datos de Contacto y Salud
+                        <i class="fa-solid fa-graduation-cap"></i> 4. Información Académica y Matrícula
                     </div>
 
                     <br>
 
                     <div class="form-grid-2">
                         <div class="form-group">
-                            <label for="telefono" class="input-label">Teléfono</label>
-                            <div class="input-with-icon">
-                                <i class="fa-solid fa-phone input-icon"></i>
-                                <input type="tel" id="telefono" name="telefono" class="form-input"
-                                    placeholder="Ej: 3001234567">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="direccion" class="input-label">Dirección de Residencia</label>
-                            <div class="input-with-icon">
-                                <i class="fa-solid fa-location-dot input-icon"></i>
-                                <input type="text" id="direccion" name="direccion" class="form-input"
-                                    placeholder="Ej: Calle 12 # 34-56">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Municipio y Zona de Residencia (Exclusivos para Estudiantes y Directivos) -->
-                    <div class="form-grid-2" id="grupo-residencia-estudiante" style="display: none;">
-                        <div class="form-group">
-                            <label for="id_municipio" class="input-label">Municipio de Residencia</label>
-                            <select id="id_municipio" name="id_municipio" class="custom-select">
-                                <option value="" disabled selected>Seleccione Municipio...</option>
-                                <option value="1">Villeta</option>
-                                <option value="2">Bogotá D.C.</option>
-                                <option value="3">Facatativá</option>
-                                <option value="4">Guaduas</option>
-                                <option value="5">Sasaima</option>
-                                <option value="6">Albán</option>
-                                <option value="7">Otro</option>
+                            <label for="id_anio_lectivo" class="input-label">Año Lectivo</label>
+                            <select id="id_anio_lectivo" name="id_anio_lectivo" class="custom-select">
+                                <option value="" disabled selected>Seleccione Año...</option>
+                                <?php foreach ($aniosLectivos as $al): ?>
+                                    <option value="<?= $al['id_anio_lectivo'] ?>">
+                                        <?= htmlspecialchars($al['anio']) ?>
+                                    </option>
+                                <?php endforeach; ?>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="id_zona" class="input-label">Zona de Residencia</label>
-                            <select id="id_zona" name="id_zona" class="custom-select">
-                                <option value="" disabled selected>Seleccione Zona...</option>
-                                <option value="1">Urbana</option>
-                                <option value="2">Rural</option>
+                            <label for="id_grado" class="input-label">Grado</label>
+                            <select id="id_grado" name="id_grado" class="custom-select">
+                                <option value="" disabled selected>Seleccione Grado...</option>
+                                <?php foreach ($grados as $grado): ?>
+                                    <option value="<?= $grado['id_grado'] ?>">
+                                        <?= htmlspecialchars($grado['nombre']) ?>
+                                    </option>
+                                <?php endforeach; ?>
                             </select>
                         </div>
                     </div>
 
-                    <!-- Campo EPS (Estudiante, Docente y Directivo) -->
-                    <div class="form-grid-2" id="grupo-eps" style="display: none;">
+                    <div class="form-grid-2">
                         <div class="form-group">
-                            <label for="id_eps" class="input-label">EPS</label>
-                            <select id="id_eps" name="id_eps" class="custom-select">
-                                <option value="" disabled selected>Seleccione EPS...</option>
-                                <option value="1">Nueva EPS</option>
-                                <option value="2">Sura</option>
-                                <option value="3">Sanitas</option>
-                                <option value="4">Compensar</option>
-                                <option value="5">Famisanar</option>
-                                <option value="6">Salud Total</option>
-                                <option value="7">Coosalud</option>
-                                <option value="8">Aliansalud</option>
-                                <option value="9">Capital Salud</option>
-                                <option value="10">Mutual Ser</option>
-                                <option value="11">Emssanar</option>
-                                <option value="12">SOS</option>
-                                <option value="13">Asmet Salud</option>
-                                <option value="14">Comfachocó</option>
-                                <option value="15">No aplica</option>
+                            <label for="id_curso" class="input-label">Curso / Grupo</label>
+                            <select id="id_curso" name="id_curso" class="custom-select">
+                                <option value="" disabled selected>Seleccione Curso (Opcional)...</option>
+                                <?php foreach ($cursos as $curso): ?>
+                                    <option value="<?= $curso['id_curso'] ?>">
+                                        <?= htmlspecialchars($curso['nombre']) ?>
+                                    </option>
+                                <?php endforeach; ?>
                             </select>
                         </div>
                     </div>
 
-                    <!-- PASO 4: Información Académica (Exclusivo para Estudiantes) -->
-                    <div id="grupo-academico-estudiante" style="display: none;">
-                        <hr class="form-divider">
-                        <div class="form-section-title">
-                            <i class="fa-solid fa-graduation-cap"></i> 4. Información Académica y Matrícula
-                        </div>
-
-                        <br>
-
-                        <div class="form-grid-2">
-                            <div class="form-group">
-                                <label for="id_anio_lectivo" class="input-label">Año Lectivo</label>
-                                <select id="id_anio_lectivo" name="id_anio_lectivo" class="custom-select">
-                                    <option value="" disabled selected>Seleccione Año...</option>
-                                    <option value="1">2026</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="id_grado" class="input-label">Grado</label>
-                                <select id="id_grado" name="id_grado" class="custom-select">
-                                    <option value="" disabled selected>Seleccione Grado...</option>
-                                    <option value="1">Sexto (6°)</option>
-                                    <option value="2">Séptimo (7°)</option>
-                                    <option value="3">Octavo (8°)</option>
-                                    <option value="4">Noveno (9°)</option>
-                                    <option value="5">Décimo (10°)</option>
-                                    <option value="6">Undécimo (11°)</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-grid-2">
-                            <div class="form-group">
-                                <label for="id_curso" class="input-label">Curso / Grupo</label>
-                                <select id="id_curso" name="id_curso" class="custom-select">
-                                    <option value="" disabled selected>Seleccione Curso (Opcional)...</option>
-                                    <option value="1">601</option>
-                                    <option value="2">602</option>
-                                    <option value="3">701</option>
-                                    <option value="4">702</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="observaciones" class="input-label">Observaciones de Matrícula</label>
-                            <textarea id="observaciones" name="observaciones" class="form-input" rows="3"
-                                placeholder="Anotaciones o detalles adicionales sobre la matrícula..."></textarea>
-                        </div>
+                    <div class="form-group">
+                        <label for="observaciones" class="input-label">Observaciones de Matrícula</label>
+                        <textarea id="observaciones" name="observaciones" class="form-input" rows="3"
+                            placeholder="Anotaciones o detalles adicionales sobre la matrícula..."></textarea>
                     </div>
-
-                    <!-- Botones de Acción -->
-                    <div class="publish-actions">
-                        <a href="dashboardAdmin.php" class="btn-cancel">Cancelar</a>
-                        <button type="submit" class="btn-publish" id="btn-submit-text">
-                            <i class="fa-solid fa-user-check"></i> Registrar Usuario
-                        </button>
-                    </div>
-
                 </div>
 
-            </form>
+                <!-- Botones de Acción -->
+                <div class="publish-actions">
+                    <a href="dashboardAdmin.php" class="btn-cancel">Cancelar</a>
+                    <button type="submit" class="btn-publish" id="btn-submit-text">
+                        <i class="fa-solid fa-user-check"></i> Registrar Usuario
+                    </button>
+                </div>
+
+        </div>
+
+        </form>
         </div>
 
         <!-- OPCIÓN 2: Carga Masiva -->
@@ -592,12 +609,10 @@
             contenedorEspecifico.style.display = 'none';
 
             // 1. FECHA NACIMIENTO, SEXO, MUNICIPIO Y ZONA: Para Estudiantes ('4') y Directivos ('2')
+            // FECHA DE NACIMIENTO: Estudiantes y Directivos
             if (idRol === "4" || idRol === "2") {
                 grupoNacimiento.style.display = 'block';
                 inputNacimiento.setAttribute('required', 'required');
-
-                grupoSexo.style.display = 'block';
-                selectSexo.setAttribute('required', 'required');
 
                 grupoResidenciaEstudiante.style.display = 'grid';
                 selectMunicipio.setAttribute('required', 'required');
@@ -607,15 +622,20 @@
                 inputNacimiento.removeAttribute('required');
                 inputNacimiento.value = '';
 
-                grupoSexo.style.display = 'none';
-                selectSexo.removeAttribute('required');
-                selectSexo.value = '';
-
                 grupoResidenciaEstudiante.style.display = 'none';
                 selectMunicipio.removeAttribute('required');
                 selectMunicipio.value = '';
                 selectZona.removeAttribute('required');
                 selectZona.value = '';
+            }
+
+            if (idRol === "4") {
+                grupoSexo.style.display = 'block';
+                selectSexo.setAttribute('required', 'required');
+            } else {
+                grupoSexo.style.display = 'none';
+                selectSexo.removeAttribute('required');
+                selectSexo.value = '';
             }
 
             // 2. ACADÉMICOS: Solo para Estudiantes ('4')
