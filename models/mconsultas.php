@@ -552,17 +552,24 @@ class Consultas
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
-/* 	public function obtenerListaUsuarios()
+	public function obtenerListaUsuarios()
 	{
-		$sql = "SELECT u.id_usuario, u.correo, u.fecha_creacion, r.nombre_rol, i.nombre AS institucion
+		$sql = "SELECT 
+                u.id_usuario, 
+                u.correo, 
+                u.fecha_creacion, 
+                u.estado,
+                r.nombre AS rol, 
+                i.nombre AS institucion
             FROM usuario u
             INNER JOIN rol r ON u.id_rol = r.id_rol
             INNER JOIN institucion i ON u.id_institucion = i.id_institucion
             ORDER BY u.id_usuario DESC";
+
 		$stmt = $this->conexion->prepare($sql);
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
-	} */
+	}
 
 
 
