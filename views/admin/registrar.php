@@ -1,21 +1,5 @@
 <?php
-require_once "../../models/mdb.php";
-require_once "../../models/mconsultas.php";
-
-$consultas = new Consultas();
-
-$instituciones = $consultas->obtenerInstituciones();
-$roles = $consultas->obtenerRoles();
-$tiposDoc = $consultas->obtenerTiposDocumento();
-$sexos = $consultas->obtenerSexos();
-$tiposSangre = $consultas->obtenerTiposSangre();
-$municipios = $consultas->obtenerMunicipios();
-$zonas = $consultas->obtenerZonas();
-$listaEPS = $consultas->obtenerEPS();
-$aniosLectivos = $consultas->obtenerAniosLectivos();
-$grados = $consultas->obtenerGrados();
-$cursos = $consultas->obtenerCursos();
-$usuarios = $consultas->obtenerListaUsuarios();
+require_once "../../controllers/ObtenerDatosUsuariosController.php";
 ?>
 
 <!DOCTYPE html>
