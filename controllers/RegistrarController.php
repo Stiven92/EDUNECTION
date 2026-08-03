@@ -73,7 +73,7 @@
 
 			echo "<script>
 				alert('Usuario registrado correctamente');
-				location.href='../views/dashboardAdmin.php';
+				location.href='../views/admin/registrar.php';
 			</script>";
 
 		}else{
