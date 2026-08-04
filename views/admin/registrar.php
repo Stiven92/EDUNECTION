@@ -403,10 +403,30 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
                     <i class="fa-solid fa-file-import"></i> Carga Masiva de Cuentas de Usuario
                 </div>
 
-                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">
-                    Sube un archivo plano (CSV o TXT) que contenga la información de los usuarios.
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">
+                    Sube un archivo (.xlsx, .csv o .txt) que contenga la información de los usuarios.
                 </p>
 
+                <!-- Selector de Tipo/Rol de Usuario -->
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="rol_usuario" style="display: block; font-weight: 600; margin-bottom: 8px;">
+                        <i class="fa-solid fa-user-gear"></i> Tipo de usuario a registrar:
+                    </label>
+                    <select name="rol_usuario" id="rol_usuario" class="form-control" required
+                        style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;"
+                        onchange="cambiarPlantilla()">
+
+                        <?php foreach ($roles as $rol): ?>
+                            <option value="<?= $rol['id_rol'] ?>"
+                                data-plantilla="../../publics/plantillas/plantilla_<?= strtolower($rol['nombre']) ?>.xlsx">
+                                <?= htmlspecialchars($rol['nombre']) ?>
+                            </option>
+                        <?php endforeach; ?>
+
+                    </select>
+                </div>
+
+                <!-- Dropzone de Carga de Archivo -->
                 <div class="file-upload-dropzone">
                     <i class="fa-solid fa-cloud-arrow-up dropzone-icon"></i>
                     <div class="dropzone-text">
@@ -417,11 +437,22 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
                         accept=".csv, .txt, .xlsx" required onchange="showFileName(this)">
                 </div>
 
-                <div class="publish-actions">
+                <div class="publish-actions"
+                    style="display: flex; justify-content: space-between; align-items: center; margin-top: 25px;">
+                    <!-- Botón a la izquierda -->
                     <a href="dashboardAdmin.php" class="btn-cancel">Cancelar</a>
-                    <button type="submit" class="btn-publish">
-                        <i class="fa-solid fa-upload"></i> Procesar Usuarios
-                    </button>
+
+                    <!-- Grupo de acciones a la derecha -->
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <a href="../../publics/plantillas/plantilla_carga_usuarios.xlsx" id="btn-descargar-plantilla"
+                            download class="btn-action download" style="text-decoration: none;">
+                            <i class="fa-solid fa-file-excel"></i> Descargar Plantilla
+                        </a>
+
+                        <button type="submit" class="btn-publish">
+                            <i class="fa-solid fa-upload"></i> Procesar Usuarios
+                        </button>
+                    </div>
                 </div>
 
             </form>
@@ -509,6 +540,21 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
 
     <!-- Script de Pestañas y Lógica de Filtrado Dinámico por Rol -->
     <script>
+        function cambiarPlantilla() {
+            const selectRol = document.getElementById('rol_usuario');
+            const opcionSeleccionada = selectRol.options[selectRol.selectedIndex];
+            const rutaPlantilla = opcionSeleccionada.getAttribute('data-plantilla');
+            const btnDescargar = document.getElementById('btn-descargar-plantilla');
+
+            if (btnDescargar && rutaPlantilla) {
+                btnDescargar.setAttribute('href', rutaPlantilla);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            cambiarPlantilla();
+        })
+
         function switchTab(tabName) {
             const tabs = {
                 'registro': document.getElementById('tab-registro'),
