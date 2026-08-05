@@ -25,3 +25,4 @@ $usuarios      = $consultas->obtenerListaUsuarios();
 
 // Cargar/Incluir la Vista para que pueda consumir las variables creadas
 require_once __DIR__ . "/../views/admin/registrar.php";
+?>
