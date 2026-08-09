@@ -396,7 +396,7 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
 
         <!-- OPCIÓN 2: Carga Masiva -->
         <div id="tab-masiva" class="publish-card tab-content" style="display: none;">
-            <form class="publish-form" action="../controller/usuarioController.php?action=carga_masiva" method="POST"
+            <form class="publish-form" action="../controller/cargaMasivaController.php?action=carga_masiva" method="POST"
                 enctype="multipart/form-data">
 
                 <div class="form-section-title">
@@ -433,8 +433,8 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
                         <span id="file-name-display">Arrastra y suelta tu archivo aquí o haz clic para buscar</span>
                         <small>Formatos permitidos: .csv, .txt, .xlsx (Máx. 10MB)</small>
                     </div>
-                    <input type="file" name="archivo_usuarios" id="archivo_usuarios" class="file-input-hidden"
-                        accept=".csv, .txt, .xlsx" required onchange="showFileName(this)">
+                    <input type="file" name="archivoPlano" id="archivoPlano" class="file-input-hidden"
+                        accept=".xls, .xlsx" required onchange="showFileName(this)">
                 </div>
 
                 <div class="publish-actions"
@@ -459,69 +459,70 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
         </div>
 
         <!-- OPCIÓN 3: Listado de Usuarios Registrados -->
-        <div id="tab-listado" class="tab-content" style="display: none;">
-            <div class="students-action-bar">
-                <div class="search-input-wrapper search-student">
-                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" class="search-input" placeholder="Buscar por correo o ID...">
-                </div>
-            </div>
-
-            <div class="table-card">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th># ID</th>
-                            <th>Correo / Usuario</th>
-                            <th>Institución</th>
-                            <th>Rol</th>
-                            <th>Fecha Creación</th>
-                            <th style="text-align: center;">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php if (!empty($usuarios)): ?>
-                            <?php foreach ($usuarios as $usr): ?>
-                                <tr>
-                                    <td class="font-bold">#
-                                        <?= $usr['id_usuario'] ?>
-                                    </td>
-                                    <td>
-                                        <div class="student-user-info">
-                                            <div class="avatar-small">
-                                                <i class="fa-regular fa-user"></i>
-                                            </div>
-                                            <span class="student-name">
-                                                <?= htmlspecialchars($usr['correo']) ?>
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td><span class="text-muted-cell">
-                                            <?= htmlspecialchars($usr['institucion']) ?>
-                                        </span></td>
-                                    <td><span class="type-tag purple">
-                                            <?= htmlspecialchars($usr['rol']) ?>
-                                        </span></td>
-                                    <td><span class="date-text">
-                                            <?= htmlspecialchars($usr['fecha_creacion']) ?>
-                                        </span></td>
-                                    <td style="text-align: center;">
-                                        <a href="editarUsuario.php?id=<?= $usr['id_usuario'] ?>" class="tool-btn"
-                                            title="Editar">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        <?php else: ?>
-                            <tr>
-                                <td colspan="6" style="text-align: center;">No se encontraron usuarios registrados.</td>
-                            </tr>
-                        <?php endif; ?>
-                    </tbody>
-                </table>
-            </div>
+<!-- OPCIÓN 3: Listado de Usuarios Registrados -->
+<div id="tab-listado" class="tab-content" style="display: none;">
+    
+    <!-- Barra de acciones (Búsqueda + Botón de Descarga) -->
+    <div class="students-action-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <div class="search-input-wrapper search-student">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" class="search-input" placeholder="Buscar por correo o ID...">
         </div>
+
+        <!-- BOTÓN PARA DESCARGAR EL ARCHIVO PLANO -->
+        <a href="../../controllers/exportarReporte.php" class="btn-action download" style="text-decoration: none;">
+            <i class="fa-solid fa-file-csv"></i> Descargar Reporte (.xlxs)
+        </a>
+    </div>
+
+    <!-- Tabla de Usuarios -->
+    <div class="table-card">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th># ID</th>
+                    <th>Correo / Usuario</th>
+                    <th>Institución</th>
+                    <th>Rol</th>
+                    <th>Fecha Creación</th>
+                    <th style="text-align: center;">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (!empty($usuarios)): ?>
+                    <?php foreach ($usuarios as $usr): ?>
+                        <tr>
+                            <td class="font-bold">#<?= $usr['id_usuario'] ?></td>
+                            <td>
+                                <div class="student-user-info">
+                                    <div class="avatar-small">
+                                        <i class="fa-regular fa-user"></i>
+                                    </div>
+                                    <span class="student-name">
+                                        <?= htmlspecialchars($usr['correo']) ?>
+                                    </span>
+                                </div>
+                            </td>
+                            <td><span class="text-muted-cell"><?= htmlspecialchars($usr['institucion']) ?></span></td>
+                            <td><span class="type-tag purple"><?= htmlspecialchars($usr['rol']) ?></span></td>
+                            <td><span class="date-text"><?= htmlspecialchars($usr['fecha_creacion']) ?></span></td>
+                            <td style="text-align: center;">
+                                <a href="editarUsuario.php?id=<?= $usr['id_usuario'] ?>" class="tool-btn" title="Editar">
+                                    <i class="fa-solid fa-pen"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="6" style="text-align: center;">No se encontraron usuarios registrados.</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
+
+</div>
 
     </main>
 

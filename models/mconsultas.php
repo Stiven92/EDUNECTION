@@ -980,7 +980,24 @@ class Consultas
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
+//descarga del reporte
+public function obtenerReporteUsuariosPlano() {
+    $sql = "SELECT 
+                u.id_usuario, 
+                u.correo, 
+                r.nombre AS rol, 
+                i.nombre AS institucion,
+                u.estado,
+                u.fecha_creacion
+            FROM usuario u
+            INNER JOIN rol r ON u.id_rol = r.id_rol
+            INNER JOIN institucion i ON u.id_institucion = i.id_institucion
+            ORDER BY u.id_usuario DESC";
 
+    $stmt = $this->conexion->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 
 
 
