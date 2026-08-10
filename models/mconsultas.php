@@ -814,7 +814,7 @@ class Consultas
 		try {
 
 			$res->execute();
-			echo "<script>alert('Carga masiva de Docentes exitosa!!')</script>";
+			echo "<script>alert('Carga masiva de Acudientes exitosa!!')</script>";
 			echo "<script>location.href='../views/admin/registrar.php'</script>";
 
 		} catch (Exception $e) {
@@ -996,7 +996,7 @@ public function obtenerReporteUsuariosPlano() {
 
     $stmt = $this->conexion->prepare($sql);
     $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $stmt->fetchAll();
 }
 
 

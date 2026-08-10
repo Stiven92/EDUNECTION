@@ -396,7 +396,7 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
 
         <!-- OPCIÓN 2: Carga Masiva -->
         <div id="tab-masiva" class="publish-card tab-content" style="display: none;">
-            <form class="publish-form" action="../controller/cargaMasivaController.php?action=carga_masiva" method="POST"
+            <form class="publish-form" action="../../controllers/cargaMasivaController.php" method="POST"
                 enctype="multipart/form-data">
 
                 <div class="form-section-title">
