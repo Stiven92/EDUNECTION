@@ -759,12 +759,12 @@ class Consultas
 			$res->execute();
 
 			echo "<script>alert('Carga masiva de Matrículas exitosa!!')</script>";
-			echo "<script>location.href='../views/ConVehiculos.php'</script>";
+			echo "<script>location.href='../views/admin/registrar.php'</script>";
 
 		} catch (Exception $e) {
 
 			echo "<script>alert('Error al realizar carga masiva!!')</script>";
-			echo "<script>location.href='../views/ConMasivo.php'</script>";
+			echo "<script>location.href='../views/admin/registrar.php'</script>";
 
 		}
 
