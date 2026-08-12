@@ -26,4 +26,9 @@ $cursos        = $consultas->obtenerCursos();
 $usuarios      = $consultas->obtenerListaUsuarios();
 
 // Cargar/Incluir la Vista para que pueda consumir las variables creadas
+<<<<<<< HEAD
 //require_once __DIR__ . "/../views/admin/registrar.php";//este es para que solo sea este archivo 
+=======
+require_once __DIR__ . "/../views/admin/registrar.php";
+?>
+>>>>>>> 090d77c37778eb9340e4f090c1c44f1fbc1f9758

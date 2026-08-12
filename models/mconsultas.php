@@ -495,6 +495,437 @@ class Consultas
 
 
 
+<<<<<<< HEAD
+=======
+	public function registrarUsuarioMasivo($correo, $password, $id_perfil, $id_institucion){
+
+	    // Verificar si el correo ya existe
+	    $sql = "SELECT correo FROM usuario WHERE correo = :correo";
+
+	    $res = $this->conexion->prepare($sql);
+	    $res->bindParam(":correo", $correo);
+
+	    try{
+
+	        $res->execute();
+
+	        $existe = $res->fetch();
+
+	        if($existe){
+
+	            echo "<script>alert('Error, correos ya registrados en el sistema')</script>";
+				echo "<script>history.back()</script>";
+				exit();
+
+	        }
+
+	        // Registrar usuario
+	        $sql = "INSERT INTO usuario
+	                (
+	                    id_institucion,
+	                    id_rol,
+	                    correo,
+	                    password
+	                )
+	                VALUES
+	                (
+	                    :id_institucion,
+	                    :id_rol,
+	                    :correo,
+	                    :password
+	                )";
+
+	        $res = $this->conexion->prepare($sql);
+
+	        $res->bindParam(":id_institucion",$id_institucion);
+	        $res->bindParam(":id_rol",$id_perfil);
+	        $res->bindParam(":correo",$correo);
+	        $res->bindParam(":password",$password);
+
+			try {
+
+				$res->execute();
+
+				// Devuelve el ID del usuario recién registrado
+				return $this->conexion->lastInsertId();
+
+				} catch (Exception $e) {
+
+					echo "<script>alert('Error al registrar usuarioss.')</script>";
+					echo "<script>history.back()</script>";
+					exit();
+
+				}
+
+		}catch (Exception $e) {
+
+			echo "<script>alert('Error al validar la información de los usuarios.')</script>";
+			echo "<script>history.back()</script>";
+			exit();
+		}
+
+	}
+
+
+	public function registrarAdministradorMasivo($idUsuario,$datos){
+
+	    $sql = "INSERT INTO administrador
+	            (
+	                id_usuario,
+	                id_institucion,
+	                nombres,
+	                apellidos,
+	                id_tipo_documento,
+	                numero_documento,
+	                numero_telefonico
+	            )
+	            VALUES
+	            (
+	                :id_usuario,
+	                :id_institucion,
+	                :nombres,
+	                :apellidos,
+	                :id_tipo_documento,
+	                :numero_documento,
+	                :numero_telefonico
+	            )";
+
+	    $res = $this->conexion->prepare($sql);
+
+	    $res->bindParam(":id_usuario",$idUsuario);
+	    $res->bindParam(":id_institucion",$datos["id_institucion"]);
+	    $res->bindParam(":nombres",$datos["nombre"]);
+	    $res->bindParam(":apellidos",$datos["apellido"]);
+	    $res->bindParam(":id_tipo_documento",$datos["id_tipo_doc"]);
+	    $res->bindParam(":numero_documento",$datos["documento_indentidad"]);
+	    $res->bindParam(":numero_telefonico",$datos["telefono"]);
+
+	    try{
+
+	        $res->execute();
+	        echo "<script>alert('Carga masiva de Administradores exitosa!!')</script>";
+			echo "<script>location.href='../views/admin/registrar.php'</script>";
+
+	    }catch(Exception $e){
+
+	        echo "<script>alert('Error al realizar carga masiva!!')</script>";
+			echo "<script>location.href='../views/admin/registrar.php'</script>";
+
+	    }
+
+	}
+
+
+	public function registrarDirectivoMasivo($idUsuario, $datos){
+
+		$sql = "INSERT INTO directivo
+		            (
+		                id_usuario,
+		                id_institucion,
+		                nombres,
+		                apellidos,
+		                id_tipo_documento,
+		                numero_documento,
+		                numero_telefonico,
+		                cargo,
+		                id_eps,
+		                id_tipo_sangre
+		            )
+		            VALUES
+		            (
+		                :id_usuario,
+		                :id_institucion,
+		                :nombres,
+		                :apellidos,
+		                :id_tipo_documento,
+		                :numero_documento,
+		                :numero_telefonico,
+		                :cargo,
+		                :id_eps,
+		                :id_tipo_sangre
+		            )";
+
+		$res = $this->conexion->prepare($sql);
+
+		$res->bindParam(":id_usuario", $idUsuario);
+		$res->bindParam(":id_institucion", $datos["id_institucion"]);
+		$res->bindParam(":nombres", $datos["nombre"]);
+		$res->bindParam(":apellidos", $datos["apellido"]);
+		$res->bindParam(":id_tipo_documento", $datos["id_tipo_doc"]);
+		$res->bindParam(":numero_documento", $datos["documento_indentidad"]);
+		$res->bindParam(":numero_telefonico", $datos["telefono"]);
+		$res->bindParam(":cargo", $datos["cargo"]);
+		$res->bindParam(":id_eps", $datos["id_eps"]);
+		$res->bindParam(":id_tipo_sangre", $datos["tipo_sangre"]);
+
+		try {
+
+			$res->execute();
+			echo "<script>alert('Carga masiva de Directivos exitosa!!')</script>";
+			echo "<script>location.href='../views/admin/registrar.php'</script>";
+
+		} catch (Exception $e) {
+
+	        echo "<script>alert('Error al realizar carga masiva!!')</script>";
+			echo "<script>location.href='../views/admin/registrar.php'</script>";
+		}
+
+	}
+
+
+	public function registrarDocenteMasivo($idUsuario, $datos)
+	{
+
+		$sql = "INSERT INTO docente
+		            (
+		                id_usuario,
+		                id_institucion,
+		                nombres,
+		                apellidos,
+		                id_tipo_documento,
+		                numero_documento,
+		                numero_telefonico,
+		                especialidad,
+		                id_eps,
+		                id_tipo_sangre
+		            )
+		            VALUES
+		            (
+		                :id_usuario,
+		                :id_institucion,
+		                :nombres,
+		                :apellidos,
+		                :id_tipo_documento,
+		                :numero_documento,
+		                :numero_telefonico,
+		                :especialidad,
+		                :id_eps,
+		                :id_tipo_sangre
+		            )";
+
+		$res = $this->conexion->prepare($sql);
+
+		$res->bindParam(":id_usuario", $idUsuario);
+		$res->bindParam(":id_institucion", $datos["id_institucion"]);
+		$res->bindParam(":nombres", $datos["nombre"]);
+		$res->bindParam(":apellidos", $datos["apellido"]);
+		$res->bindParam(":id_tipo_documento", $datos["id_tipo_doc"]);
+		$res->bindParam(":numero_documento", $datos["documento_indentidad"]);
+		$res->bindParam(":numero_telefonico", $datos["telefono"]);
+		$res->bindParam(":especialidad", $datos["especialidad"]);
+		$res->bindParam(":id_eps", $datos["id_eps"]);
+		$res->bindParam(":id_tipo_sangre", $datos["tipo_sangre"]);
+
+		try {
+
+			$res->execute();
+			echo "<script>alert('Carga masiva de Docentes exitosa!!')</script>";
+			echo "<script>location.href='../views/admin/registrar.php'</script>";
+
+		} catch (Exception $e) {
+
+	        echo "<script>alert('Error al realizar carga masiva!!')</script>";
+			echo "<script>location.href='../views/admin/registrar.php'</script>";
+		}
+
+
+	}
+
+
+	public function registrarMatriculaMasiva($idUsuario, $datos)
+	{
+
+		// Buscar el año lectivo activo
+		$sql = "SELECT id_anio_lectivo
+		            FROM anio_lectivo
+		            WHERE id_institucion = :institucion
+		            AND estado = 'Activo'
+		            LIMIT 1";
+
+		$res = $this->conexion->prepare($sql);
+		$res->bindParam(":institucion", $datos["id_institucion"]);
+
+		try {
+
+			$res->execute();
+			$anio = $res->fetch(PDO::FETCH_ASSOC);
+
+			if (!$anio) {
+
+		        echo "<script>alert('No existe un año lectivo activo para esta institución')</script>";
+				echo "<script>location.href='../views/admin/registrar.php'</script>";
+				exit();
+
+			}
+
+			// Campos opcionales
+			$idCurso = null;
+
+			if (isset($datos["id_curso"]) && $datos["id_curso"] != "") {
+				$idCurso = $datos["id_curso"];
+			}
+
+			$observaciones = !empty($datos["observaciones"])
+				? $datos["observaciones"]
+				: null;
+
+			$sql = "INSERT INTO matricula
+		                (
+		                    id_usuario,
+		                    id_institucion,
+		                    nombres,
+		                    apellidos,
+		                    id_tipo_documento,
+		                    numero_documento,
+		                    fecha_nacimiento,
+		                    id_sexo,
+		                    direccion,
+		                    id_municipio,
+		                    id_zona,
+		                    numero_telefonico,
+		                    id_eps,
+		                    id_tipo_sangre,
+		                    id_anio_lectivo,
+		                    id_grado,
+		                    id_curso,
+		                    observaciones
+		                )
+		                VALUES
+		                (
+		                    :id_usuario,
+		                    :id_institucion,
+		                    :nombres,
+		                    :apellidos,
+		                    :id_tipo_documento,
+		                    :numero_documento,
+		                    :fecha_nacimiento,
+		                    :id_sexo,
+		                    :direccion,
+		                    :id_municipio,
+		                    :id_zona,
+		                    :numero_telefonico,
+		                    :id_eps,
+		                    :id_tipo_sangre,
+		                    :id_anio_lectivo,
+		                    :id_grado,
+		                    :id_curso,
+		                    :observaciones
+		                )";
+
+			$res = $this->conexion->prepare($sql);
+
+			$res->bindParam(":id_usuario", $idUsuario);
+			$res->bindParam(":id_institucion", $datos["id_institucion"]);
+			$res->bindParam(":nombres", $datos["nombre"]);
+			$res->bindParam(":apellidos", $datos["apellido"]);
+			$res->bindParam(":id_tipo_documento", $datos["id_tipo_doc"]);
+			$res->bindParam(":numero_documento", $datos["documento_indentidad"]);
+			$res->bindParam(":fecha_nacimiento", $datos["fecha_nacimiento"]);
+			$res->bindParam(":id_sexo", $datos["sexo"]);
+			$res->bindParam(":direccion", $datos["direccion"]);
+			$res->bindParam(":id_municipio", $datos["id_municipio"]);
+			$res->bindParam(":id_zona", $datos["id_zona"]);
+			$res->bindParam(":numero_telefonico", $datos["telefono"]);
+			$res->bindParam(":id_eps", $datos["id_eps"]);
+			$res->bindParam(":id_tipo_sangre", $datos["tipo_sangre"]);
+			$res->bindParam(":id_anio_lectivo", $anio["id_anio_lectivo"]);
+			$res->bindParam(":id_grado", $datos["id_grado"]);
+
+			$res->bindValue(":id_curso", $idCurso, is_null($idCurso) ? PDO::PARAM_NULL : PDO::PARAM_INT);
+			$res->bindValue(":observaciones", $observaciones, is_null($observaciones) ? PDO::PARAM_NULL : PDO::PARAM_STR);
+
+			$res->execute();
+
+			echo "<script>alert('Carga masiva de Matrículas exitosa!!')</script>";
+			echo "<script>location.href='../views/admin/registrar.php'</script>";
+
+		} catch (Exception $e) {
+
+			echo "<script>alert('Error al realizar carga masiva!!')</script>";
+			echo "<script>location.href='../views/admin/registrar.php'</script>";
+
+		}
+
+	}
+
+
+	public function registrarAcudienteMasivo($idUsuario, $datos)
+	{
+
+		$sql = "INSERT INTO acudiente
+					(
+						id_usuario,
+						id_institucion,
+						nombres,
+						apellidos,
+						id_tipo_documento,
+						numero_documento,
+						numero_telefonico,
+						direccion,
+						ocupacion
+					)
+					VALUES
+					(
+						:id_usuario,
+						:id_institucion,
+						:nombres,
+						:apellidos,
+						:id_tipo_documento,
+						:numero_documento,
+						:numero_telefonico,
+						:direccion,
+						:ocupacion
+					)";
+
+		$res = $this->conexion->prepare($sql);
+
+		$res->bindParam(":id_usuario", $idUsuario);
+		$res->bindParam(":id_institucion", $datos["id_institucion"]);
+		$res->bindParam(":nombres", $datos["nombre"]);
+		$res->bindParam(":apellidos", $datos["apellido"]);
+		$res->bindParam(":id_tipo_documento", $datos["id_tipo_doc"]);
+		$res->bindParam(":numero_documento", $datos["documento_indentidad"]);
+		$res->bindParam(":numero_telefonico", $datos["telefono"]);
+		$res->bindParam(":direccion", $datos["direccion"]);
+		$res->bindParam(":ocupacion", $datos["ocupacion"]);
+
+		try {
+
+			$res->execute();
+			echo "<script>alert('Carga masiva de Acudientes exitosa!!')</script>";
+			echo "<script>location.href='../views/admin/registrar.php'</script>";
+
+		} catch (Exception $e) {
+
+	        echo "<script>alert('Error al realizar carga masiva!!')</script>";
+			echo "<script>location.href='../views/admin/registrar.php'</script>";
+		}
+
+
+	}
+
+
+
+
+
+	//login of entrance or main 
+	public function getUserUsuario($email)
+	{
+		$sql = 'SELECT * FROM clientes WHERE email=:email';
+		$res = $this->conexion->prepare($sql);
+		$res->bindParam(':email', $email);
+
+		try {
+			$res->execute();
+			$f = $res->fetch();
+			return $f;
+		} catch (Exception $e) {
+			echo "<script>alert('Error al buscar usuario!!')</script>";
+			echo "<script>location.href='../views/login.php'</script>";
+		}
+	}
+
+>>>>>>> 090d77c37778eb9340e4f090c1c44f1fbc1f9758
 	public function obtenerUsuarioPorCredenciales($correo, $id_rol, $id_institucion)
 	{
 		// Ejemplo usando PDO con sentencias preparadas
@@ -650,7 +1081,24 @@ class Consultas
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
+//descarga del reporte
+public function obtenerReporteUsuariosPlano() {
+    $sql = "SELECT 
+                u.id_usuario, 
+                u.correo, 
+                r.nombre AS rol, 
+                i.nombre AS institucion,
+                u.estado,
+                u.fecha_creacion
+            FROM usuario u
+            INNER JOIN rol r ON u.id_rol = r.id_rol
+            INNER JOIN institucion i ON u.id_institucion = i.id_institucion
+            ORDER BY u.id_usuario DESC";
 
+    $stmt = $this->conexion->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
 
 
 
