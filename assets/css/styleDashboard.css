@@ -2470,7 +2470,7 @@ body {
 
 .publish-layout {
     padding: 40px 24px;
-    max-width: 800px; /* Ancho idóneo para lectura y llenado */
+    max-width: 860px; /* Ancho idóneo para lectura y llenado */
 }
 
 /* Píldoras de Información de Contexto */
@@ -2929,6 +2929,7 @@ body {
 }
 
 /* Contenido de la Tabla */
+
 .table-text-content {
     font-size: 0.88rem;
     color: var(--text-dark);
