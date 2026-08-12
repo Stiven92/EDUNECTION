@@ -495,8 +495,7 @@ class Consultas
 
 
 
-<<<<<<< HEAD
-=======
+
 	public function registrarUsuarioMasivo($correo, $password, $id_perfil, $id_institucion){
 
 	    // Verificar si el correo ya existe
@@ -908,24 +907,6 @@ class Consultas
 
 
 
-	//login of entrance or main 
-	public function getUserUsuario($email)
-	{
-		$sql = 'SELECT * FROM clientes WHERE email=:email';
-		$res = $this->conexion->prepare($sql);
-		$res->bindParam(':email', $email);
-
-		try {
-			$res->execute();
-			$f = $res->fetch();
-			return $f;
-		} catch (Exception $e) {
-			echo "<script>alert('Error al buscar usuario!!')</script>";
-			echo "<script>location.href='../views/login.php'</script>";
-		}
-	}
-
->>>>>>> 090d77c37778eb9340e4f090c1c44f1fbc1f9758
 	public function obtenerUsuarioPorCredenciales($correo, $id_rol, $id_institucion)
 	{
 		// Ejemplo usando PDO con sentencias preparadas
