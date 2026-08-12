@@ -473,6 +473,9 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
         <a href="../../controllers/exportarReporte.php" class="btn-action download" style="text-decoration: none;">
             <i class="fa-solid fa-file-csv"></i> Descargar Reporte (.xlxs)
         </a>
+        <a href="../../controllers/exportarPdf.php" class="btn-action download" style="text-decoration: none;">
+            <i class="fa-solid fa-file-csv"></i> Descargar Reporte (.PDF)
+        </a>
     </div>
 
     <!-- Tabla de Usuarios -->
