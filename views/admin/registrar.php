@@ -459,73 +459,76 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
         </div>
 
         <!-- OPCIÓN 3: Listado de Usuarios Registrados -->
-<!-- OPCIÓN 3: Listado de Usuarios Registrados -->
-<div id="tab-listado" class="tab-content" style="display: none;">
-    
-    <!-- Barra de acciones (Búsqueda + Botón de Descarga) -->
-    <div class="students-action-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-        <div class="search-input-wrapper search-student">
-            <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            <input type="text" class="search-input" placeholder="Buscar por correo o ID...">
-        </div>
+        <!-- OPCIÓN 3: Listado de Usuarios Registrados -->
+        <div id="tab-listado" class="tab-content" style="display: none;">
 
-        <!-- BOTÓN PARA DESCARGAR EL ARCHIVO PLANO -->
-        <a href="../../controllers/exportarReporte.php" class="btn-action download" style="text-decoration: none;">
-            <i class="fa-solid fa-file-csv"></i> Descargar Reporte (.xlxs)
-        </a>
-        <a href="../../controllers/exportarPdf.php" class="btn-action download" style="text-decoration: none;">
-            <i class="fa-solid fa-file-csv"></i> Descargar Reporte (.PDF)
-        </a>
-    </div>
+            <!-- Barra de acciones (Búsqueda + Botón de Descarga) -->
+            <div class="students-action-bar"
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <div class="search-input-wrapper search-student">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Buscar por correo o ID...">
+                </div>
 
-    <!-- Tabla de Usuarios -->
-    <div class="table-card">
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th># ID</th>
-                    <th>Correo / Usuario</th>
-                    <th>Institución</th>
-                    <th>Rol</th>
-                    <th>Fecha Creación</th>
-                    <th style="text-align: center;">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php if (!empty($usuarios)): ?>
-                    <?php foreach ($usuarios as $usr): ?>
+                <!-- BOTÓN PARA DESCARGAR EL ARCHIVO PLANO -->
+                <a href="../../controllers/exportarReporte.php" class="btn-action download"
+                    style="text-decoration: none;">
+                    <i class="fa-solid fa-file-csv"></i> Descargar Reporte (.xlxs)
+                </a>
+                <a href="../../controllers/exportarPdf.php" class="btn-action download" style="text-decoration: none;">
+                    <i class="fa-solid fa-file-csv"></i> Descargar Reporte (.PDF)
+                </a>
+            </div>
+
+            <!-- Tabla de Usuarios -->
+            <div class="table-card">
+                <table class="data-table" id="userTable">
+                    <thead>
                         <tr>
-                            <td class="font-bold">#<?= $usr['id_usuario'] ?></td>
-                            <td>
-                                <div class="student-user-info">
-                                    <div class="avatar-small">
-                                        <i class="fa-regular fa-user"></i>
-                                    </div>
-                                    <span class="student-name">
-                                        <?= htmlspecialchars($usr['correo']) ?>
-                                    </span>
-                                </div>
-                            </td>
-                            <td><span class="text-muted-cell"><?= htmlspecialchars($usr['institucion']) ?></span></td>
-                            <td><span class="type-tag purple"><?= htmlspecialchars($usr['rol']) ?></span></td>
-                            <td><span class="date-text"><?= htmlspecialchars($usr['fecha_creacion']) ?></span></td>
-                            <td style="text-align: center;">
-                                <a href="editarUsuario.php?id=<?= $usr['id_usuario'] ?>" class="tool-btn" title="Editar">
-                                    <i class="fa-solid fa-pen"></i>
-                                </a>
-                            </td>
+                            <th># ID</th>
+                            <th>Correo / Usuario</th>
+                            <th>Institución</th>
+                            <th>Rol</th>
+                            <th>Fecha Creación</th>
+                            <th style="text-align: center;">Acciones</th>
                         </tr>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <tr>
-                        <td colspan="6" style="text-align: center;">No se encontraron usuarios registrados.</td>
-                    </tr>
-                <?php endif; ?>
-            </tbody>
-        </table>
-    </div>
+                    </thead>
+                    <tbody>
+                        <?php if (!empty($usuarios)): ?>
+                            <?php foreach ($usuarios as $usr): ?>
+                                <tr>
+                                    <td class="font-bold">#<?= $usr['id_usuario'] ?></td>
+                                    <td>
+                                        <div class="student-user-info">
+                                            <div class="avatar-small">
+                                                <i class="fa-regular fa-user"></i>
+                                            </div>
+                                            <span class="student-name">
+                                                <?= htmlspecialchars($usr['correo']) ?>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td><span class="text-muted-cell"><?= htmlspecialchars($usr['institucion']) ?></span></td>
+                                    <td><span class="type-tag purple"><?= htmlspecialchars($usr['rol']) ?></span></td>
+                                    <td><span class="date-text"><?= htmlspecialchars($usr['fecha_creacion']) ?></span></td>
+                                    <td style="text-align: center;">
+                                        <a href="editarUsuario.php?id=<?= $usr['id_usuario'] ?>" class="tool-btn"
+                                            title="Editar">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="6" style="text-align: center;">No se encontraron usuarios registrados.</td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
 
-</div>
+        </div>
 
     </main>
 
@@ -732,6 +735,28 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
                 btnSubmit.innerHTML = '<i class="fa-solid fa-user-check"></i> Registrar Administrador';
             }
         }
+        
+        //hace funcional la barra de busqueda
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('searchInput');
+            const filas = document.querySelectorAll('#userTable tbody tr');
+
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase().trim();
+
+                filas.forEach(fila =>{
+                    //trae todo el texto de la fila
+                    const textoFila = fila.textContent.toLocaleLowerCase();
+
+                    if (textoFila.includes(searchTerm)) {
+                        fila.style.display = '';
+                    }else{
+                        fila.style.display = 'none';
+                    }
+                })
+
+            })
+        })
     </script>
 
 </body>
