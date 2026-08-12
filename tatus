@@ -1,0 +1,110 @@
+* [33m090d77c[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m solucionado el error del botón
+* [33m9ba84ca[m Preview de reporte en pdf creada
+* [33m9bfb3d2[m consulta masiva de matriculas arreglada
+* [33m4f6d16a[m carga masiva arreglado
+* [33mcc9416a[m Funcion de descargar reporte de usuarios registrados añadida
+* [33m3387df6[m controladores y consultas de carga masiva
+* [33m0e6101c[m composer desacargado
+* [33m0c66f41[m cerrada etiqueta PHP
+* [33m0e6be81[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m descargar plantillas implementado
+* [33me5e6fea[m separada la vista del modelo
+* [33m39f2199[m separada la vista del model
+* [33m436c1e1[m solucionado el error de la sección 3 y dinamizada la tabla
+* [33m727db4c[m registro de los usuarios dynamizados
+* [33mafe5e5f[m Consultas arregladas
+* [33m670344b[m se incorporo el funcionamiento de registrar usuario, pequeño problema al registrar la matricula
+*   [33m215db72[m Merge pull request #6 from Stiven92/main
+[32m|[m[33m\[m  
+[32m|[m *   [33m5790a75[m[33m ([m[1;31morigin/main[m[33m)[m Merge remote-tracking branch 'origin/master'
+[32m|[m [34m|[m[32m\[m  
+[32m|[m [34m|[m[32m/[m  
+[32m|[m[32m/[m[34m|[m   
+* [34m|[m   [33md0607ba[m Merge branch 'master' of https://github.com/Stiven92/EDUNECTION
+[36m|[m[1;31m\[m [34m\[m  
+[36m|[m * [34m|[m [33md07ea12[m vistas para registrar unificadas
+* [1;31m|[m [34m|[m [33me4fac3f[m SessionEstudianteController.php agrgada a la pagina
+[1;31m|[m[1;31m/[m [34m/[m  
+* [34m|[m [33m8d5c90f[m vista registrar usuario.php añadida
+* [34m|[m [33m225427d[m logincontroler pte1 de 3
+[1;31m|[m * [33m95ef04d[m controladores y consultas para registrar
+[1;31m|[m[1;31m/[m  
+*   [33m8427a07[m Merge branch 'master' of https://github.com/Stiven92/EDUNECTION
+[1;32m|[m[1;33m\[m  
+[1;32m|[m *   [33m693152f[m Merge pull request #5 from Stiven92/main
+[1;32m|[m [1;34m|[m[1;35m\[m  
+[1;32m|[m [1;34m|[m * [33ma6ddfd0[m login.php actualizado
+* [1;34m|[m [1;35m|[m   [33m5c12530[m Merge branch 'login_backen_#1'
+[1;34m|[m[31m\[m [1;34m\[m [1;35m\[m  
+[1;34m|[m [31m|[m[1;34m/[m [1;35m/[m  
+[1;34m|[m[1;34m/[m[31m|[m [1;35m|[m   
+[1;34m|[m * [1;35m|[m [33mbfa8b94[m[33m ([m[1;32mlogin_backen_#1[m[33m)[m siuuuu
+* [31m|[m [1;35m|[m [33mb85d373[m ahora si lo arregle
+[1;35m|[m [31m|[m[1;35m/[m  
+[1;35m|[m[1;35m/[m[31m|[m   
+* [31m|[m [33m0d0b740[m arreglado el style de registrar.php
+* [31m|[m [33m1153bec[m remplazada la vista registar
+[31m|[m[31m/[m  
+* [33m80be4bf[m mejoras html estudiante y acudiente #2
+* [33m6c616d4[m mejoras html estudiante y acudiente
+* [33m162f9d7[m creado el html estudiantes,falta conectar
+* [33m9bad9c8[m models
+* [33m836640a[m[33m ([m[1;32mmain[m[33m)[m seccion controler agregados no funcionales
+*   [33m5cf10a5[m Merge pull request #4 from Stiven92/main
+[32m|[m[33m\[m  
+[32m|[m * [33m4bcf9e5[m landing page actualizada
+[32m|[m[32m/[m  
+*   [33m6c7b8d2[m agregada la vista de registrar en el rol admin
+[34m|[m[35m\[m  
+[34m|[m * [33m0b82a16[m layoutRol creada
+* [35m|[m [33m670749b[m Vista de registrar alumno desde el rol de admin
+* [35m|[m [33m14f35f3[m Añadida la vista de registrar alumno
+[35m|[m[35m/[m  
+* [33me00aff9[m De nuevo el parche de dashboardDocent
+* [33mf16c9e3[m html de acudientes pte#1
+* [33m762b2da[m agragado el layout footerdocentes
+* [33m772ad12[m agragado el layout headdocentes #2
+* [33me39211c[m agragado el layout headdocentes
+*   [33maf598af[m Merge remote-tracking branch 'origin/master'
+[36m|[m[1;31m\[m  
+[36m|[m * [33m2a93382[m nuevas 7 interfaces y añadidos los enrutamientos
+[36m|[m * [33md83d3b3[m nuevas interfaces y solucionado el error de los enrutamientos
+[36m|[m * [33m8a58307[m solucionado el error con el logo en las vistas
+[36m|[m * [33m4e39788[m index.php terminado y logo azul agregado
+[36m|[m *   [33mb501a2f[m Merge branch 'master' of https://github.com/Stiven92/EDUNECTION
+[36m|[m [1;32m|[m[1;33m\[m  
+[36m|[m * [1;33m|[m [33m542f22e[m index.php terminado
+* [1;33m|[m [1;33m|[m   [33m9312e93[m Merge branch 'master' of https://github.com/Stiven92/EDUNECTION
+[1;34m|[m[1;33m\[m [1;33m\[m [1;33m\[m  
+[1;34m|[m [1;33m|[m [1;33m|[m[1;33m/[m  
+[1;34m|[m [1;33m|[m[1;33m/[m[1;33m|[m   
+[1;34m|[m * [1;33m|[m [33m0ea6733[m nuevo enrutamiento y carpeta de vistas docentes
+[1;34m|[m * [1;33m|[m [33m53acdd4[m Merge pull request #3 from Stiven92/main
+[1;34m|[m [1;36m|[m[1;33m\[m[1;33m|[m 
+* [1;36m|[m [1;33m|[m   [33md3a60e6[m Merge branch 'main' of https://github.com/Stiven92/EDUNECTION
+[1;36m|[m[1;33m\[m [1;36m\[m [1;33m\[m  
+[1;36m|[m [1;33m|[m[1;36m/[m [1;33m/[m  
+[1;36m|[m[1;36m/[m[1;33m|[m [1;33m/[m   
+[1;36m|[m [1;33m|[m[1;33m/[m    
+[1;36m|[m * [33mb9a819b[m index.php actualizado
+* [33m|[m [33me73886d[m traduccion stiven
+* [33m|[m [33m3dc8e9d[m pagina 404 traducida
+* [33m|[m [33m8f1bf05[m llevar el style del tank_you al css
+* [33m|[m [33m2313959[m Merge pull request #2 from Stiven92/main
+[34m|[m[33m\[m[33m|[m 
+[34m|[m * [33m3a31183[m reinicio
+[34m|[m * [33m5387215[m colores de contact.php cambiados
+* [35m|[m [33m64b69b9[m style.css actualizado
+[36m|[m[35m\[m[35m|[m 
+[36m|[m * [33m49d04fd[m style.css actualizado
+[36m|[m[36m/[m  
+* [33mfa58373[m navbar.php file complete
+* [33m4c983b3[m foother last jquery file complet
+* [33m564e0ab[m latout head complet
+* [33m9d2e065[m carpeta latout otraves
+* [33m1b66166[m dashboard integrado y estilo  modificado
+* [33mca7988a[m ahora sí
+* [33m5249371[m repositorio ya estructurado
+* [33me9af605[m Header.php add
+* [33m01bfe20[m ADD file php
+* [33m399a0ba[m ADD php
+* [33m2969f40[m start

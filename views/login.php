@@ -1,3 +1,6 @@
+<?php
+require_once "../controllers/ObtenerDatosUsuariosController.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -23,92 +26,77 @@
             <div class="login-logo">
                 <img src="../assets/img/logos/logo_blanco.svg" alt="Logo Edunection" class="logo">
             </div>
-
             <br><br>
+
+            
 
             <h2>INICIAR SESIÓN</h2>
 
-            <br><br>
+            
 
             <form action="../controllers/LoginController.php" method="POST">
-
-                <div class="form-row">
-
-                    <div class="form-group">
-                        <label>Institución Educativa</label>
-
-                        <div class="select-wrapper">
-
-                            <select class="form-input form-select" name="id_institucion" required>
-
-                                <option value="">Seleccione una institución</option>
-
-                                <?php foreach($instituciones as $institucion){ ?>
-
-                                    <option value="<?= $institucion['id_institucion']; ?>">
-                                        <?= $institucion['nombre']; ?>
-                                    </option>
-
-                                <?php } ?>
-
-                            </select>
-
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Rol</label>
-
-                        <div class="select-wrapper">
-
-                            <select class="form-input form-select" name="id_rol" required>
-
-                                <option value="">Seleccione un rol</option>
-
-                                <?php foreach($roles as $rol){ ?>
-
-                                    <option value="<?= $rol['id_rol']; ?>">
-                                        <?= $rol['nombre']; ?>
-                                    </option>
-
-                                <?php } ?>
-
-                            </select>
-
-                        </div>
-                    </div>
-
+                
+                <!-- Selección de Institución Educativa -->
+                <div class="form-group">
+                    <label for="id_institucion" class="input-label">Institución Educativa</label>
+                    <select id="id_institucion" name="id_institucion" class="custom-select" required>
+                        <option value="" disabled selected>Seleccione Institución...</option>
+                        <?php foreach ($instituciones as $inst): ?>
+                            <option value="<?= $inst['id_institucion'] ?>">
+                                <?= htmlspecialchars($inst['nombre']) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
 
+                <!-- Selección de Rol de Usuario -->
                 <div class="form-group">
-                    <label>Correo Electrónico</label>
-                    <input
-                        type="email"
-                        class="form-input"
-                        name="correo"
-                        placeholder="Ingresa tu correo electrónico"
+                    <label for="id_perfil" class="input-label">Rol del Usuario</label>
+                    <select id="id_perfil" name="id_perfil" class="custom-select" required onchange="actualizarCamposPorRol(this.value)">
+                        <option value="" disabled selected>Seleccione Rol...</option>
+                        <?php foreach ($roles as $rol): ?>
+                            <option value="<?= $rol['id_rol'] ?>">
+                                <?= htmlspecialchars($rol['nombre']) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <!-- Correo Electrónico -->
+                <div class="form-group">
+                    <label for="correo" class="input-label">Correo Electrónico</label>
+                    <input 
+                        type="email" 
+                        id="correo"
+                        name="correo" 
+                        class="form-input" 
+                        placeholder="Ingresa tu correo electrónico" 
                         required>
                 </div>
 
+                <!-- Contraseña -->
                 <div class="form-group">
-                    <label>Contraseña</label>
-                    <input
-                        type="password"
-                        class="form-input"
-                        name="password"
-                        placeholder="Ingresa tu contraseña"
+                    <label for="password" class="input-label">Contraseña</label>
+                    <input 
+                        type="password" 
+                        id="password"
+                        name="password" 
+                        class="form-input" 
+                        placeholder="Ingresa tu contraseña" 
                         required>
                 </div>
 
-                <button type="submit" class="btn-submit">
-                    Iniciar Sesión
-                </button>
 
-                <br><br>
+                <!-- Botones de Acción -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">
+                        Iniciar Sesión
+                    </button>
 
-                <a href="reset_password.php" class="btn-outline">
-                    Restablecer Contraseña
-                </a>
+                    <a href="reset_password.php" class="btn-outline">
+                        Restablecer Contraseña
+                    </a>
+                </div>
 
             </form>
         </div>

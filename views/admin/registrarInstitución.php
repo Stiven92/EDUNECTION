@@ -1,3 +1,8 @@
+<?php
+require_once "../../controllers/ObtenerDatosUsuariosController.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -17,18 +22,18 @@
 <body>
 
     <!-- Header & Navegación -->
-    <header class="navbar">
+ <header class="navbar">
         <div class="container nav-container">
             <a href="dashboardAdmin.php" class="logo">
-                <img src="logo_azul.png" alt="Logo Pulpo" class="logo-icon">
+                <img src="../../assets/img/logos/logo_azul.png" alt="Logo EDUNECTION" class="logo-icon">
                 <span>EDUNECTION</span>
             </a>
 
             <nav class="nav-links">
                 <a href="dashboardAdmin.php" class="nav-item">Inicio</a>
-                <a href="instituciones.php" class="nav-item active">Instituciones</a>
-                <a href="estudiantes.php" class="nav-item">Estudiantes</a>
+                <a href="usuarios.php" class="nav-item active">Usuarios</a>
                 <a href="docentes.php" class="nav-item">Docentes</a>
+                <a href="cursosAdmin.php" class="nav-item">Cursos</a>
 
                 <!-- Desplegable Gestión -->
                 <div class="nav-dropdown">
@@ -37,8 +42,8 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="dropdown-menu">
-                        <a href="registrarInstitucion.php" class="dropdown-item active">
-                            <i class="fa-solid fa-building-circle-check"></i> Nueva Institución
+                        <a href="matricularEstudiante.php" class="dropdown-item">
+                            <i class="fa-solid fa-user-plus"></i> Nuevo Registro
                         </a>
                         <a href="reportes.php" class="dropdown-item">
                             <i class="fa-solid fa-chart-pie"></i> Reportes Generales
@@ -67,7 +72,7 @@
 
         <!-- Tarjeta de Formulario Principal -->
         <div class="publish-card">
-            <form class="publish-form" action="../controller/registrarInstitucionController.php" method="POST"
+            <form class="publish-form" action="../../controllers/saveColegio.php" method="POST"
                 enctype="multipart/form-data">
 
                 <!-- Sección 1: Información General -->
@@ -104,18 +109,20 @@
                             <option value="No Oficial / Privado">No Oficial / Privado</option>
                         </select>
                     </div>
-
                     <div class="form-group">
-                        <label for="jornada" class="input-label">Jornada Escolar</label>
+                        <label for="jornada" class="input-label">Jornada Actual</label>
                         <select id="jornada" name="jornada" class="custom-select" required>
-                            <option value="" disabled selected>Seleccione la jornada...</option>
-                            <option value="Mañana">Mañana</option>
-                            <option value="Tarde">Tarde</option>
-                            <option value="Nocturna">Nocturna</option>
-                            <option value="Única">Única</option>
-                            <option value="Completa">Completa</option>
+                            <option value="" disabled selected>Seleccione jornada...</option>
+                            <?php if (!empty($jornada) && is_array($jornada)): ?>
+                                <?php foreach ($jornada as $jor): ?>
+                                    <option value="<?= $jor['id_jornada'] ?>">
+                                        <?= htmlspecialchars($jor['nombre']) ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         </select>
                     </div>
+
                 </div>
 
                 <hr class="form-divider">
@@ -128,20 +135,26 @@
                 <div class="form-grid-2">
                     <div class="form-group">
                         <label for="departamento" class="input-label">Departamento</label>
-                        <div class="input-with-icon">
-                            <i class="fa-solid fa-map input-icon"></i>
-                            <input type="text" id="departamento" name="departamento" class="form-input"
-                                placeholder="Ej: Cundinamarca" required>
-                        </div>
+                        <select id="departamento" name="departamento" class="custom-select" >
+                            <option value="" disabled selected>Seleccione un departamento...</option>
+                            <?php foreach ($departamentos as $dep): ?>
+                                <option value="<?= $dep['id_departamento'] ?>">
+                                    <?= htmlspecialchars($dep['nombre']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="municipio" class="input-label">Municipio / Ciudad</label>
-                        <div class="input-with-icon">
-                            <i class="fa-solid fa-city input-icon"></i>
-                            <input type="text" id="municipio" name="municipio" class="form-input"
-                                placeholder="Ej: Villeta" required>
-                        </div>
+                        <label for="id_municipio" class="input-label">Municipio / Ciudad</label>
+                        <select id="id_municipio" name="municipio" class="custom-select" required>
+                            <option value="" disabled selected>Seleccione municipio...</option>
+                            <?php foreach ($municipios as $mun): ?>
+                                <option value="<?= $mun['id_municipio'] ?>">
+                                    <?= htmlspecialchars($mun['nombre']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                 </div>
 
@@ -188,7 +201,7 @@
                             seleccionar</span>
                         <small>Formatos permitidos: .png, .jpg, .svg (Máx. 5MB)</small>
                     </div>
-                    <input type="file" name="logo_institucion" id="logo_institucion" class="file-input-hidden"
+                    <input type="file" name="imagen_apoyo_1" id="logo_institucion" class="file-input-hidden"
                         accept="image/png, image/jpeg, image/svg+xml" onchange="showFileName(this)">
                 </div>
 

@@ -11,6 +11,82 @@ class Consultas
 		$this->conexion = $cnn->get_conexion();
 	}
 
+	
+	//login of entrance or main 
+	public function getUserUsuario($email)
+	{
+		$sql = 'SELECT * FROM clientes WHERE email=:email';
+		$res = $this->conexion->prepare($sql);
+		$res->bindParam(':email', $email);
+
+		try {
+			$res->execute();
+			$f = $res->fetch();
+			return $f;
+		} catch (Exception $e) {
+			echo "<script>alert('Error al buscar usuario!!')</script>";
+			echo "<script>location.href='../views/login.php'</script>";
+		}
+	}
+
+
+	public function saveInstitucion($nombre_institucion, $codigo_dane_nit, $tipo_sector, $departamento, $municipio, $direccion, $telefono_institucional, $correo_institucional, $jornadas, $logo) {
+	    try {
+	        $sql = "INSERT INTO institucion (
+	                    nombre,
+	                    codigo_dane,
+	                    direccion,
+	                    id_departamento,
+	                    id_municipio,
+	                    numero_telefonico,
+	                    correo,
+	                    fecha_registro,
+	                    logo
+	                ) VALUES (
+	                    :nombre,
+	                    :codigo_dane,
+	                    :direccion,
+	                    :id_departamento,
+	                    :id_municipio,
+	                    :numero_telefonico,
+	                    :correo,
+	                    CURDATE(),
+	                    :logo
+	                )";
+
+	        $res = $this->conexion->prepare($sql);
+
+	        $res->bindParam(":nombre", $nombre_institucion);
+	        $res->bindParam(":codigo_dane", $codigo_dane_nit);
+	        $res->bindParam(":direccion", $direccion);
+	        $res->bindValue(":id_departamento", (int)$departamento, PDO::PARAM_INT);
+	        $res->bindValue(":id_municipio", (int)$municipio, PDO::PARAM_INT);
+	        $res->bindParam(":numero_telefonico", $telefono_institucional);
+	        $res->bindParam(":correo", $correo_institucional);
+	        $res->bindParam(":logo", $logo);
+
+	        $res->execute();
+
+	        $id_institucion = $this->conexion->lastInsertId();
+
+	        if ($id_institucion && !empty($jornadas)) {
+	            $sqlJornada = "INSERT INTO institucion_jornada (id_institucion, id_jornada) VALUES (:id_institucion, :id_jornada)";
+	            $stmtJornada = $this->conexion->prepare($sqlJornada);
+	            $stmtJornada->execute([
+	                ':id_institucion' => $id_institucion,
+	                ':id_jornada'     => (int)$jornadas
+	            ]);
+	        }
+
+	        return true;
+
+	    } catch (PDOException $e) {
+	        return false;
+	    }
+	}
+
+
+
 
 	public function registrarUsuario($correo, $password, $id_perfil, $id_institucion)
 	{
@@ -419,25 +495,6 @@ class Consultas
 
 
 
-
-
-	//login of entrance or main 
-	public function getUserUsuario($email)
-	{
-		$sql = 'SELECT * FROM clientes WHERE email=:email';
-		$res = $this->conexion->prepare($sql);
-		$res->bindParam(':email', $email);
-
-		try {
-			$res->execute();
-			$f = $res->fetch();
-			return $f;
-		} catch (Exception $e) {
-			echo "<script>alert('Error al buscar usuario!!')</script>";
-			echo "<script>location.href='../views/login.php'</script>";
-		}
-	}
-
 	public function obtenerUsuarioPorCredenciales($correo, $id_rol, $id_institucion)
 	{
 		// Ejemplo usando PDO con sentencias preparadas
@@ -464,6 +521,26 @@ class Consultas
 
 	// En mconsultas.php
 
+
+	public function obtenerDepartamentos()
+	{
+		$sql = "SELECT id_departamento, nombre FROM departamento";
+		$stmt = $this->conexion->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+
+
+	public function obtenerjornada()
+	{
+		$sql = "SELECT id_jornada, nombre FROM jornada";
+		$stmt = $this->conexion->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+
 	public function obtenerInstituciones()
 	{
 		$sql = "SELECT id_institucion, nombre FROM institucion WHERE estado = 'Activa'";
@@ -471,6 +548,8 @@ class Consultas
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
+
+
 
 	public function obtenerRoles()
 	{
