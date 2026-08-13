@@ -41,6 +41,46 @@
 
         $rol = $_POST["rol_usuario"];
 
+        $plantillasRoles = [
+
+            1 => "PLANTILLA DE CARGA MASIVA - ADMINISTRADORES",
+            2 => "PLANTILLA DE CARGA MASIVA - DIRECTIVOS",
+            3 => "PLANTILLA DE CARGA MASIVA - DOCENTES",
+            4 => "PLANTILLA DE CARGA MASIVA - ESTUDIANTES",
+            5 => "PLANTILLA DE CARGA MASIVA - ACUDIENTES"
+
+        ];
+
+        $tituloPlantilla = trim($sheet->getCell("A1")->getValue());
+
+        if(!isset($plantillasRoles[$rol])){
+
+            echo "<script>
+
+                    alert('Rol no válido');
+
+                    history.back();
+
+                  </script>";
+
+            exit();
+
+        }
+
+        if($tituloPlantilla != $plantillasRoles[$rol]){
+
+            echo "<script>
+
+                    alert('La plantilla no corresponde al tipo de usuario seleccionado.');
+
+                    history.back();
+
+                  </script>";
+
+            exit();
+
+        }
+
         switch($rol){
 
             case 1:

@@ -12,7 +12,7 @@
     --text-muted: #b0bec5;
     --radius-lg: 16px;
     --radius-md: 10px;
-    --font-main: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-main: 'Plus Jakarta Sans', system-ui, sans-serif; 
 }
 
 * {
@@ -3367,3 +3367,395 @@ body {
 
 }
 
+
+/* =========================================================
+   GESTIÓN DE USUARIOS
+   ========================================================= */
+
+.usuarios-layout {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 35px 24px 50px;
+}
+
+
+/* ---------------------------------------------------------
+   ENCABEZADO
+   --------------------------------------------------------- */
+
+.usuarios-layout .page-header-action {
+    margin-bottom: 30px;
+}
+
+
+/* ---------------------------------------------------------
+   BARRA DE PESTAÑAS
+   --------------------------------------------------------- */
+
+.usuarios-layout .tab-container {
+    margin-bottom: 18px;
+}
+
+
+/* ---------------------------------------------------------
+   BARRA DE FILTROS
+   --------------------------------------------------------- */
+
+.users-toolbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+
+/* Zona izquierda: buscador + filtro */
+
+.users-filters {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* BUSCADOR */
+
+.users-filters .search-student {
+    width: 360px;
+    min-width: 300px;
+    flex: none;
+    margin: 0 !important;
+}
+
+.users-filters .search-input {
+    width: 100%;
+    height: 48px;
+}
+
+
+/* ---------------------------------------------------------
+   FILTRO DE ROL
+   --------------------------------------------------------- */
+
+.role-filter-wrapper {
+    position: relative;
+    width: 190px;
+    min-width: 190px;
+}
+
+.role-filter {
+    width: 100%;
+    height: 48px;
+
+    padding: 0 38px 0 15px;
+
+    border: 1px solid #dbe3ef;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #334155;
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+
+    outline: none;
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    transition: all 0.2s ease;
+}
+
+.role-filter:hover {
+    border-color: #2563eb;
+}
+
+.role-filter:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.role-filter-wrapper > i {
+    position: absolute;
+
+    right: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #64748b;
+    font-size: 12px;
+
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   BOTONES EXCEL / PDF
+   --------------------------------------------------------- */
+
+.users-downloads {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+.user-download-btn {
+    height: 48px;
+
+    padding: 0 17px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    border-radius: 10px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.84rem;
+    font-weight: 700;
+
+    text-decoration: none !important;
+
+    white-space: nowrap;
+
+    border: 1px solid transparent;
+
+    transition: all 0.2s ease;
+}
+
+.user-download-btn:hover {
+    background: #2563eb;
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+.user-download-btn i {
+    font-size: 16px;
+}
+
+
+/* ---------------------------------------------------------
+   TABLA
+   --------------------------------------------------------- */
+
+.users-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.users-table {
+    width: 100%;
+    min-width: 900px;
+}
+
+
+/* ---------------------------------------------------------
+   COLUMNAS
+   --------------------------------------------------------- */
+
+.users-table th:nth-child(1),
+.users-table td:nth-child(1) {
+    width: 8%;
+}
+
+.users-table th:nth-child(2),
+.users-table td:nth-child(2) {
+    width: 29%;
+}
+
+.users-table th:nth-child(3),
+.users-table td:nth-child(3) {
+    width: 21%;
+}
+
+.users-table th:nth-child(4),
+.users-table td:nth-child(4) {
+    width: 13%;
+}
+
+.users-table th:nth-child(5),
+.users-table td:nth-child(5) {
+    width: 18%;
+}
+
+.users-table th:nth-child(6),
+.users-table td:nth-child(6) {
+    width: 11%;
+}
+
+
+/* ---------------------------------------------------------
+   INFORMACIÓN DEL USUARIO
+   --------------------------------------------------------- */
+
+.users-table .student-user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.users-table .student-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* ---------------------------------------------------------
+   FECHA
+   --------------------------------------------------------- */
+
+.users-table .date-text {
+    white-space: nowrap;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+
+    .users-toolbar {
+        flex-wrap: wrap;
+    }
+
+    .users-filters {
+        width: 100%;
+    }
+
+    .users-downloads {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .usuarios-layout {
+        padding: 25px 15px 40px;
+    }
+
+    .users-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .users-filters .search-student {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .role-filter-wrapper {
+        width: 100%;
+    }
+
+    .users-downloads {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .user-download-btn {
+        width: 100%;
+    }
+}
+
+
+/* =========================================
+   TARJETA DE CARGA MASIVA
+   ========================================= */
+
+.carga-masiva-card {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Selector de rol - Carga Masiva */
+.carga-masiva-card #rol_usuario {
+    width: 430px !important;
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid #dbe3ef;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #17213a;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+/* Efecto al pasar el mouse */
+.carga-masiva-card #rol_usuario:hover {
+    border-color: #b8c9e8;
+}
+
+/* Efecto al seleccionar */
+.carga-masiva-card #rol_usuario:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+/* Contenedor del selector */
+.carga-masiva-card #rol_usuario {
+    display: block;
+}
+
+#rol_usuario {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2318273a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 18px 18px;
+}
+
+.carga-masiva-card .btn-action.download {
+    height: 48px;
+    padding: 0 22px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    border-radius: 10px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.carga-masiva-card .btn-action.download i {
+    font-size: 16px;
+}
+
+
+/* Ajuste exclusivo para Dirección de Residencia */
+#grupo-direccion {
+    transform: translateY(5px);
+}

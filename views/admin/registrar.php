@@ -59,7 +59,7 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
     </header>
 
     <!-- Main Content -->
-    <main class="container publish-layout">
+    <main class="container usuarios-layout">
 
         <div class="page-header-action">
             <a href="dashboardAdmin.php" class="btn-back">
@@ -82,7 +82,7 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
         </div>
 
         <!-- OPCIÓN 1: Formulario Individual de Registro -->
-        <div id="tab-registro" class="publish-card tab-content active">
+        <div id="tab-registro" class="publish-card registro-individual-card">
             <!-- Dirección al Controlador RegistrarController.php -->
             <form class="publish-form" action="../../controllers/RegistrarController.php" method="POST">
 
@@ -116,6 +116,7 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
                 <div class="form-group">
                     <label for="id_perfil" class="input-label">Rol del Usuario</label>
                     <select id="id_perfil" name="id_perfil" class="custom-select" required
+                        style="width: 50%;"
                         onchange="actualizarCamposPorRol(this.value)">
                         <option value="" disabled selected>Seleccione Rol...</option>
                         <?php foreach ($roles as $rol): ?>
@@ -158,25 +159,27 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="id_tipo_doc" class="input-label">Tipo de Documento</label>
-                        <select id="id_tipo_doc" name="id_tipo_doc" class="custom-select">
-                            <option value="" disabled selected>Seleccione...</option>
-                            <?php foreach ($tiposDoc as $td): ?>
-                                <option value="<?= $td['id_tipo_documento'] ?>">
-                                    <?= htmlspecialchars($td['nombre']) ?> (
-                                    <?= htmlspecialchars($td['abreviatura']) ?>)
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="id_tipo_doc" class="input-label">Tipo de Documento</label>
+                            <select id="id_tipo_doc" name="id_tipo_doc" class="custom-select">
+                                <option value="" disabled selected>Seleccione...</option>
+                                <?php foreach ($tiposDoc as $td): ?>
+                                    <option value="<?= $td['id_tipo_documento'] ?>">
+                                        <?= htmlspecialchars($td['nombre']) ?> (
+                                        <?= htmlspecialchars($td['abreviatura']) ?>)
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="documento_indentidad" class="input-label">Número de Documento</label>
-                        <div class="input-with-icon">
-                            <i class="fa-solid fa-hashtag input-icon"></i>
-                            <input type="text" id="documento_indentidad" name="documento_indentidad" class="form-input"
-                                placeholder="Ej: 1098765432">
+                        <div class="form-group">
+                            <label for="documento_indentidad" class="input-label">Número de Documento</label>
+                            <div class="input-with-icon">
+                                <i class="fa-solid fa-hashtag input-icon"></i>
+                                <input type="text" id="documento_indentidad" name="documento_indentidad" class="form-input"
+                                    placeholder="Ej: 1098765432">
+                            </div>
                         </div>
                     </div>
 
@@ -395,7 +398,7 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
         </div>
 
         <!-- OPCIÓN 2: Carga Masiva -->
-        <div id="tab-masiva" class="publish-card tab-content" style="display: none;">
+        <div id="tab-masiva" class="publish-card tab-content carga-masiva-card" style="display: none;">
             <form class="publish-form" action="../../controllers/cargaMasivaController.php" method="POST"
                 enctype="multipart/form-data">
 
@@ -412,6 +415,7 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
                     <label for="rol_usuario" style="display: block; font-weight: 600; margin-bottom: 8px;">
                         <i class="fa-solid fa-user-gear"></i> Tipo de usuario a registrar:
                     </label>
+
                     <select name="rol_usuario" id="rol_usuario" class="form-control" required
                         style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;"
                         onchange="cambiarPlantilla()">
@@ -463,26 +467,81 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
         <div id="tab-listado" class="tab-content" style="display: none;">
 
             <!-- Barra de acciones (Búsqueda + Botón de Descarga) -->
-            <div class="students-action-bar"
-                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                <div class="search-input-wrapper search-student">
-                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" class="search-input" id="searchInput" placeholder="Buscar por correo o ID...">
+            <!-- Barra de búsqueda, filtros y descargas -->
+            <div class="users-toolbar">
+
+                <div class="users-filters">
+
+                    <!-- BUSCADOR -->
+                    <div class="search-input-wrapper search-student">
+
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+
+                        <input
+                            type="text"
+                            class="search-input"
+                            id="searchInput"
+                            placeholder="Buscar usuario, correo o ID..."
+                        >
+
+                    </div>
+
+
+                    <!-- FILTRO -->
+                    <div class="role-filter-wrapper">
+
+                        <select id="roleFilter" class="role-filter">
+
+                            <option value="">Todos los roles</option>
+
+                            <option value="Administrador">Administrador</option>
+
+                            <option value="Directivo">Directivo</option>
+
+                            <option value="Docente">Docente</option>
+
+                            <option value="Estudiante">Estudiante</option>
+
+                            <option value="Acudiente">Acudiente</option>
+
+                        </select>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </div>
+
                 </div>
 
-                <!-- BOTÓN PARA DESCARGAR EL ARCHIVO PLANO -->
-                <a href="../../controllers/exportarReporte.php" class="btn-action download"
-                    style="text-decoration: none;">
-                    <i class="fa-solid fa-file-csv"></i> Descargar Reporte (.xlxs)
-                </a>
-                <a href="../../controllers/exportarPdf.php" class="btn-action download" style="text-decoration: none;">
-                    <i class="fa-solid fa-file-csv"></i> Descargar Reporte (.PDF)
-                </a>
+
+                <!-- DESCARGAS -->
+                <div class="users-downloads">
+
+                    <a
+                        href="../../controllers/exportarReporte.php"
+                        class="user-download-btn"
+                    >
+                        <i class="fa-solid fa-file-excel"></i>
+                        Reporte Excel (.xlsx)
+                    </a>
+
+
+                    <a
+                        href="../../controllers/exportarPdf.php"
+                        class="user-download-btn"
+                    >
+                        <i class="fa-solid fa-file-pdf"></i>
+                        Reporte PDF (.pdf)
+                    </a>
+
+                </div>
+
             </div>
 
             <!-- Tabla de Usuarios -->
-            <div class="table-card">
-                <table class="data-table" id="userTable">
+           <div class="table-card users-table-container">
+
+                <table class="data-table users-table" id="userTable">
+
                     <thead>
                         <tr>
                             <th># ID</th>
@@ -493,39 +552,83 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
                             <th style="text-align: center;">Acciones</th>
                         </tr>
                     </thead>
+
                     <tbody>
+
                         <?php if (!empty($usuarios)): ?>
+
                             <?php foreach ($usuarios as $usr): ?>
+
                                 <tr>
-                                    <td class="font-bold">#<?= $usr['id_usuario'] ?></td>
+
+                                    <td class="font-bold">
+                                        #<?= $usr['id_usuario'] ?>
+                                    </td>
+
                                     <td>
+
                                         <div class="student-user-info">
+
                                             <div class="avatar-small">
                                                 <i class="fa-regular fa-user"></i>
                                             </div>
+
                                             <span class="student-name">
                                                 <?= htmlspecialchars($usr['correo']) ?>
                                             </span>
+
                                         </div>
+
                                     </td>
-                                    <td><span class="text-muted-cell"><?= htmlspecialchars($usr['institucion']) ?></span></td>
-                                    <td><span class="type-tag purple"><?= htmlspecialchars($usr['rol']) ?></span></td>
-                                    <td><span class="date-text"><?= htmlspecialchars($usr['fecha_creacion']) ?></span></td>
+
+                                    <td>
+                                        <span class="text-muted-cell">
+                                            <?= htmlspecialchars($usr['institucion']) ?>
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <span class="type-tag purple">
+                                            <?= htmlspecialchars($usr['rol']) ?>
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <span class="date-text">
+                                            <?= date('d/m/Y H:i', strtotime($usr['fecha_creacion'])) ?>
+                                        </span>
+                                    </td>
+
                                     <td style="text-align: center;">
-                                        <a href="editarUsuario.php?id=<?= $usr['id_usuario'] ?>" class="tool-btn"
-                                            title="Editar">
+
+                                        <a
+                                            href="editarUsuario.php?id=<?= $usr['id_usuario'] ?>"
+                                            class="tool-btn"
+                                            title="Editar"
+                                        >
                                             <i class="fa-solid fa-pen"></i>
                                         </a>
+
                                     </td>
+
                                 </tr>
+
                             <?php endforeach; ?>
+
                         <?php else: ?>
+
                             <tr>
-                                <td colspan="6" style="text-align: center;">No se encontraron usuarios registrados.</td>
+                                <td colspan="6" style="text-align:center;">
+                                    No se encontraron usuarios registrados.
+                                </td>
                             </tr>
+
                         <?php endif; ?>
+
                     </tbody>
+
                 </table>
+
             </div>
 
         </div>
@@ -667,8 +770,8 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
                 selectZona.value = '';
             }
 
-            // 2. DIRECCIÓN DE RESIDENCIA: No obligatoria para Directivo ('2')
-            if (idRol === "2") {
+            // 2. DIRECCIÓN DE RESIDENCIA: No se solicita para Directivos ('2') ni Docentes ('3')
+            if (idRol === "2" || idRol === "3") {
                 grupoDireccion.style.display = 'none';
                 inputDireccion.removeAttribute('required');
                 inputDireccion.value = '';
@@ -738,25 +841,55 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
         
         //hace funcional la barra de busqueda
         document.addEventListener('DOMContentLoaded', () => {
+
             const searchInput = document.getElementById('searchInput');
+            const roleFilter = document.getElementById('roleFilter');
             const filas = document.querySelectorAll('#userTable tbody tr');
 
-            searchInput.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase().trim();
+            function filtrarUsuarios() {
 
-                filas.forEach(fila =>{
-                    //trae todo el texto de la fila
-                    const textoFila = fila.textContent.toLocaleLowerCase();
+                const textoBusqueda = searchInput.value.toLowerCase().trim();
+                const rolSeleccionado = roleFilter.value.toLowerCase().trim();
 
-                    if (textoFila.includes(searchTerm)) {
+                filas.forEach(fila => {
+
+                    // Evita intentar filtrar la fila de "No se encontraron usuarios"
+                    if (fila.cells.length < 4) {
+                        return;
+                    }
+
+                    // Todo el contenido de la fila
+                    const textoFila = fila.textContent.toLowerCase();
+
+                    // El rol está en la cuarta columna
+                    const rolUsuario = fila.cells[3].textContent.toLowerCase().trim();
+
+                    // Comprobar búsqueda
+                    const coincideBusqueda = textoFila.includes(textoBusqueda);
+
+                    // Comprobar rol
+                    const coincideRol =
+                        rolSeleccionado === '' ||
+                        rolUsuario === rolSeleccionado;
+
+                    // Mostrar solamente si cumple ambos filtros
+                    if (coincideBusqueda && coincideRol) {
                         fila.style.display = '';
-                    }else{
+                    } else {
                         fila.style.display = 'none';
                     }
-                })
 
-            })
-        })
+                });
+            }
+
+            // Buscar mientras escribe
+            searchInput.addEventListener('input', filtrarUsuarios);
+
+            // Filtrar al cambiar el rol
+            roleFilter.addEventListener('change', filtrarUsuarios);
+
+        });
+
     </script>
 
 </body>
