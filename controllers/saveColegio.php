@@ -17,12 +17,9 @@ if ($_POST) {
     $rutaFoto1 = "";
     if (isset($_FILES['imagen_apoyo_1']) && $_FILES['imagen_apoyo_1']['error'] == 0) {
         $nombreImagen = time() . "_" . $_FILES['imagen_apoyo_1']['name'];
-        $directorioDestino = "../public/uploads/vehiculos/";
+        $directorioDestino = "../assets/img/logo_colegio/";
 
-        // Crear la carpeta si no existe
-        if (!file_exists($directorioDestino)) {
-            mkdir($directorioDestino, 0777, true);
-        }
+
 
         $rutaFoto1 = $directorioDestino . $nombreImagen;
         move_uploaded_file($_FILES['imagen_apoyo_1']['tmp_name'], $rutaFoto1);
