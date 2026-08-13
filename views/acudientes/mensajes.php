@@ -1,4 +1,4 @@
-<?php include("../controllers/SessionAcudienteController.php"); ?>
+<?php include("../../controllers/SessionAcudienteController.php"); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

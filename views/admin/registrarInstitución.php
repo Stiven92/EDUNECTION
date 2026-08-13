@@ -1,3 +1,5 @@
+<?php include("../../controllers/SessionAdministradorController.php"); ?>
+
 <?php
 require_once "../../controllers/ObtenerDatosUsuariosController.php";
 ?>

@@ -1,5 +1,4 @@
-<?php include("../controllers/SessionEstudianteController.php"); ?>
-
+<?php include("../../controllers/SessionEstudianteController.php"); ?>
 <!DOCTYPE html>
 <html lang="es">
 

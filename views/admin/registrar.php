@@ -1,6 +1,9 @@
-<?php
+
+<?php include("../../controllers/SessionAdministradorController.php"); ?>
+
 require_once "../../controllers/ObtenerDatosUsuariosController.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
