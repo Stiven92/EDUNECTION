@@ -1,7 +1,7 @@
 
-<?php include("../../controllers/SessionAdministradorController.php"); ?>
+<?php //include("../../controllers/SessionAdministradorController.php"); ?>
 
-require_once "../../controllers/ObtenerDatosUsuariosController.php";
+<?php require_once "../../controllers/ObtenerDatosUsuariosController.php";
 ?>
 
 <!DOCTYPE html>
@@ -400,69 +400,648 @@ require_once "../../controllers/ObtenerDatosUsuariosController.php";
             </form>
         </div>
 
+
+
         <!-- OPCIÓN 2: Carga Masiva -->
         <div id="tab-masiva" class="publish-card tab-content carga-masiva-card" style="display: none;">
-            <form class="publish-form" action="../../controllers/cargaMasivaController.php" method="POST"
+
+            <!-- =========================================
+                 FORMULARIO DE CARGA
+                 ========================================= -->
+
+            <form class="publish-form"
+                action="../../controllers/cargaMasivaController.php"
+                method="POST"
                 enctype="multipart/form-data">
 
+                <!-- TÍTULO -->
                 <div class="form-section-title">
-                    <i class="fa-solid fa-file-import"></i> Carga Masiva de Cuentas de Usuario
+                    <i class="fa-solid fa-file-import"></i>
+                    Carga Masiva de Cuentas de Usuario
                 </div>
 
+
+                <!-- DESCRIPCIÓN -->
                 <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">
                     Sube un archivo (.xlsx, .csv o .txt) que contenga la información de los usuarios.
                 </p>
 
-                <!-- Selector de Tipo/Rol de Usuario -->
+
+                <!-- =========================================
+                     SELECTOR DE TIPO / ROL
+                     ========================================= -->
+
                 <div class="form-group" style="margin-bottom: 20px;">
-                    <label for="rol_usuario" style="display: block; font-weight: 600; margin-bottom: 8px;">
-                        <i class="fa-solid fa-user-gear"></i> Tipo de usuario a registrar:
+
+                    <label for="rol_usuario"
+                        style="display: block; font-weight: 600; margin-bottom: 8px;">
+
+                        <i class="fa-solid fa-user-gear"></i>
+                        Tipo de usuario a registrar:
+
                     </label>
 
-                    <select name="rol_usuario" id="rol_usuario" class="form-control" required
-                        style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;"
+
+                    <select name="rol_usuario"
+                        id="rol_usuario"
+                        class="form-control"
+                        required
+                        style="width: 50%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;"
                         onchange="cambiarPlantilla()">
 
                         <?php foreach ($roles as $rol): ?>
+
                             <option value="<?= $rol['id_rol'] ?>"
                                 data-plantilla="../../publics/plantillas/plantilla_<?= strtolower($rol['nombre']) ?>.xlsx">
+
                                 <?= htmlspecialchars($rol['nombre']) ?>
+
                             </option>
+
                         <?php endforeach; ?>
 
                     </select>
+
                 </div>
 
-                <!-- Dropzone de Carga de Archivo -->
+
+                <!-- =========================================
+                     ZONA DE CARGA DEL ARCHIVO
+                     ========================================= -->
+
                 <div class="file-upload-dropzone">
+
                     <i class="fa-solid fa-cloud-arrow-up dropzone-icon"></i>
+
+
                     <div class="dropzone-text">
-                        <span id="file-name-display">Arrastra y suelta tu archivo aquí o haz clic para buscar</span>
-                        <small>Formatos permitidos: .csv, .txt, .xlsx (Máx. 10MB)</small>
+
+                        <span id="file-name-display">
+                            Arrastra y suelta tu archivo aquí o haz clic para buscar
+                        </span>
+
+                        <small>
+                            Formatos permitidos: .csv, .txt, .xlsx (Máx. 10MB)
+                        </small>
+
                     </div>
-                    <input type="file" name="archivoPlano" id="archivoPlano" class="file-input-hidden"
-                        accept=".xls, .xlsx" required onchange="showFileName(this)">
+
+
+                    <input type="file"
+                        name="archivoPlano"
+                        id="archivoPlano"
+                        class="file-input-hidden"
+                        accept=".xls, .xlsx"
+                        required
+                        onchange="showFileName(this)">
+
                 </div>
+
+
+                <!-- =========================================
+                     BOTONES DE ACCIÓN
+                     ========================================= -->
 
                 <div class="publish-actions"
                     style="display: flex; justify-content: space-between; align-items: center; margin-top: 25px;">
-                    <!-- Botón a la izquierda -->
-                    <a href="dashboardAdmin.php" class="btn-cancel">Cancelar</a>
 
-                    <!-- Grupo de acciones a la derecha -->
+                    <!-- CANCELAR -->
+
+                    <a href="dashboardAdmin.php"
+                        class="btn-cancel">
+
+                        Cancelar
+
+                    </a>
+
+
+                    <!-- ACCIONES -->
+
                     <div style="display: flex; gap: 10px; align-items: center;">
-                        <a href="../../publics/plantillas/plantilla_carga_usuarios.xlsx" id="btn-descargar-plantilla"
-                            download class="btn-action download" style="text-decoration: none;">
-                            <i class="fa-solid fa-file-excel"></i> Descargar Plantilla
+
+                        <!-- DESCARGAR PLANTILLA -->
+
+                        <a href="../../publics/plantillas/plantilla_carga_usuarios.xlsx"
+                            id="btn-descargar-plantilla"
+                            download
+                            class="btn-action download"
+                            style="text-decoration: none;">
+
+                            <i class="fa-solid fa-file-excel"></i>
+
+                            Descargar Plantilla
+
                         </a>
 
-                        <button type="submit" class="btn-publish">
-                            <i class="fa-solid fa-upload"></i> Procesar Usuarios
+
+                        <!-- PROCESAR USUARIOS -->
+
+                        <button type="submit"
+                            class="btn-publish">
+
+                            <i class="fa-solid fa-upload"></i>
+
+                            Procesar Usuarios
+
                         </button>
+
                     </div>
+
                 </div>
 
             </form>
+
+
+            <!-- =========================================
+                 TARJETA DE INSTRUCCIONES
+                 ========================================= -->
+
+            <div class="bulk-instructions-card">
+
+
+                <!-- =====================================
+                     ENCABEZADO
+                     ===================================== -->
+
+                <div class="bulk-instructions-header">
+
+                    <div class="bulk-instructions-icon">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Instrucciones para la carga masiva
+                        </h3>
+
+                        <p>
+                            Ten en cuenta estas recomendaciones antes de procesar los usuarios.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <br>
+
+
+                <!-- =====================================
+                     INSTRUCCIONES GENERALES
+                     ===================================== -->
+
+                <div class="bulk-instructions-grid">
+
+
+                    <!-- 1 -->
+
+                    <div class="bulk-instruction-item">
+
+                        <span class="instruction-number">
+                            1
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Selecciona el rol
+                            </strong>
+
+                            <p>
+                                Elige correctamente el tipo de usuario que vas a registrar.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 2 -->
+
+                    <div class="bulk-instruction-item">
+
+                        <span class="instruction-number">
+                            2
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Utiliza la plantilla correcta
+                            </strong>
+
+                            <p>
+                                Descarga y utiliza la plantilla correspondiente al rol seleccionado.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 3 -->
+
+                    <div class="bulk-instruction-item">
+
+                        <span class="instruction-number">
+                            3
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                No modifiques las columnas
+                            </strong>
+
+                            <p>
+                                Conserva los nombres y el orden de las columnas de la plantilla.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 4 -->
+
+                    <div class="bulk-instruction-item">
+
+                        <span class="instruction-number">
+                            4
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Revisa los datos
+                            </strong>
+
+                            <p>
+                                Verifica que los campos obligatorios estén completos y correctamente diligenciados.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 5 -->
+
+                    <div class="bulk-instruction-item">
+
+                        <span class="instruction-number">
+                            5
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Evita duplicados
+                            </strong>
+
+                            <p>
+                                Comprueba que no existan usuarios repetidos antes de cargar el archivo.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 6 -->
+
+                    <div class="bulk-instruction-item">
+
+                        <span class="instruction-number">
+                            6
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Verifica el archivo
+                            </strong>
+
+                            <p>
+                                Asegúrate de cargar el archivo correspondiente al rol seleccionado.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+                     SECCIÓN DE VALORES ID
+                     ========================================= -->
+
+                <div class="bulk-id-section">
+
+
+                    <!-- TÍTULO -->
+
+                    <div class="bulk-id-title">
+
+                        <i class="fa-solid fa-list-check"></i>
+
+                        <h4>
+                            Valores para los campos ID
+                        </h4>
+
+                    </div>
+
+
+                    <!-- DESCRIPCIÓN -->
+
+                    <p class="bulk-id-description">
+
+                        Algunos campos de la plantilla requieren un ID numérico.
+                        Utiliza únicamente los valores correspondientes a cada opción.
+                        No escribas el nombre del dato en estos campos.
+
+                    </p>
+
+
+                    <!-- =====================================
+                         GRUPOS DE ID
+                         ===================================== -->
+
+                    <div class="bulk-id-grid">
+
+
+                        <!-- =================================
+                             TIPO DE DOCUMENTO
+                             ================================= -->
+
+                        <div class="bulk-id-group">
+
+                            <div class="bulk-id-group-title">
+                                ID Tipo de Documento
+                            </div>
+
+
+                            <div class="bulk-id-list">
+
+                                <span>
+                                    <strong>1</strong> — Tarjeta de Identidad
+                                </span>
+
+                                <span>
+                                    <strong>2</strong> — Cédula de Ciudadanía
+                                </span>
+
+                                <span>
+                                    <strong>3</strong> — Registro Civil
+                                </span>
+
+                                <span>
+                                    <strong>4</strong> — Cédula de Extranjería
+                                </span>
+
+                                <span>
+                                    <strong>5</strong> — Pasaporte
+                                </span>
+
+                                <span>
+                                    <strong>6</strong> — Permiso por Protección Temporal
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =================================
+                             EPS
+                             ================================= -->
+
+                        <div class="bulk-id-group">
+
+                            <div class="bulk-id-group-title">
+                                ID EPS
+                            </div>
+
+
+                            <div class="bulk-id-list">
+
+                                <span>
+                                    <strong>1</strong> — Nueva EPS
+                                </span>
+
+                                <span>
+                                    <strong>2</strong> — Sura
+                                </span>
+
+                                <span>
+                                    <strong>3</strong> — Sanitas
+                                </span>
+
+                                <span>
+                                    <strong>4</strong> — Compensar
+                                </span>
+
+                                <span>
+                                    <strong>5</strong> — Famisanar
+                                </span>
+
+                                <span>
+                                    <strong>6</strong> — Salud Total
+                                </span>
+
+                                <span>
+                                    <strong>7</strong> — Coosalud
+                                </span>
+
+                                <span>
+                                    <strong>8</strong> — Aliansalud
+                                </span>
+
+                                <span>
+                                    <strong>9</strong> — Capital Salud
+                                </span>
+
+                                <span>
+                                    <strong>10</strong> — Mutual Ser
+                                </span>
+
+                                <span>
+                                    <strong>11</strong> — Emssanar
+                                </span>
+
+                                <span>
+                                    <strong>12</strong> — SOS
+                                </span>
+
+                                <span>
+                                    <strong>13</strong> — Asmet Salud
+                                </span>
+
+                                <span>
+                                    <strong>14</strong> — Comfachocó
+                                </span>
+
+                                <span>
+                                    <strong>15</strong> — No aplica
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =================================
+                             TIPO DE SANGRE
+                             ================================= -->
+
+                        <div class="bulk-id-group">
+
+                            <div class="bulk-id-group-title">
+                                ID Tipo de Sangre
+                            </div>
+
+
+                            <div class="bulk-id-list">
+
+                                <span>
+                                    <strong>1</strong> — 0+
+                                </span>
+
+                                <span>
+                                    <strong>2</strong> — 0-
+                                </span>
+
+                                <span>
+                                    <strong>3</strong> — A+
+                                </span>
+
+                                <span>
+                                    <strong>4</strong> — A-
+                                </span>
+
+                                <span>
+                                    <strong>5</strong> — B+
+                                </span>
+
+                                <span>
+                                    <strong>6</strong> — B-
+                                </span>
+
+                                <span>
+                                    <strong>7</strong> — AB+
+                                </span>
+
+                                <span>
+                                    <strong>8</strong> — AB-
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =================================
+                             SEXO
+                             ================================= -->
+
+                        <div class="bulk-id-group">
+
+                            <div class="bulk-id-group-title">
+                                ID Sexo
+                            </div>
+
+
+                            <div class="bulk-id-list">
+
+                                <span>
+                                    <strong>1</strong> — Masculino
+                                </span>
+
+                                <span>
+                                    <strong>2</strong> — Femenino
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =================================
+                             MUNICIPIO
+                             ================================= -->
+
+                        <div class="bulk-id-group">
+
+                            <div class="bulk-id-group-title">
+                                ID Municipio
+                            </div>
+
+
+                            <div class="bulk-id-list">
+
+                                <span>
+                                    <strong>1</strong> — Agua de Dios
+                                </span>
+
+                                <span>
+                                    <strong>2</strong> — Albán
+                                </span>
+
+                                <span>
+                                    <strong>3</strong> — Anapoima
+                                </span>
+
+                                <span>
+                                    <strong>4</strong> — Anolaima
+                                </span>
+
+                                <span>
+                                    <strong>5</strong> — Arbeláez
+                                </span>
+
+                                <span>
+                                    <strong>6</strong> — Beltrán
+                                </span>
+
+                                <span>
+                                    <strong>7</strong> — Caparrapí
+                                </span>
+
+                                <span>
+                                    <strong>8</strong> — Chía
+                                </span>
+
+                                <span>
+                                    <strong>9</strong> — Facatativá
+                                </span>
+
+                                <span>
+                                    <strong>10</strong> — Guaduas
+                                </span>
+
+                                <span>
+                                    <strong>11</strong> — Sasaima
+                                </span>
+
+                                <span>
+                                    <strong>12</strong> — Villeta
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
         <!-- OPCIÓN 3: Listado de Usuarios Registrados -->

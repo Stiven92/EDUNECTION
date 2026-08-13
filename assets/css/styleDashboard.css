@@ -3759,3 +3759,223 @@ body {
 #grupo-direccion {
     transform: translateY(5px);
 }
+
+/* =========================================
+   TARJETA DE INSTRUCCIONES - CARGA MASIVA
+   ========================================= */
+
+.bulk-instructions-card {
+    margin-top: 18px;
+    padding: 24px 28px;
+
+    background: #ffffff;
+    border: 1px solid #e5eaf2;
+    border-radius: 14px;
+
+    box-shadow: 0 4px 14px rgba(30, 60, 90, 0.05);
+}
+
+
+/* Encabezado */
+
+.bulk-instructions-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 22px;
+}
+
+.bulk-instructions-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #eef5ff;
+    color: var(--primary-blue);
+
+    font-size: 18px;
+}
+
+.bulk-instructions-header h3 {
+    margin: 0 0 4px;
+
+    font-size: 1.08rem;
+    font-weight: 700;
+
+    color: var(--text-dark);
+}
+
+.bulk-instructions-header p {
+    margin: 0;
+
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+
+/* =========================================
+   INSTRUCCIONES GENERALES
+   ========================================= */
+
+.bulk-instructions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px 40px;
+
+    margin-bottom: 25px;
+}
+
+.bulk-instruction-item {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 12px;
+}
+
+.instruction-number {
+    min-width: 29px;
+    height: 29px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eef5ff;
+    color: var(--primary-blue);
+
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.bulk-instruction-item strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 0.88rem;
+    font-weight: 700;
+
+    color: var(--text-dark);
+}
+
+.bulk-instruction-item p {
+    margin: 0;
+
+    font-size: 0.83rem;
+    line-height: 1.5;
+
+    color: var(--text-muted);
+}
+
+
+
+/* =========================================
+   SECCIÓN DE IDs
+   ========================================= */
+
+.bulk-id-section {
+    padding-top: 22px;
+
+    border-top: 1px solid #e8edf4;
+}
+
+.bulk-id-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 7px;
+}
+
+.bulk-id-title i {
+    color: var(--primary-blue);
+    font-size: 17px;
+}
+
+.bulk-id-title h4 {
+    margin: 0;
+
+    font-size: 0.98rem;
+    font-weight: 700;
+
+    color: var(--text-dark);
+}
+
+.bulk-id-description {
+    margin: 0 0 18px;
+
+    font-size: 0.83rem;
+    line-height: 1.5;
+
+    color: var(--text-muted);
+}
+
+
+/* Tarjetas de cada grupo de IDs */
+
+.bulk-id-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+.bulk-id-group {
+    padding: 15px 17px;
+
+    background: #f8faff;
+
+    border: 1px solid #e5eaf2;
+    border-radius: 10px;
+}
+
+.bulk-id-group-title {
+    margin-bottom: 10px;
+
+    font-size: 0.86rem;
+    font-weight: 700;
+
+    color: var(--primary-blue);
+}
+
+.bulk-id-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 5px 20px;
+}
+
+.bulk-id-list span {
+    font-size: 0.78rem;
+    line-height: 1.5;
+
+    color: var(--text-muted);
+}
+
+.bulk-id-list strong {
+    color: var(--text-dark);
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .bulk-instructions-grid,
+    .bulk-id-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bulk-instructions-card {
+        padding: 20px;
+    }
+
+}
