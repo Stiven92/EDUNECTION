@@ -11,22 +11,22 @@ class Consultas
 		$this->conexion = $cnn->get_conexion();
 	}
 
-
+//para el login ------------------------------------------------------------------- 
 	public function getUserUsuario($correo){
 		
-			$sql = 'SELECT * FROM usuario WHERE correo=:correo ';
-			$res = $this->conexion->prepare($sql);
-			$res->bindParam(':correo', $correo);
+		$sql = 'SELECT * FROM usuario WHERE correo=:correo ';
+		$res = $this->conexion->prepare($sql);
+		$res->bindParam(':correo', $correo);
 			
-			try {
-				$res->execute();
-			    $f = $res->fetch();
-			    return $f;
-			} catch (Exception $e) {
-				echo "<script>alert('Error al buscar usuario!!')</script>";
-				echo "<script>location.href='../views/login.php'</script>";
-			}
+		try {
+			$res->execute();
+		    $f = $res->fetch();
+		    return $f;
+		} catch (Exception $e) {
+		echo "<script>alert('Error al buscar usuario!!')</script>";
+		echo "<script>location.href='../views/login.php'</script>";
 		}
+	}
 
 	
 
@@ -957,7 +957,7 @@ class Consultas
 
 	public function obtenerInstituciones()
 	{
-		$sql = "SELECT id_institucion, nombre FROM institucion WHERE estado = 'Activa'";
+		$sql = "SELECT * FROM institucion WHERE estado = 'Activa'";
 		$stmt = $this->conexion->prepare($sql);
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);

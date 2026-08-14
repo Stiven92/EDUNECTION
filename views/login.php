@@ -37,18 +37,26 @@ require_once "../controllers/ObtenerDatosUsuariosController.php";
             <form action="../controllers/LoginController.php" method="POST">
                 
                 <!-- Selección de Institución Educativa -->
+
+
+                <?php
+                // Captura el 'id' enviado por la URL. Si no viene ninguno, queda vacío o null
+                $id_seleccionado = $_GET['id'] ?? null; 
+                ?>
+
                 <div class="form-group">
                     <label for="id_institucion" class="input-label">Institución Educativa</label>
                     <select id="id_institucion" name="id_institucion" class="custom-select" required>
-                        <option value="" disabled selected>Seleccione Institución...</option>
+                        <!-- Si no viene ningún id por URL, muestra este placeholder seleccionado -->
+                        <option value="" disabled <?= empty($id_seleccionado) ? 'selected' : '' ?>>Seleccione Institución...</option>
+                        
                         <?php foreach ($instituciones as $inst): ?>
-                            <option value="<?= $inst['id_institucion'] ?>">
+                            <option value="<?= $inst['id_institucion'] ?>" <?= ($inst['id_institucion'] == $id_seleccionado) ? 'selected' : '' ?>>
                                 <?= htmlspecialchars($inst['nombre']) ?>
                             </option>
                         <?php endforeach; ?>
                     </select>
                 </div>
-
                 <!-- Selección de Rol de Usuario -->
                 <div class="form-group">
                     <label for="id_perfil" class="input-label">Rol del Usuario</label>

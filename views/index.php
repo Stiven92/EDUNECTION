@@ -1,10 +1,13 @@
+
+	<?php require_once "../controllers/ObtenerDatosUsuariosController.php";
+	?>
 <!DOCTYPE html>
 <html lang="es">
 
 	<?php 
     include'layout/head.php'
 	 ?>
-	
+
     <body data-spy="scroll" data-offset="80">
 
 		<!-- START PRELOADER -->
@@ -260,84 +263,25 @@
 		<!-- START COURSE -->
 		<section class="home_course section-padding">
 			<div class="container">
-
-				<div class="row">
-					<div class="col-lg-8 col-sm-6 col-xs-12">
-						<div class="section-title">
-							<h2>Explora todas nuestras <b>Instituciones Educativas</b> asociadas</h2>
-						</div>
-					</div><!--- END COL -->
-
-					<div class="col-lg-4 col-sm-6 col-xs-12">
-						<div class="cour_btn">
-							<a href="institutions.php" class="btn_one">
-								Ver instituciones <i class="ti-arrow-top-right"></i>
-							</a>
-						</div>
-					</div><!--- END COL -->
-
-				</div><!--- END ROW -->
-
 				<div class="row">
 
-					<div class="col-lg-4 col-sm-6 col-xs-12">
-						<div class="single_course">
-							<div class="single_c_img">
-								<img src="../assets/img/course/1.png" class="img-fluid" alt="institution-image" />
-								<span>Oficial</span>
+					<?php foreach ($instituciones as $f): ?>
+						<div class="col-lg-4 col-sm-6 col-xs-12">
+							<div class="single_course">
+								<div class="single_c_img">
+									<img src="<?= $f['logo']; ?>" class="img-fluid" alt="institution-image" />
+									
+								</div>
+								<h4><a href="login.php?id=<?= $f['id_institucion']; ?>"><?= $f['nombre']; ?></a></h4>
+								<p><span class="ti-email"></span> <?= $f['correo']; ?></p>
+								<br>
+								<p><span class="ti-world"></span> <?= $f['numero_telefonico']; ?></p>
+	
 							</div>
-
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-
-							<h4><a href="institutions.php">Institución Educativa San José</a></h4>
-
-							<p><span class="ti-book"></span> Educación Básica y Media</p>
-							<p><span class="ti-world"></span> Gestión académica digital</p>
-
-							<div class="price">Institución Pública</div>
-						</div>
-					</div><!-- END COL -->
-
-
-					<div class="col-lg-4 col-sm-6 col-xs-12">
-						<div class="single_course">
-							<div class="single_c_img">
-								<img src="../assets/img/course/2.png" class="img-fluid" alt="institution-image" />
-								<span>Privada</span>
-							</div>
-
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-
-							<h4><a href="institutions.php">Colegio Nueva Esperanza</a></h4>
-
-							<p><span class="ti-book"></span> Primaria y Bachillerato</p>
-							<p><span class="ti-world"></span> Comunicación escolar</p>
-
-							<div class="price">Institución Privada</div>
-						</div>
-					</div><!-- END COL -->
-
-
-					<div class="col-lg-4 col-sm-6 col-xs-12">
-						<div class="single_course">
-							<div class="single_c_img">
-								<img src="../assets/img/course/3.png" class="img-fluid" alt="institution-image" />
-								<span>Técnica</span>
-							</div>
-
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-
-							<h4><a href="institutions.php">Institución Técnica Industrial</a></h4>
-
-							<p><span class="ti-book"></span> Formación Técnica</p>
-							<p><span class="ti-world"></span> Seguimiento académico</p>
-
-							<div class="price">Educación Técnica</div>
-						</div>
-					</div><!-- END COL -->
+						</div><!-- END COL -->
+					<?php endforeach; ?>
 
 				</div><!--- END ROW -->
-
 			</div><!--- END CONTAINER -->
 		</section>
 		<!-- END COURSE -->
