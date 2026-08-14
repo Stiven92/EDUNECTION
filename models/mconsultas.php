@@ -906,6 +906,98 @@ class Consultas
 	}
 
 
+	public function obtenerUsuario($idUsuario){
+
+	    $sql = "SELECT
+	                u.id_usuario,
+	                u.id_institucion,
+	                i.nombre AS institucion,
+	                u.id_rol,
+	                r.nombre AS rol,
+	                u.correo,
+	                u.estado,
+	                u.fecha_creacion
+
+	            FROM usuario u
+
+	            INNER JOIN institucion i
+	                ON u.id_institucion = i.id_institucion
+
+	            INNER JOIN rol r
+	                ON u.id_rol = r.id_rol
+
+	            WHERE u.id_usuario = :id_usuario";
+
+	    $stmt = $this->conexion->prepare($sql);
+
+	    $stmt->bindParam(
+	        ':id_usuario',
+	        $idUsuario,
+	        PDO::PARAM_INT
+	    );
+
+	    $stmt->execute();
+
+	    return $stmt->fetch(PDO::FETCH_ASSOC);
+	}
+
+
+	public function obtenerAdministrador($idUsuario){
+
+	    $sql = "SELECT
+	                u.id_usuario,
+	                u.correo,
+	                u.estado,
+	                u.fecha_creacion,
+
+	                i.nombre AS institucion,
+
+	                r.nombre AS rol,
+
+	                a.id_administrador,
+	                a.nombres AS nombre,
+	                a.apellidos AS apellido,
+	                a.id_tipo_documento,
+	                td.nombre AS tipo_documento,
+	                a.numero_documento AS documento,
+	                a.numero_telefonico AS telefono
+
+	            FROM usuario u
+
+	            INNER JOIN administrador a
+	                ON u.id_usuario = a.id_usuario
+
+	            LEFT JOIN institucion i
+	                ON u.id_institucion = i.id_institucion
+
+	            LEFT JOIN rol r
+	                ON u.id_rol = r.id_rol
+
+	            LEFT JOIN tipo_documento td
+	                ON a.id_tipo_documento = td.id_tipo_documento
+
+	            WHERE u.id_usuario = :id_usuario";
+
+	    $stmt = $this->conexion->prepare($sql);
+
+	    $stmt->bindParam(':id_usuario', $idUsuario, PDO::PARAM_INT);
+
+	    $stmt->execute();
+
+	    return $stmt->fetch(PDO::FETCH_ASSOC);
+	}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
