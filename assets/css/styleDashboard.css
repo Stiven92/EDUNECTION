@@ -3979,3 +3979,29 @@ body {
     }
 
 }
+
+
+/* Enlace al perfil del usuario */
+.user-profile-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+/* Efecto al pasar sobre correo */
+.user-profile-link .student-name {
+    transition: color 0.2s ease;
+}
+
+.user-profile-link:hover .student-name {
+    color: var(--primary-blue);
+}
+
+/* Efecto sobre el icono */
+.user-profile-link .avatar-small {
+    transition: transform 0.2s ease;
+}
+
+.user-profile-link:hover .avatar-small {
+    transform: scale(1.05);
+}

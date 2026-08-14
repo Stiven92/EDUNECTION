@@ -894,11 +894,10 @@
 
         </div>
 
-        <!-- OPCIÓN 3: Listado de Usuarios Registrados -->
+
         <!-- OPCIÓN 3: Listado de Usuarios Registrados -->
         <div id="tab-listado" class="tab-content" style="display: none;">
 
-            <!-- Barra de acciones (Búsqueda + Botón de Descarga) -->
             <!-- Barra de búsqueda, filtros y descargas -->
             <div class="users-toolbar">
 
@@ -915,7 +914,7 @@
                     </div>
 
 
-                    <!-- FILTRO -->
+                    <!-- FILTRO POR ROL -->
                     <div class="role-filter-wrapper">
 
                         <select id="roleFilter" class="role-filter">
@@ -954,21 +953,35 @@
 
             </div>
 
-            <!-- Tabla de Usuarios -->
+
+            <!-- TABLA DE USUARIOS -->
+
             <div class="table-card users-table-container">
 
                 <table class="data-table users-table" id="userTable">
 
                     <thead>
+
                         <tr>
+
                             <th># ID</th>
+
                             <th>Correo / Usuario</th>
+
                             <th>Institución</th>
+
                             <th>Rol</th>
+
                             <th>Fecha Creación</th>
-                            <th style="text-align: center;">Acciones</th>
+
+                            <th style="text-align: center;">
+                                Acciones
+                            </th>
+
                         </tr>
+
                     </thead>
+
 
                     <tbody>
 
@@ -978,49 +991,94 @@
 
                                 <tr>
 
+                                    <!-- ID -->
                                     <td class="font-bold">
+
                                         #<?= $usr['id_usuario'] ?>
+
                                     </td>
 
+
+                                    <!-- CORREO + ICONO -->
                                     <td>
 
-                                        <div class="student-user-info">
+                                        <a
+                                            href="detalleUsuario.php?id=<?= $usr['id_usuario'] ?>"
+                                            class="user-profile-link"
+                                        >
 
-                                            <div class="avatar-small">
-                                                <i class="fa-regular fa-user"></i>
+                                            <div class="student-user-info">
+
+                                                <div class="avatar-small">
+
+                                                    <i class="fa-regular fa-user"></i>
+
+                                                </div>
+
+
+                                                <span class="student-name">
+
+                                                    <?= htmlspecialchars($usr['correo']) ?>
+
+                                                </span>
+
                                             </div>
 
-                                            <span class="student-name">
-                                                <?= htmlspecialchars($usr['correo']) ?>
-                                            </span>
-
-                                        </div>
+                                        </a>
 
                                     </td>
 
+
+                                    <!-- INSTITUCIÓN -->
                                     <td>
+
                                         <span class="text-muted-cell">
+
                                             <?= htmlspecialchars($usr['institucion']) ?>
+
                                         </span>
+
                                     </td>
 
+
+                                    <!-- ROL -->
                                     <td>
+
                                         <span class="type-tag purple">
+
                                             <?= htmlspecialchars($usr['rol']) ?>
+
                                         </span>
+
                                     </td>
 
+
+                                    <!-- FECHA -->
                                     <td>
+
                                         <span class="date-text">
-                                            <?= date('d/m/Y H:i', strtotime($usr['fecha_creacion'])) ?>
+
+                                            <?= date(
+                                                'd/m/Y H:i',
+                                                strtotime($usr['fecha_creacion'])
+                                            ) ?>
+
                                         </span>
+
                                     </td>
 
+
+                                    <!-- ACCIONES -->
                                     <td style="text-align: center;">
 
-                                        <a href="editarUsuario.php?id=<?= $usr['id_usuario'] ?>" class="tool-btn"
-                                            title="Editar">
+                                        <a
+                                            href="editarUsuario.php?id=<?= $usr['id_usuario'] ?>"
+                                            class="tool-btn"
+                                            title="Editar"
+                                        >
+
                                             <i class="fa-solid fa-pen"></i>
+
                                         </a>
 
                                     </td>
@@ -1029,12 +1087,20 @@
 
                             <?php endforeach; ?>
 
+
                         <?php else: ?>
 
                             <tr>
-                                <td colspan="6" style="text-align:center;">
+
+                                <td
+                                    colspan="6"
+                                    style="text-align:center;"
+                                >
+
                                     No se encontraron usuarios registrados.
+
                                 </td>
+
                             </tr>
 
                         <?php endif; ?>
