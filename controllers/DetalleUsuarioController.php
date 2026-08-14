@@ -1,8 +1,7 @@
 <?php
 
-    include("../models/mdb.php");
-    include("../models/mconsultas.php");
-
+    require_once __DIR__ . "/../models/mdb.php";
+    require_once __DIR__ . "/../models/mconsultas.php";
 
     $consultas = new Consultas();
 
@@ -15,6 +14,9 @@
 
         // Obtener información general del usuario
         $usuario = $consultas->obtenerUsuario($idUsuario);
+
+        // var_dump($usuario);
+        // die();
 
 
         // Verificar que el usuario exista

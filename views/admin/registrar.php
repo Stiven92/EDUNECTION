@@ -302,7 +302,6 @@
 
                             </select>
                         </div>
-                    </div>
 
                     <div class="form-group">
                         <label for="id_zona" class="input-label">Zona de Residencia</label>
