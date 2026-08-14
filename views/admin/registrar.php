@@ -1,4 +1,3 @@
-
 <?php //include("../../controllers/SessionAdministradorController.php"); ?>
 
 <?php require_once "../../controllers/ObtenerDatosUsuariosController.php";
@@ -118,8 +117,7 @@
 
                 <div class="form-group">
                     <label for="id_perfil" class="input-label">Rol del Usuario</label>
-                    <select id="id_perfil" name="id_perfil" class="custom-select" required
-                        style="width: 50%;"
+                    <select id="id_perfil" name="id_perfil" class="custom-select" required style="width: 50%;"
                         onchange="actualizarCamposPorRol(this.value)">
                         <option value="" disabled selected>Seleccione Rol...</option>
                         <?php foreach ($roles as $rol): ?>
@@ -180,8 +178,8 @@
                             <label for="documento_indentidad" class="input-label">Número de Documento</label>
                             <div class="input-with-icon">
                                 <i class="fa-solid fa-hashtag input-icon"></i>
-                                <input type="text" id="documento_indentidad" name="documento_indentidad" class="form-input"
-                                    placeholder="Ej: 1098765432">
+                                <input type="text" id="documento_indentidad" name="documento_indentidad"
+                                    class="form-input" placeholder="Ej: 1098765432">
                             </div>
                         </div>
                     </div>
@@ -293,111 +291,114 @@
                             <label for="id_municipio" class="input-label">Municipio de Residencia</label>
                             <select id="id_municipio" name="id_municipio" class="custom-select">
                                 <option value="" disabled selected>Seleccione Municipio...</option>
-                                <option value="1">Villeta</option>
-                                <option value="2">Bogotá D.C.</option>
-                                <option value="3">Facatativá</option>
-                                <option value="4">Guaduas</option>
-                                <option value="5">Sasaima</option>
-                                <option value="6">Albán</option>
-                                <option value="7">Otro</option>
+
+                                <?php if (!empty($municipios)): ?>
+                                    <?php foreach ($municipios as $mun): ?>
+                                        <option value="<?= $mun['id_municipio'] ?>">
+                                            <?= htmlspecialchars($mun['nombre']) ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id_zona" class="input-label">Zona de Residencia</label>
+                        <select id="id_zona" name="id_zona" class="custom-select">
+                            <option value="" disabled selected>Seleccione Zona...</option>
+                            <?php foreach ($zonas as $zona): ?>
+                                <option value="<?= $zona['id_zona'] ?>">
+                                    <?= htmlspecialchars($zona['nombre']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Campo EPS (Estudiante, Docente y Directivo) -->
+                <div class="form-grid-2" id="grupo-eps" style="display: none;">
+                    <div class="form-group">
+                        <label for="id_eps" class="input-label">EPS</label>
+                        <select id="id_eps" name="id_eps" class="custom-select">
+                            <option value="" disabled selected>Seleccione EPS...</option>
+                            <?php foreach ($listaEPS as $eps): ?>
+                                <option value="<?= $eps['id_eps'] ?>">
+                                    <?= htmlspecialchars($eps['nombre']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- PASO 4: Información Académica (Exclusivo para Estudiantes) -->
+                <div id="grupo-academico-estudiante" style="display: none;">
+                    <hr class="form-divider">
+                    <div class="form-section-title">
+                        <i class="fa-solid fa-graduation-cap"></i> 4. Información Académica y Matrícula
+                    </div>
+
+                    <br>
+
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="id_anio_lectivo" class="input-label">Año Lectivo</label>
+                            <select id="id_anio_lectivo" name="id_anio_lectivo" class="custom-select">
+                                <option value="" disabled selected>Seleccione Año...</option>
+                                <?php foreach ($aniosLectivos as $al): ?>
+                                    <option value="<?= $al['id_anio_lectivo'] ?>">
+                                        <?= htmlspecialchars($al['anio']) ?>
+                                    </option>
+                                <?php endforeach; ?>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="id_zona" class="input-label">Zona de Residencia</label>
-                            <select id="id_zona" name="id_zona" class="custom-select">
-                                <option value="" disabled selected>Seleccione Zona...</option>
-                                <?php foreach ($zonas as $zona): ?>
-                                    <option value="<?= $zona['id_zona'] ?>">
-                                        <?= htmlspecialchars($zona['nombre']) ?>
+                            <label for="id_grado" class="input-label">Grado</label>
+                            <select id="id_grado" name="id_grado" class="custom-select">
+                                <option value="" disabled selected>Seleccione Grado...</option>
+                                <?php foreach ($grados as $grado): ?>
+                                    <option value="<?= $grado['id_grado'] ?>">
+                                        <?= htmlspecialchars($grado['nombre']) ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
                     </div>
 
-                    <!-- Campo EPS (Estudiante, Docente y Directivo) -->
-                    <div class="form-grid-2" id="grupo-eps" style="display: none;">
+                    <div class="form-grid-2">
                         <div class="form-group">
-                            <label for="id_eps" class="input-label">EPS</label>
-                            <select id="id_eps" name="id_eps" class="custom-select">
-                                <option value="" disabled selected>Seleccione EPS...</option>
-                                <?php foreach ($listaEPS as $eps): ?>
-                                    <option value="<?= $eps['id_eps'] ?>">
-                                        <?= htmlspecialchars($eps['nombre']) ?>
+                            <label for="id_curso" class="input-label">Curso / Grupo</label>
+                            <select id="id_curso" name="id_curso" class="custom-select">
+                                <option value="" disabled selected>Seleccione Curso (Opcional)...</option>
+                                <?php foreach ($cursos as $curso): ?>
+                                    <option value="<?= $curso['id_curso'] ?>">
+                                        <?= htmlspecialchars($curso['nombre']) ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
                     </div>
 
-                    <!-- PASO 4: Información Académica (Exclusivo para Estudiantes) -->
-                    <div id="grupo-academico-estudiante" style="display: none;">
-                        <hr class="form-divider">
-                        <div class="form-section-title">
-                            <i class="fa-solid fa-graduation-cap"></i> 4. Información Académica y Matrícula
-                        </div>
-
-                        <br>
-
-                        <div class="form-grid-2">
-                            <div class="form-group">
-                                <label for="id_anio_lectivo" class="input-label">Año Lectivo</label>
-                                <select id="id_anio_lectivo" name="id_anio_lectivo" class="custom-select">
-                                    <option value="" disabled selected>Seleccione Año...</option>
-                                    <?php foreach ($aniosLectivos as $al): ?>
-                                        <option value="<?= $al['id_anio_lectivo'] ?>">
-                                            <?= htmlspecialchars($al['anio']) ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="id_grado" class="input-label">Grado</label>
-                                <select id="id_grado" name="id_grado" class="custom-select">
-                                    <option value="" disabled selected>Seleccione Grado...</option>
-                                    <?php foreach ($grados as $grado): ?>
-                                        <option value="<?= $grado['id_grado'] ?>">
-                                            <?= htmlspecialchars($grado['nombre']) ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-grid-2">
-                            <div class="form-group">
-                                <label for="id_curso" class="input-label">Curso / Grupo</label>
-                                <select id="id_curso" name="id_curso" class="custom-select">
-                                    <option value="" disabled selected>Seleccione Curso (Opcional)...</option>
-                                    <?php foreach ($cursos as $curso): ?>
-                                        <option value="<?= $curso['id_curso'] ?>">
-                                            <?= htmlspecialchars($curso['nombre']) ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="observaciones" class="input-label">Observaciones de Matrícula</label>
-                            <textarea id="observaciones" name="observaciones" class="form-input" rows="3"
-                                placeholder="Anotaciones o detalles adicionales sobre la matrícula..."></textarea>
-                        </div>
+                    <div class="form-group">
+                        <label for="observaciones" class="input-label">Observaciones de Matrícula</label>
+                        <textarea id="observaciones" name="observaciones" class="form-input" rows="3"
+                            placeholder="Anotaciones o detalles adicionales sobre la matrícula..."></textarea>
                     </div>
+                </div>
 
-                    <!-- Botones de Acción -->
-                    <div class="publish-actions">
-                        <a href="dashboardAdmin.php" class="btn-cancel">Cancelar</a>
-                        <button type="submit" class="btn-publish" id="btn-submit-text">
-                            <i class="fa-solid fa-user-check"></i> Registrar Usuario
-                        </button>
-                    </div>
+                <!-- Botones de Acción -->
+                <div class="publish-actions">
+                    <a href="dashboardAdmin.php" class="btn-cancel">Cancelar</a>
+                    <button type="submit" class="btn-publish" id="btn-submit-text">
+                        <i class="fa-solid fa-user-check"></i> Registrar Usuario
+                    </button>
+                </div>
 
-                </div> <!-- Cierre de #secciones-dinamicas -->
+        </div> <!-- Cierre de #secciones-dinamicas -->
 
-            </form>
+        </form>
         </div>
 
 
@@ -409,9 +410,7 @@
                  FORMULARIO DE CARGA
                  ========================================= -->
 
-            <form class="publish-form"
-                action="../../controllers/cargaMasivaController.php"
-                method="POST"
+            <form class="publish-form" action="../../controllers/cargaMasivaController.php" method="POST"
                 enctype="multipart/form-data">
 
                 <!-- TÍTULO -->
@@ -433,8 +432,7 @@
 
                 <div class="form-group" style="margin-bottom: 20px;">
 
-                    <label for="rol_usuario"
-                        style="display: block; font-weight: 600; margin-bottom: 8px;">
+                    <label for="rol_usuario" style="display: block; font-weight: 600; margin-bottom: 8px;">
 
                         <i class="fa-solid fa-user-gear"></i>
                         Tipo de usuario a registrar:
@@ -442,10 +440,7 @@
                     </label>
 
 
-                    <select name="rol_usuario"
-                        id="rol_usuario"
-                        class="form-control"
-                        required
+                    <select name="rol_usuario" id="rol_usuario" class="form-control" required
                         style="width: 50%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;"
                         onchange="cambiarPlantilla()">
 
@@ -487,13 +482,8 @@
                     </div>
 
 
-                    <input type="file"
-                        name="archivoPlano"
-                        id="archivoPlano"
-                        class="file-input-hidden"
-                        accept=".xls, .xlsx"
-                        required
-                        onchange="showFileName(this)">
+                    <input type="file" name="archivoPlano" id="archivoPlano" class="file-input-hidden"
+                        accept=".xls, .xlsx" required onchange="showFileName(this)">
 
                 </div>
 
@@ -507,8 +497,7 @@
 
                     <!-- CANCELAR -->
 
-                    <a href="dashboardAdmin.php"
-                        class="btn-cancel">
+                    <a href="dashboardAdmin.php" class="btn-cancel">
 
                         Cancelar
 
@@ -521,11 +510,8 @@
 
                         <!-- DESCARGAR PLANTILLA -->
 
-                        <a href="../../publics/plantillas/plantilla_carga_usuarios.xlsx"
-                            id="btn-descargar-plantilla"
-                            download
-                            class="btn-action download"
-                            style="text-decoration: none;">
+                        <a href="../../publics/plantillas/plantilla_carga_usuarios.xlsx" id="btn-descargar-plantilla"
+                            download class="btn-action download" style="text-decoration: none;">
 
                             <i class="fa-solid fa-file-excel"></i>
 
@@ -536,8 +522,7 @@
 
                         <!-- PROCESAR USUARIOS -->
 
-                        <button type="submit"
-                            class="btn-publish">
+                        <button type="submit" class="btn-publish">
 
                             <i class="fa-solid fa-upload"></i>
 
@@ -784,33 +769,17 @@
                                 ID Tipo de Documento
                             </div>
 
-
                             <div class="bulk-id-list">
-
-                                <span>
-                                    <strong>1</strong> — Tarjeta de Identidad
-                                </span>
-
-                                <span>
-                                    <strong>2</strong> — Cédula de Ciudadanía
-                                </span>
-
-                                <span>
-                                    <strong>3</strong> — Registro Civil
-                                </span>
-
-                                <span>
-                                    <strong>4</strong> — Cédula de Extranjería
-                                </span>
-
-                                <span>
-                                    <strong>5</strong> — Pasaporte
-                                </span>
-
-                                <span>
-                                    <strong>6</strong> — Permiso por Protección Temporal
-                                </span>
-
+                                <?php if (!empty($tiposDoc)): ?>
+                                    <?php foreach ($tiposDoc as $td): ?>
+                                        <span>
+                                            <strong><?= $td['id_tipo_documento'] ?></strong> —
+                                            <?= htmlspecialchars($td['nombre']) ?>
+                                        </span>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <span>No hay documentos registrados</span>
+                                <?php endif; ?>
                             </div>
 
                         </div>
@@ -826,69 +795,16 @@
                                 ID EPS
                             </div>
 
-
                             <div class="bulk-id-list">
-
-                                <span>
-                                    <strong>1</strong> — Nueva EPS
-                                </span>
-
-                                <span>
-                                    <strong>2</strong> — Sura
-                                </span>
-
-                                <span>
-                                    <strong>3</strong> — Sanitas
-                                </span>
-
-                                <span>
-                                    <strong>4</strong> — Compensar
-                                </span>
-
-                                <span>
-                                    <strong>5</strong> — Famisanar
-                                </span>
-
-                                <span>
-                                    <strong>6</strong> — Salud Total
-                                </span>
-
-                                <span>
-                                    <strong>7</strong> — Coosalud
-                                </span>
-
-                                <span>
-                                    <strong>8</strong> — Aliansalud
-                                </span>
-
-                                <span>
-                                    <strong>9</strong> — Capital Salud
-                                </span>
-
-                                <span>
-                                    <strong>10</strong> — Mutual Ser
-                                </span>
-
-                                <span>
-                                    <strong>11</strong> — Emssanar
-                                </span>
-
-                                <span>
-                                    <strong>12</strong> — SOS
-                                </span>
-
-                                <span>
-                                    <strong>13</strong> — Asmet Salud
-                                </span>
-
-                                <span>
-                                    <strong>14</strong> — Comfachocó
-                                </span>
-
-                                <span>
-                                    <strong>15</strong> — No aplica
-                                </span>
-
+                                <?php if (!empty($listaEPS)): ?>
+                                    <?php foreach ($listaEPS as $eps): ?>
+                                        <span>
+                                            <strong><?= $eps['id_eps'] ?></strong> — <?= htmlspecialchars($eps['nombre']) ?>
+                                        </span>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <span>No hay EPS registradas</span>
+                                <?php endif; ?>
                             </div>
 
                         </div>
@@ -904,41 +820,16 @@
                                 ID Tipo de Sangre
                             </div>
 
-
                             <div class="bulk-id-list">
-
-                                <span>
-                                    <strong>1</strong> — 0+
-                                </span>
-
-                                <span>
-                                    <strong>2</strong> — 0-
-                                </span>
-
-                                <span>
-                                    <strong>3</strong> — A+
-                                </span>
-
-                                <span>
-                                    <strong>4</strong> — A-
-                                </span>
-
-                                <span>
-                                    <strong>5</strong> — B+
-                                </span>
-
-                                <span>
-                                    <strong>6</strong> — B-
-                                </span>
-
-                                <span>
-                                    <strong>7</strong> — AB+
-                                </span>
-
-                                <span>
-                                    <strong>8</strong> — AB-
-                                </span>
-
+                                <?php if (!empty($tiposSangre)): ?>
+                                    <?php foreach ($tiposSangre as $ts): ?>
+                                        <span>
+                                            <strong><?= $ts['id_tipo_sangre'] ?></strong> — <?= htmlspecialchars($ts['tipo']) ?>
+                                        </span>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <span>No hay documentos registrados</span>
+                                <?php endif; ?>
                             </div>
 
                         </div>
@@ -980,57 +871,16 @@
                                 ID Municipio
                             </div>
 
-
                             <div class="bulk-id-list">
-
-                                <span>
-                                    <strong>1</strong> — Agua de Dios
-                                </span>
-
-                                <span>
-                                    <strong>2</strong> — Albán
-                                </span>
-
-                                <span>
-                                    <strong>3</strong> — Anapoima
-                                </span>
-
-                                <span>
-                                    <strong>4</strong> — Anolaima
-                                </span>
-
-                                <span>
-                                    <strong>5</strong> — Arbeláez
-                                </span>
-
-                                <span>
-                                    <strong>6</strong> — Beltrán
-                                </span>
-
-                                <span>
-                                    <strong>7</strong> — Caparrapí
-                                </span>
-
-                                <span>
-                                    <strong>8</strong> — Chía
-                                </span>
-
-                                <span>
-                                    <strong>9</strong> — Facatativá
-                                </span>
-
-                                <span>
-                                    <strong>10</strong> — Guaduas
-                                </span>
-
-                                <span>
-                                    <strong>11</strong> — Sasaima
-                                </span>
-
-                                <span>
-                                    <strong>12</strong> — Villeta
-                                </span>
-
+                                <?php if (!empty($municipios)): ?>
+                                    <?php foreach ($municipios as $mun): ?>
+                                        <span>
+                                            <strong><?= $mun['id_municipio'] ?></strong> — <?= htmlspecialchars($mun['nombre']) ?>
+                                        </span>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <span>No hay municipios registrados</span>
+                                <?php endif; ?>
                             </div>
 
                         </div>
@@ -1059,12 +909,8 @@
 
                         <i class="fa-solid fa-magnifying-glass search-icon"></i>
 
-                        <input
-                            type="text"
-                            class="search-input"
-                            id="searchInput"
-                            placeholder="Buscar usuario, correo o ID..."
-                        >
+                        <input type="text" class="search-input" id="searchInput"
+                            placeholder="Buscar usuario, correo o ID...">
 
                     </div>
 
@@ -1074,17 +920,12 @@
 
                         <select id="roleFilter" class="role-filter">
 
-                            <option value="">Todos los roles</option>
-
-                            <option value="Administrador">Administrador</option>
-
-                            <option value="Directivo">Directivo</option>
-
-                            <option value="Docente">Docente</option>
-
-                            <option value="Estudiante">Estudiante</option>
-
-                            <option value="Acudiente">Acudiente</option>
+                        <option value="" disabled selected>Seleccione Rol</option>
+                        <?php foreach ($roles as $rol): ?>
+                            <option value="<?= $rol['id_rol'] ?>">
+                                <?= htmlspecialchars($rol['nombre']) ?>
+                            </option>
+                        <?php endforeach; ?>
 
                         </select>
 
@@ -1098,19 +939,13 @@
                 <!-- DESCARGAS -->
                 <div class="users-downloads">
 
-                    <a
-                        href="../../controllers/exportarReporte.php"
-                        class="user-download-btn"
-                    >
+                    <a href="../../controllers/exportarReporte.php" class="user-download-btn">
                         <i class="fa-solid fa-file-excel"></i>
                         Reporte Excel (.xlsx)
                     </a>
 
 
-                    <a
-                        href="../../controllers/exportarPdf.php"
-                        class="user-download-btn"
-                    >
+                    <a href="../../controllers/exportarPdf.php" class="user-download-btn">
                         <i class="fa-solid fa-file-pdf"></i>
                         Reporte PDF (.pdf)
                     </a>
@@ -1120,7 +955,7 @@
             </div>
 
             <!-- Tabla de Usuarios -->
-           <div class="table-card users-table-container">
+            <div class="table-card users-table-container">
 
                 <table class="data-table users-table" id="userTable">
 
@@ -1183,11 +1018,8 @@
 
                                     <td style="text-align: center;">
 
-                                        <a
-                                            href="editarUsuario.php?id=<?= $usr['id_usuario'] ?>"
-                                            class="tool-btn"
-                                            title="Editar"
-                                        >
+                                        <a href="editarUsuario.php?id=<?= $usr['id_usuario'] ?>" class="tool-btn"
+                                            title="Editar">
                                             <i class="fa-solid fa-pen"></i>
                                         </a>
 
@@ -1420,7 +1252,7 @@
                 btnSubmit.innerHTML = '<i class="fa-solid fa-user-check"></i> Registrar Administrador';
             }
         }
-        
+
         //hace funcional la barra de busqueda
         document.addEventListener('DOMContentLoaded', () => {
 
