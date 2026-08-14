@@ -943,7 +943,7 @@
                     </a>
 
 
-                    <a href="../../controllers/exportarPdf.php" class="user-download-btn">
+                    <a href="../../controllers/exportarPdf.php" target="_blank" class="user-download-btn">
                         <i class="fa-solid fa-file-pdf"></i>
                         Reporte PDF (.pdf)
                     </a>
