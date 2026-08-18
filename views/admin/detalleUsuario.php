@@ -192,21 +192,6 @@ if (empty($nombreCompleto)) {
         <div class="detalle-grid">
 
 
-            <!-- ID -->
-
-            <div class="detalle-info">
-
-                <span class="detalle-label">
-                    ID Usuario
-                </span>
-
-                <span class="detalle-value">
-                    #<?= htmlspecialchars($idUsuario) ?>
-                </span>
-
-            </div>
-
-
             <!-- CORREO -->
 
             <div class="detalle-info">
@@ -827,23 +812,6 @@ if (empty($nombreCompleto)) {
 
                         <?= htmlspecialchars(
                             $detalle['estado_matricula'] ?? 'No registrado'
-                        ) ?>
-
-                    </span>
-
-                </div>
-
-
-                <div class="detalle-info">
-
-                    <span class="detalle-label">
-                        Fecha de matrícula
-                    </span>
-
-                    <span class="detalle-value">
-
-                        <?= htmlspecialchars(
-                            $detalle['fecha_matricula'] ?? 'No registrada'
                         ) ?>
 
                     </span>

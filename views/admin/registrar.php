@@ -915,20 +915,18 @@
 
                     <!-- FILTRO POR ROL -->
                     <div class="role-filter-wrapper">
-
                         <select id="roleFilter" class="role-filter">
+                            <!-- Opción para resetear el filtro -->
+                            <option value="">Todos los roles</option>
 
-                        <option value="" disabled selected>Seleccione Rol</option>
-                        <?php foreach ($roles as $rol): ?>
-                            <option value="<?= $rol['id_rol'] ?>">
-                                <?= htmlspecialchars($rol['nombre']) ?>
-                            </option>
-                        <?php endforeach; ?>
-
+                            <?php foreach ($roles as $rol): ?>
+                                <!-- Guardamos el NOMBRE en el value en lugar del ID -->
+                                <option value="<?= htmlspecialchars($rol['nombre']) ?>">
+                                    <?= htmlspecialchars($rol['nombre']) ?>
+                                </option>
+                            <?php endforeach; ?>
                         </select>
-
                         <i class="fa-solid fa-chevron-down"></i>
-
                     </div>
 
                 </div>
