@@ -988,6 +988,68 @@ class Consultas
 	}
 
 
+	public function obtenerDirectivo($idUsuario){
+
+	    $sql = "SELECT
+	                u.id_usuario,
+	                u.correo,
+	                u.estado,
+	                u.fecha_creacion,
+
+	                i.nombre AS institucion,
+
+	                r.nombre AS rol,
+
+	                d.id_directivo,
+	                d.nombres AS nombre,
+	                d.apellidos AS apellido,
+
+	                d.id_tipo_documento,
+	                td.nombre AS tipo_documento,
+
+	                d.numero_documento AS documento,
+	                d.numero_telefonico AS telefono,
+
+	                d.cargo,
+
+	                d.id_eps,
+	                e.nombre AS eps,
+
+	                d.id_tipo_sangre,
+	                ts.tipo AS tipo_sangre
+
+	            FROM usuario u
+
+	            INNER JOIN directivo d
+	                ON u.id_usuario = d.id_usuario
+
+	            LEFT JOIN institucion i
+	                ON u.id_institucion = i.id_institucion
+
+	            LEFT JOIN rol r
+	                ON u.id_rol = r.id_rol
+
+	            LEFT JOIN tipo_documento td
+	                ON d.id_tipo_documento = td.id_tipo_documento
+
+	            LEFT JOIN eps e
+	                ON d.id_eps = e.id_eps
+
+	            LEFT JOIN tipo_sangre ts
+	                ON d.id_tipo_sangre = ts.id_tipo_sangre
+
+	            WHERE u.id_usuario = :id_usuario";
+
+	    $stmt = $this->conexion->prepare($sql);
+
+	    $stmt->bindParam(':id_usuario', $idUsuario, PDO::PARAM_INT);
+
+	    $stmt->execute();
+
+	    return $stmt->fetch(PDO::FETCH_ASSOC);
+	}
+
+
 
 
 
