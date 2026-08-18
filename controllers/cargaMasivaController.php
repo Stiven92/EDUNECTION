@@ -239,7 +239,38 @@
                     $apellido = $sheet->getCell("e".$row)->getValue();
                     $id_tipo_doc = $sheet->getCell("f".$row)->getValue();
                     $documento_indentidad = $sheet->getCell("g".$row)->getValue();
+
+                    // FECHA DE NACIMIENTO
                     $fecha_nacimiento = $sheet->getCell("h".$row)->getValue();
+
+                    if (!empty($fecha_nacimiento)) {
+
+                        if (is_numeric($fecha_nacimiento)) {
+
+                            $fecha_nacimiento = Date::excelToDateTimeObject($fecha_nacimiento)
+                                ->format('Y-m-d');
+
+                        } else {
+
+                            $fecha = DateTime::createFromFormat(
+                                'd/m/Y',
+                                trim($fecha_nacimiento)
+                            );
+
+                            if ($fecha !== false) {
+                                $fecha_nacimiento = $fecha->format('Y-m-d');
+                            } else {
+                                $fecha_nacimiento = null;
+                            }
+
+                        }
+
+                    } else {
+
+                        $fecha_nacimiento = null;
+
+                    }
+
                     $sexo = $sheet->getCell("i".$row)->getValue();
                     $direccion = $sheet->getCell("j".$row)->getValue();
                     $id_municipio = $sheet->getCell("k".$row)->getValue();
