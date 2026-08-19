@@ -733,8 +733,7 @@ class Consultas
 	}
 
 
-	public function registrarMatriculaMasiva($idUsuario, $datos)
-	{
+	public function registrarMatriculaMasiva($idUsuario, $datos){
 
 		// Buscar el año lectivo activo
 		$sql = "SELECT id_anio_lectivo
@@ -988,7 +987,290 @@ class Consultas
 	}
 
 
+	public function obtenerDirectivo($idUsuario){
 
+	    $sql = "SELECT
+	                u.id_usuario,
+	                u.correo,
+	                u.estado,
+	                u.fecha_creacion,
+
+	                i.nombre AS institucion,
+
+	                r.nombre AS rol,
+
+	                d.id_directivo,
+	                d.nombres AS nombre,
+	                d.apellidos AS apellido,
+
+	                d.id_tipo_documento,
+	                td.nombre AS tipo_documento,
+
+	                d.numero_documento AS documento,
+	                d.numero_telefonico AS telefono,
+
+	                d.cargo,
+
+	                d.id_eps,
+	                e.nombre AS eps,
+
+	                d.id_tipo_sangre,
+	                ts.tipo AS tipo_sangre
+
+	            FROM usuario u
+
+	            INNER JOIN directivo d
+	                ON u.id_usuario = d.id_usuario
+
+	            LEFT JOIN institucion i
+	                ON u.id_institucion = i.id_institucion
+
+	            LEFT JOIN rol r
+	                ON u.id_rol = r.id_rol
+
+	            LEFT JOIN tipo_documento td
+	                ON d.id_tipo_documento = td.id_tipo_documento
+
+	            LEFT JOIN eps e
+	                ON d.id_eps = e.id_eps
+
+	            LEFT JOIN tipo_sangre ts
+	                ON d.id_tipo_sangre = ts.id_tipo_sangre
+
+	            WHERE u.id_usuario = :id_usuario";
+
+	    $stmt = $this->conexion->prepare($sql);
+
+	    $stmt->bindParam(':id_usuario', $idUsuario, PDO::PARAM_INT);
+
+	    $stmt->execute();
+
+	    return $stmt->fetch(PDO::FETCH_ASSOC);
+	}
+
+
+	public function obtenerDocente($idUsuario){
+
+	    $sql = "SELECT
+	                u.id_usuario,
+	                u.correo,
+	                u.estado,
+	                u.fecha_creacion,
+
+	                i.nombre AS institucion,
+
+	                r.nombre AS rol,
+
+	                d.id_docente,
+	                d.nombres AS nombre,
+	                d.apellidos AS apellido,
+
+	                d.id_tipo_documento,
+	                td.nombre AS tipo_documento,
+
+	                d.numero_documento AS documento,
+	                d.numero_telefonico AS telefono,
+
+	                d.especialidad,
+
+	                d.id_eps,
+	                e.nombre AS eps,
+
+	                d.id_tipo_sangre,
+	                ts.tipo AS tipo_sangre
+
+	            FROM usuario u
+
+	            INNER JOIN docente d
+	                ON u.id_usuario = d.id_usuario
+
+	            LEFT JOIN institucion i
+	                ON u.id_institucion = i.id_institucion
+
+	            LEFT JOIN rol r
+	                ON u.id_rol = r.id_rol
+
+	            LEFT JOIN tipo_documento td
+	                ON d.id_tipo_documento = td.id_tipo_documento
+
+	            LEFT JOIN eps e
+	                ON d.id_eps = e.id_eps
+
+	            LEFT JOIN tipo_sangre ts
+	                ON d.id_tipo_sangre = ts.id_tipo_sangre
+
+	            WHERE u.id_usuario = :id_usuario";
+
+	    $stmt = $this->conexion->prepare($sql);
+
+	    $stmt->bindParam(':id_usuario', $idUsuario, PDO::PARAM_INT);
+
+	    $stmt->execute();
+
+	    return $stmt->fetch(PDO::FETCH_ASSOC);
+	}
+
+
+	public function obtenerEstudiante($idUsuario){
+
+	    $sql = "SELECT
+	                u.id_usuario,
+	                u.correo,
+	                u.estado,
+	                u.fecha_creacion,
+
+	                i.nombre AS institucion,
+
+	                r.nombre AS rol,
+
+	                m.id_matricula,
+	                m.nombres AS nombre,
+	                m.apellidos AS apellido,
+
+	                m.id_tipo_documento,
+	                td.nombre AS tipo_documento,
+
+	                m.numero_documento AS documento,
+
+	                m.fecha_nacimiento,
+
+	                m.id_sexo,
+	                s.nombre AS sexo,
+
+	                m.direccion,
+
+	                m.id_municipio,
+	                mu.nombre AS municipio,
+
+	                m.id_zona,
+	                z.nombre AS zona,
+
+	                m.numero_telefonico AS telefono,
+
+	                m.id_eps,
+	                e.nombre AS eps,
+
+	                m.id_tipo_sangre,
+	                ts.tipo AS tipo_sangre,
+
+	                m.id_anio_lectivo,
+	                al.anio AS anio_lectivo,
+
+	                m.id_grado,
+	                g.nombre AS grado,
+
+	                m.id_curso,
+	                c.nombre AS curso,
+
+	                m.id_estado_matricula,
+	                em.nombre AS estado_matricula,
+
+	                m.fecha_matricula,
+	                m.observaciones
+
+	            FROM usuario u
+
+	            INNER JOIN matricula m
+	                ON u.id_usuario = m.id_usuario
+
+	            LEFT JOIN institucion i
+	                ON m.id_institucion = i.id_institucion
+
+	            LEFT JOIN rol r
+	                ON u.id_rol = r.id_rol
+
+	            LEFT JOIN tipo_documento td
+	                ON m.id_tipo_documento = td.id_tipo_documento
+
+	            LEFT JOIN sexo s
+	                ON m.id_sexo = s.id_sexo
+
+	            LEFT JOIN municipio mu
+	                ON m.id_municipio = mu.id_municipio
+
+	            LEFT JOIN zona z
+	                ON m.id_zona = z.id_zona
+
+	            LEFT JOIN eps e
+	                ON m.id_eps = e.id_eps
+
+	            LEFT JOIN tipo_sangre ts
+	                ON m.id_tipo_sangre = ts.id_tipo_sangre
+
+	            LEFT JOIN anio_lectivo al
+	                ON m.id_anio_lectivo = al.id_anio_lectivo
+
+	            LEFT JOIN grado g
+	                ON m.id_grado = g.id_grado
+
+	            LEFT JOIN curso c
+	                ON m.id_curso = c.id_curso
+
+	            LEFT JOIN estado_matricula em
+	                ON m.id_estado_matricula = em.id_estado_matricula
+
+	            WHERE u.id_usuario = :id_usuario";
+
+	    $stmt = $this->conexion->prepare($sql);
+
+	    $stmt->bindParam(':id_usuario', $idUsuario, PDO::PARAM_INT);
+
+	    $stmt->execute();
+
+	    return $stmt->fetch(PDO::FETCH_ASSOC);
+	}
+
+
+	public function obtenerAcudiente($idUsuario){
+
+	    $sql = "SELECT
+	                u.id_usuario,
+	                u.correo,
+	                u.estado,
+	                u.fecha_creacion,
+
+	                i.nombre AS institucion,
+
+	                r.nombre AS rol,
+
+	                a.id_acudiente,
+	                a.nombres AS nombre,
+	                a.apellidos AS apellido,
+
+	                a.id_tipo_documento,
+	                td.nombre AS tipo_documento,
+
+	                a.numero_documento AS documento,
+	                a.numero_telefonico AS telefono,
+
+	                a.direccion,
+
+	                a.ocupacion
+
+	            FROM usuario u
+
+	            INNER JOIN acudiente a
+	                ON u.id_usuario = a.id_usuario
+
+	            LEFT JOIN institucion i
+	                ON u.id_institucion = i.id_institucion
+
+	            LEFT JOIN rol r
+	                ON u.id_rol = r.id_rol
+
+	            LEFT JOIN tipo_documento td
+	                ON a.id_tipo_documento = td.id_tipo_documento
+
+	            WHERE u.id_usuario = :id_usuario";
+
+	    $stmt = $this->conexion->prepare($sql);
+
+	    $stmt->bindParam(':id_usuario', $idUsuario, PDO::PARAM_INT);
+
+	    $stmt->execute();
+
+	    return $stmt->fetch(PDO::FETCH_ASSOC);
+	}
 
 
 
