@@ -1,3 +1,7 @@
+	<?php require_once "../controllers/ObtenerDatosUsuariosController.php";
+	?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,7 +26,7 @@
 	                 data-wow-duration="1s"
 	                 data-wow-delay="0.3s">
 
-	                <h1>Instituciones</h1>
+	                <h1>Instituciones</h1> 
 
 	                <ul>
 	                    <li><a href="index.php">Inicio</a></li>
@@ -52,17 +56,15 @@
 
 				<div class="home_sb2">
 
-					<form action="#" class="banner_subs2">
+					<form action="institutions.php"  onsubmit="return false;" method="GET" class="banner_subs2">
 
-						<input type="text" 
+						<input type="text"
+						id="searchInput" 
 						class="form-control home_si2" 
 						placeholder="Buscar institución educativa"
-						required="required">
+						autocomplete="off">
 
 
-						<button type="submit" class="search-btn">
-						    <i class="fa fa-search"></i>
-						</button>
 
 					</form>
 
@@ -73,138 +75,57 @@
 		</div>
 		<!-- FIN BARRA DE BUSQUEDA -->
 
-        <div class="row">
-
-			<div class="col-lg-4 col-sm-6 col-xs-12">
-				<div class="single_course">
-			        <div class="single_c_img">
-			            <a href="institution_details.php">
-			                <img src="../assets/img/course/1.png" class="img-fluid" alt="institution-image" />
-			            </a>
-			            <span>Oficial</span>
-			        </div>
-
-					<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-
-					<h4><a href="institution_details.php">Institución Educativa San José</a></h4>
-
-					<p><span class="ti-book"></span> Educación Básica y Media</p>
-					<p><span class="ti-world"></span> Gestión académica digital</p>
-
-					<div class="price">Institución Pública</div>
-				</div>
-			</div><!-- END COL -->
-
-
-			<div class="col-lg-4 col-sm-6 col-xs-12">
-				<div class="single_course">
-					<div class="single_c_img">
-						<a href="institution_details.php">
-							<img src="../assets/img/course/2.png" class="img-fluid" alt="institution-image" />
-						</a>
-						<span>Privada</span>
-					</div>
-
-					<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-
-					<h4><a href="institution_details.php">Colegio Nueva Esperanza</a></h4>
-
-					<p><span class="ti-book"></span> Primaria y Bachillerato</p>
-					<p><span class="ti-world"></span> Comunicación escolar</p>
-
-					<div class="price">Institución Privada</div>
-				</div>
-			</div><!-- END COL -->
-
-
-			<div class="col-lg-4 col-sm-6 col-xs-12">
-				<div class="single_course">
-					<div class="single_c_img">
-						<a href="institution_details.php">
-							<img src="../assets/img/course/3.png" class="img-fluid" alt="institution-image" />
-						</a>
-						<span>Técnica</span>
-					</div>
-
-					<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-
-					<h4><a href="institution_details.php">Institución Técnica Industrial</a></h4>
-
-					<p><span class="ti-book"></span> Formación Técnica</p>
-					<p><span class="ti-world"></span> Seguimiento académico</p>
-
-					<div class="price">Educación Técnica</div>
-				</div>
-			</div><!-- END COL -->
-
-
-			<div class="col-lg-4 col-sm-6 col-xs-12">
-				<div class="single_course">
-					<div class="single_c_img">
-						<a href="institution_details.php">
-							<img src="../assets/img/course/4.png" class="img-fluid" alt="institution-image" />
-						</a>
-						<span>Rural</span>
-					</div>
-
-					<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-
-					<h4><a href="institution_details.php">Centro Educativo Rural</a></h4>
-
-					<p><span class="ti-book"></span> Educación Rural</p>
-					<p><span class="ti-world"></span> Acceso desde cualquier lugar</p>
-
-					<div class="price">Cobertura Rural</div>
-				</div>
-			</div><!-- END COL -->
-			
-
-			<div class="col-lg-4 col-sm-6 col-xs-12">
-				<div class="single_course">
-					<div class="single_c_img">
-						<a href="institution_details.php">
-							<img src="../assets/img/course/5.png" class="img-fluid" alt="institution-image" />
-						</a>
-						<span>Urbana</span>
-					</div>
-
-					<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-
-					<h4><a href="institution_details.php">Colegio Ciudad del Saber</a></h4>
-
-					<p><span class="ti-book"></span> Gestión Institucional</p>
-					<p><span class="ti-world"></span> Plataforma colaborativa</p>
-
-					<div class="price">Educación Urbana</div>
-				</div>
-			</div><!-- END COL -->
-
-
-			<div class="col-lg-4 col-sm-6 col-xs-12">
-				<div class="single_course">
-					<div class="single_c_img">
-						<a href="institution_details.php">
-							<img src="../assets/img/course/6.png" class="img-fluid" alt="institution-image" />
-						</a>
-						<span>Bilingüe</span>
-					</div>
-
-					<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-
-					<h4><a href="institution_details.php">Colegio Internacional Futuro</a></h4>
-
-					<p><span class="ti-book"></span> Educación Bilingüe</p>
-					<p><span class="ti-world"></span> Innovación educativa</p>
-
-					<div class="price">Formación Internacional</div>
-				</div>
-			</div><!-- END COL -->
-
+		<div class="row" id="contenedorInstituciones">
+		    <?php foreach ($instituciones as $f): ?>
+		        <div class="col-lg-4 col-sm-6 col-xs-12">
+		            <div class="single_course">
+		                <div class="single_c_img">
+		                    <img src="<?= $f['logo']; ?>" class="img-fluid" alt="institution-image" />
+		                </div>
+		                <h4><a href="login.php?id=<?= $f['id_institucion']; ?>"><?= $f['nombre']; ?></a></h4>
+		                <p><span class="ti-email"></span> <?= $f['correo']; ?></p>
+		                <br>
+		                <p><span class="ti-world"></span> <?= $f['numero_telefonico']; ?></p>
+		            </div>
+		        </div><!-- END COL -->
+		    <?php endforeach; ?>
 		</div><!--- END ROW -->
-	    </div>
 	</section>
 
 	<?php include 'layout/foother_last_jquery.php'; ?>
 
 	</body>
+	<script>
+	document.addEventListener('DOMContentLoaded', () => {
+
+    const searchInput = document.getElementById('searchInput');
+    // Seleccionamos la columna de cada institución
+    const tarjetas = document.querySelectorAll('#contenedorInstituciones > div');
+
+    function filtrarInstituciones() {
+        const textoBusqueda = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+        tarjetas.forEach(tarjeta => {
+            // Obtenemos todo el texto legible de la tarjeta (nombre, correo, teléfono)
+            const textoTarjeta = tarjeta.textContent.toLowerCase();
+
+            // Comprobar si coincide con lo que el usuario escribe
+            const coincideBusqueda = textoTarjeta.includes(textoBusqueda);
+
+            // Mostrar u ocultar la columna contenedora
+            if (coincideBusqueda) {
+                tarjeta.style.display = '';
+            } else {
+                tarjeta.style.display = 'none';
+            }
+        });
+    }
+
+    // Escuchar el evento de búsqueda en tiempo real
+    if (searchInput) {
+        searchInput.addEventListener('input', filtrarInstituciones);
+    }
+});
+
+	</script>
 </html>
