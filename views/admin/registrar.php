@@ -1249,8 +1249,8 @@
                 selectZona.value = '';
             }
 
-            // 2. DIRECCIÓN DE RESIDENCIA: No se solicita para Directivos ('2') ni Docentes ('3')
-            if (idRol === "2" || idRol === "3") {
+            // 2. DIRECCIÓN DE RESIDENCIA: No se solicita para Administradores ('1') ni Directivos ('2') ni Docentes ('3')
+            if (idRol === "1" || idRol === "2" || idRol === "3") {
                 grupoDireccion.style.display = 'none';
                 inputDireccion.removeAttribute('required');
                 inputDireccion.value = '';
