@@ -1,4 +1,9 @@
-<?php include("../../controllers/SessionEstudianteController.php"); ?>
+<?php 
+include("../../controllers/SessionEstudianteController.php"); 
+require_once __DIR__ . "/../../controllers/UsuarioSesionController.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -65,33 +70,33 @@
                 <div class="avatar-circle">
                     <i class="fa-solid fa-user"></i>
                 </div>
-                <h3 class="profile-name">Juan Esteban Mendieta</h3>
+                <h3 class="profile-name"><?= $detalle['nombre'] . ' ' . $detalle['apellido'] ?></h3>
             </div>
 
             <div class="profile-info">
                 <div class="info-group">
                     <label>ID Documento</label>
-                    <span>1004589211</span>
+                    <span><?= $detalle['documento'] ?></span>
                 </div>
                 <div class="info-group">
                     <label>Correo Electrónico</label>
-                    <span>juan.mendieta@estudiante.edu.co</span>
+                    <span><?= $detalle['correo'] ?></span>
                 </div>
                 <div class="info-group">
                     <label>Teléfono</label>
-                    <span>3124567890</span>
+                    <span><?= $detalle['telefono'] ?></span>
                 </div>
                 <div class="info-group">
                     <label>Institución Educativa</label>
-                    <span>Unidad Educativa Simón Bolívar</span>
+                    <span><?= $detalle['institucion'] ?></span>
                 </div>
                 <div class="info-group">
                     <label>Curso Actual</label>
-                    <span>Curso 1104</span>
+                    <span><?= $detalle['curso'] ?></span>
                 </div>
                 <div class="info-group">
                     <label>Estado</label>
-                    <div><span class="status-tag">Activo</span></div>
+                    <div><span class="status-tag"><?= $detalle['estado'] ?></span></div>
                 </div>
             </div>
         </aside>
@@ -100,7 +105,7 @@
         <section>
             <!-- Card de Bienvenida -->
             <div class="dash-card welcome-card">
-                <h2>¡Bienvenido de nuevo, Juan!</h2>
+                <h2>¡Bienvenido de nuevo, <?= $detalle['nombre'] ?>!</h2>
                 <p>Desde aquí puedes consultar tus asignaturas, revisar tareas pendientes, verificar tus calificaciones y estar al día con tus actividades escolares.</p>
             </div>
 
