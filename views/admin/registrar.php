@@ -920,7 +920,7 @@
 
                         <option value="" disabled selected>Seleccione Rol</option>
                         <?php foreach ($roles as $rol): ?>
-                            <option value="<?= $rol['id_rol'] ?>">
+                            <option value="<?= $rol['nombre'] ?>">
                                 <?= htmlspecialchars($rol['nombre']) ?>
                             </option>
                         <?php endforeach; ?>
