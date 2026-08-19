@@ -1,11 +1,15 @@
 <?php 
+
 session_start();
 
-if (isset($_SESSION['rol']) && $_SESSION['rol'] == 3) {
+if (isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == 3) {
    
 } else {
+
     echo "<script>alert('Usted no esta autorizado!!!')</script>";
     echo "<script>location.href='../../views/login.php'</script>";
     exit();
+
 }
+
 ?>
