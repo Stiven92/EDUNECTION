@@ -303,101 +303,101 @@
                             </select>
                         </div>
 
-                    <div class="form-group">
-                        <label for="id_zona" class="input-label">Zona de Residencia</label>
-                        <select id="id_zona" name="id_zona" class="custom-select">
-                            <option value="" disabled selected>Seleccione Zona...</option>
-                            <?php foreach ($zonas as $zona): ?>
-                                <option value="<?= $zona['id_zona'] ?>">
-                                    <?= htmlspecialchars($zona['nombre']) ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Campo EPS (Estudiante, Docente y Directivo) -->
-                <div class="form-grid-2" id="grupo-eps" style="display: none;">
-                    <div class="form-group">
-                        <label for="id_eps" class="input-label">EPS</label>
-                        <select id="id_eps" name="id_eps" class="custom-select">
-                            <option value="" disabled selected>Seleccione EPS...</option>
-                            <?php foreach ($listaEPS as $eps): ?>
-                                <option value="<?= $eps['id_eps'] ?>">
-                                    <?= htmlspecialchars($eps['nombre']) ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- PASO 4: Información Académica (Exclusivo para Estudiantes) -->
-                <div id="grupo-academico-estudiante" style="display: none;">
-                    <hr class="form-divider">
-                    <div class="form-section-title">
-                        <i class="fa-solid fa-graduation-cap"></i> 4. Información Académica y Matrícula
-                    </div>
-
-                    <br>
-
-                    <div class="form-grid-2">
                         <div class="form-group">
-                            <label for="id_anio_lectivo" class="input-label">Año Lectivo</label>
-                            <select id="id_anio_lectivo" name="id_anio_lectivo" class="custom-select">
-                                <option value="" disabled selected>Seleccione Año...</option>
-                                <?php foreach ($aniosLectivos as $al): ?>
-                                    <option value="<?= $al['id_anio_lectivo'] ?>">
-                                        <?= htmlspecialchars($al['anio']) ?>
-                                    </option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="id_grado" class="input-label">Grado</label>
-                            <select id="id_grado" name="id_grado" class="custom-select">
-                                <option value="" disabled selected>Seleccione Grado...</option>
-                                <?php foreach ($grados as $grado): ?>
-                                    <option value="<?= $grado['id_grado'] ?>">
-                                        <?= htmlspecialchars($grado['nombre']) ?>
+                            <label for="id_zona" class="input-label">Zona de Residencia</label>
+                            <select id="id_zona" name="id_zona" class="custom-select">
+                                <option value="" disabled selected>Seleccione Zona...</option>
+                                <?php foreach ($zonas as $zona): ?>
+                                    <option value="<?= $zona['id_zona'] ?>">
+                                        <?= htmlspecialchars($zona['nombre']) ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
                     </div>
 
-                    <div class="form-grid-2">
+                    <!-- Campo EPS (Estudiante, Docente y Directivo) -->
+                    <div class="form-grid-2" id="grupo-eps" style="display: none;">
                         <div class="form-group">
-                            <label for="id_curso" class="input-label">Curso / Grupo</label>
-                            <select id="id_curso" name="id_curso" class="custom-select">
-                                <option value="" disabled selected>Seleccione Curso (Opcional)...</option>
-                                <?php foreach ($cursos as $curso): ?>
-                                    <option value="<?= $curso['id_curso'] ?>">
-                                        <?= htmlspecialchars($curso['nombre']) ?>
+                            <label for="id_eps" class="input-label">EPS</label>
+                            <select id="id_eps" name="id_eps" class="custom-select">
+                                <option value="" disabled selected>Seleccione EPS...</option>
+                                <?php foreach ($listaEPS as $eps): ?>
+                                    <option value="<?= $eps['id_eps'] ?>">
+                                        <?= htmlspecialchars($eps['nombre']) ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="observaciones" class="input-label">Observaciones de Matrícula</label>
-                        <textarea id="observaciones" name="observaciones" class="form-input" rows="3"
-                            placeholder="Anotaciones o detalles adicionales sobre la matrícula..."></textarea>
+                    <!-- PASO 4: Información Académica (Exclusivo para Estudiantes) -->
+                    <div id="grupo-academico-estudiante" style="display: none;">
+                        <hr class="form-divider">
+                        <div class="form-section-title">
+                            <i class="fa-solid fa-graduation-cap"></i> 4. Información Académica y Matrícula
+                        </div>
+
+                        <br>
+
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="id_anio_lectivo" class="input-label">Año Lectivo</label>
+                                <select id="id_anio_lectivo" name="id_anio_lectivo" class="custom-select">
+                                    <option value="" disabled selected>Seleccione Año...</option>
+                                    <?php foreach ($aniosLectivos as $al): ?>
+                                        <option value="<?= $al['id_anio_lectivo'] ?>">
+                                            <?= htmlspecialchars($al['anio']) ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="id_grado" class="input-label">Grado</label>
+                                <select id="id_grado" name="id_grado" class="custom-select">
+                                    <option value="" disabled selected>Seleccione Grado...</option>
+                                    <?php foreach ($grados as $grado): ?>
+                                        <option value="<?= $grado['id_grado'] ?>">
+                                            <?= htmlspecialchars($grado['nombre']) ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="id_curso" class="input-label">Curso / Grupo</label>
+                                <select id="id_curso" name="id_curso" class="custom-select">
+                                    <option value="" disabled selected>Seleccione Curso (Opcional)...</option>
+                                    <?php foreach ($cursos as $curso): ?>
+                                        <option value="<?= $curso['id_curso'] ?>">
+                                            <?= htmlspecialchars($curso['nombre']) ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="observaciones" class="input-label">Observaciones de Matrícula</label>
+                            <textarea id="observaciones" name="observaciones" class="form-input" rows="3"
+                                placeholder="Anotaciones o detalles adicionales sobre la matrícula..."></textarea>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Botones de Acción -->
-                <div class="publish-actions">
-                    <a href="dashboardAdmin.php" class="btn-cancel">Cancelar</a>
-                    <button type="submit" class="btn-publish" id="btn-submit-text">
-                        <i class="fa-solid fa-user-check"></i> Registrar Usuario
-                    </button>
-                </div>
+                    <!-- Botones de Acción -->
+                    <div class="publish-actions">
+                        <a href="dashboardAdmin.php" class="btn-cancel">Cancelar</a>
+                        <button type="submit" class="btn-publish" id="btn-submit-text">
+                            <i class="fa-solid fa-user-check"></i> Registrar Usuario
+                        </button>
+                    </div>
 
-        </div> <!-- Cierre de #secciones-dinamicas -->
+                </div> <!-- Cierre de #secciones-dinamicas -->
 
-        </form>
+            </form>
         </div>
 
 
@@ -874,7 +874,8 @@
                                 <?php if (!empty($municipios)): ?>
                                     <?php foreach ($municipios as $mun): ?>
                                         <span>
-                                            <strong><?= $mun['id_municipio'] ?></strong> — <?= htmlspecialchars($mun['nombre']) ?>
+                                            <strong><?= $mun['id_municipio'] ?></strong> —
+                                            <?= htmlspecialchars($mun['nombre']) ?>
                                         </span>
                                     <?php endforeach; ?>
                                 <?php else: ?>
@@ -918,12 +919,14 @@
 
                         <select id="roleFilter" class="role-filter">
 
-                        <option value="" disabled selected>Seleccione Rol</option>
-                        <?php foreach ($roles as $rol): ?>
-                            <option value="<?= $rol['nombre'] ?>">
-                                <?= htmlspecialchars($rol['nombre']) ?>
-                            </option>
-                        <?php endforeach; ?>
+                            <option value="" disabled selected>Seleccione Rol</option>
+
+                            <option value="todos">Todos</option>
+                            <?php foreach ($roles as $rol): ?>
+                                <option value="<?= $rol['nombre'] ?>">
+                                    <?= htmlspecialchars($rol['nombre']) ?>
+                                </option>
+                            <?php endforeach; ?>
 
                         </select>
 
@@ -1001,10 +1004,7 @@
                                     <!-- CORREO + ICONO -->
                                     <td>
 
-                                        <a
-                                            href="detalleUsuario.php?id=<?= $usr['id_usuario'] ?>"
-                                            class="user-profile-link"
-                                        >
+                                        <a href="detalleUsuario.php?id=<?= $usr['id_usuario'] ?>" class="user-profile-link">
 
                                             <div class="student-user-info">
 
@@ -1070,11 +1070,8 @@
                                     <!-- ACCIONES -->
                                     <td style="text-align: center;">
 
-                                        <a
-                                            href="editarUsuario.php?id=<?= $usr['id_usuario'] ?>"
-                                            class="tool-btn"
-                                            title="Editar"
-                                        >
+                                        <a href="editarUsuario.php?id=<?= $usr['id_usuario'] ?>" class="tool-btn"
+                                            title="Editar">
 
                                             <i class="fa-solid fa-pen"></i>
 
@@ -1091,10 +1088,7 @@
 
                             <tr>
 
-                                <td
-                                    colspan="6"
-                                    style="text-align:center;"
-                                >
+                                <td colspan="6" style="text-align:center;">
 
                                     No se encontraron usuarios registrados.
 
@@ -1349,6 +1343,7 @@
                     // Comprobar rol
                     const coincideRol =
                         rolSeleccionado === '' ||
+                        rolSeleccionado === 'todos' ||
                         rolUsuario === rolSeleccionado;
 
                     // Mostrar solamente si cumple ambos filtros
