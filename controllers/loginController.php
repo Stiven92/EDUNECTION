@@ -39,7 +39,7 @@ include("../models/mconsultas.php");
 
                 case 3:
                     echo "<script>alert('Bienvenido Docente')</script>";
-                    echo "<script>location.href='../views/docentes/dashboardDocentee.php'</script>";
+                    echo "<script>location.href='../views/docentes/dashboardDocente.php'</script>";
                     break;
 
                 case 2:
