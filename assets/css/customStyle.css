@@ -1,0 +1,337 @@
+:root {
+  --bg-dark-blue: #031b4e;
+  --bg-main-blue: #0d47a1;
+  --card-blue: #0b3c85;
+  --accent-blue: #42a5f5;
+  --teal-accent: #1abc9c;
+  --text-white: #ffffff;
+  --text-muted: #b0bec5;
+  --radius-lg: 1rem; /* 16px */
+  --radius-md: 0.625rem; /* 10px */
+  --font-main: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #f4f6ff;
+  color: var(--text-white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header con altura consistente */
+header.navbar-custom {
+  min-height: 4.8rem; /* ~72px */
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  background-color: #ffffff;
+}
+
+/* Espaciado horizontal generoso hacia los bordes */
+header.navbar-custom .header-container {
+  padding-left: 12rem;
+  padding-right: 12rem;
+}
+
+/* Menú central pill */
+.nav-pill-container {
+  background-color: #f1f5f9;
+  padding: 0.3rem 1rem;
+  border-radius: 0.75rem;
+}
+
+/* Ganamos especificidad sobre Bootstrap encadenando .nav-link */
+.nav-pill-container .nav-link.nav-link {
+  font-size: 0.925rem; /* ~14.8px */
+  font-weight: 600;
+  color: #64748b;
+  padding: 0.45rem 1.1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.nav-pill-container .nav-link.nav-link:hover {
+  color: #1e293b;
+}
+
+.nav-pill-container .nav-link.nav-link.active {
+  background-color: #ffffff;
+  color: #2563eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Botones circulares de la derecha */
+.btn-action-icon {
+  width: 2.375rem; /* 38px */
+  height: 2.375rem; /* 38px */
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  border-radius: 50%;
+  font-size: 0.9rem;
+}
+
+.btn-action-icon:hover {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+@media (max-width: 768px) {
+  header.navbar-custom .header-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+/* Estilos para el Desplegable por Hover */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Botón Gestión alineado con los enlaces del menú */
+.nav-dropdown .dropdown-btn {
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: #64748b;
+  padding: 0.45rem 1.1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.nav-dropdown .dropdown-btn i {
+  font-size: 0.75rem;
+  color: #64748b;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Hover sobre la opción Gestión */
+.nav-dropdown:hover .dropdown-btn {
+  color: #2563eb;
+}
+
+.nav-dropdown:hover .dropdown-btn i {
+  transform: rotate(180deg);
+  color: #2563eb;
+}
+
+/* Menú FLOTANTE */
+.custom-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0; /* O right: 0 si prefieres alinearlo a la derecha */
+  background-color: #ffffff;
+  min-width: 220px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  z-index: 1050;
+  border: 1px solid #e2e8f0;
+}
+
+/* Mostrar menú con hover */
+.nav-dropdown:hover .custom-dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  animation: dropdownFadeIn 0.2s ease-in-out;
+}
+
+/* Opciones internas del desplegable */
+.custom-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.85rem;
+  color: #334155;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.custom-dropdown-item i {
+  width: 1.1rem;
+  color: #2563eb;
+  text-align: center;
+}
+
+.custom-dropdown-item:hover {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+/* Animación de entrada */
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive: Manejo fluido de paddings en la Navbar */
+
+/* Pantallas medianas/grandes (Laptops pequeñas o tablets horizontales: 992px a 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  header.navbar-custom .header-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  /* Reduce el relleno interno de los enlaces para ganar espacio horizontal */
+  .nav-pill-container .nav-link.nav-link,
+  .nav-dropdown .dropdown-btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  /* Reduce un poco la separación entre los enlaces del menú */
+  .nav-pill-container {
+    gap: 0.25rem !important;
+  }
+}
+
+/*Las pestañas de navegación en registrar*/
+
+.btn-primary {
+  background-color: #2562ea !important;
+  border-color: #2562ea !important;
+  color: #ffffff !important;
+}
+
+/* ===================================================
+   EFECTOS HOVER PARA BOTONES DE CARGA MASIVA
+   =================================================== */
+
+/* Transición suave para todos los botones */
+.btn {
+    transition: all 0.25s ease-in-out !important;
+}
+
+/* 1. Botón "Procesar Usuarios" (Verde) */
+button[type="submit"].btn-success:hover,
+.btn-success:hover {
+    transform: translateY(-2px); /* Se eleva un poco */
+    background-color: #0e9f6e !important; /* Se oscurece ligeramente */
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3); /* Sombra elegante */
+}
+
+/* 2. Botón "Descargar Plantilla" (Solo cuando está habilitado) */
+#btn-descargar-plantilla:not(.disabled):hover {
+    transform: translateY(-2px); /* Se eleva un poco */
+    background-color: #0d6efd !important; /* Tono azul primario de tus pestañas */
+    color: #ffffff !important; /* Texto en blanco */
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+}
+
+/* Asegura que el icono dentro del botón de descarga pase a blanco en hover */
+#btn-descargar-plantilla:not(.disabled):hover i {
+    color: #ffffff !important;
+}
+
+/*el contenido principal */
+
+.container-custom {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+/* Incrementa la altura y padding de todos los inputs y selects */
+.form-control,
+.form-select,
+.input-group-text {
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+  font-size: 0.95rem;
+  border-radius: 0.5rem; /* Esquinas ligeramente más suaves */
+}
+
+/* Ajuste de alineación para iconos en input-groups */
+.input-group-text {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Zona de Arrastre (Dropzone) */
+.dropzone-box {
+  border: 2px dashed #cbd5e1;
+  background-color: #f8fafc;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.dropzone-box:hover {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+/* El input transparente cubre toda la tarjeta para capturar clics y drag & drop */
+.dropzone-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Pantallas móviles y tablets verticales (Menos de 992px) */
+@media (max-width: 991.98px) {
+  header.navbar-custom .header-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Ajustes para el menú desplegado en móvil */
+  #navbarEDUNECTION {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    margin-top: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Cambia la lista de navegación central a formato vertical en móvil */
+  .nav-pill-container {
+    flex-direction: column;
+    align-items: stretch !important;
+    width: 100%;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .nav-pill-container .nav-link.nav-link,
+  .nav-dropdown .dropdown-btn {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0.6rem 1rem;
+  }
+
+  /* Botones circulares de acción alineados en móvil */
+  .header-container .d-flex.align-items-center.gap-2 {
+    justify-content: flex-start;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e2e8f0;
+  }
+}
+
+
