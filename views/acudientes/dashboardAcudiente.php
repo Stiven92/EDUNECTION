@@ -1,4 +1,5 @@
 <?php include("../../controllers/SessionAcudienteController.php"); ?>
+<?php require_once __DIR__ . "/../../controllers/UsuarioSesionController.php"; ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -44,25 +45,25 @@ include'../layoutRol/HeadRol.php'
                 <div class="avatar-circle">
                     <i class="fa-solid fa-user-group"></i>
                 </div>
-                <h3 class="profile-name">Carlos Pérez Gómez</h3>
+                <h3 class="profile-name"><?= $detalle['nombre'] . ' ' . $detalle['apellido'] ?></h3>
             </div>
 
             <div class="profile-info">
                 <div class="info-group">
                     <label>ID Documento</label>
-                    <span>79844321</span>
+                    <span><?= $detalle['documento'] ?></span>
                 </div>
                 <div class="info-group">
                     <label>Correo Electrónico</label>
-                    <span>carlos.perez@gmail.com</span>
+                    <span><?= $detalle['correo'] ?></span>
                 </div>
                 <div class="info-group">
                     <label>Teléfono</label>
-                    <span>3158804422</span>
+                    <span><?= $detalle['telefono'] ?></span>
                 </div>
                 <div class="info-group">
                     <label>Institución Educativa</label>
-                    <span>Unidad Educativa Simón Bolívar</span>
+                    <span><?= $detalle['institucion'] ?></span>
                 </div>
                 <div class="info-group">
                     <label>Estudiante Acudido</label>
@@ -74,7 +75,7 @@ include'../layoutRol/HeadRol.php'
                 </div>
                 <div class="info-group">
                     <label>Estado</label>
-                    <div><span class="status-tag">Activo</span></div>
+                    <div><span class="status-tag"><?= $detalle['estado'] ?></span></div>
                 </div>
             </div>
         </aside>
@@ -83,7 +84,7 @@ include'../layoutRol/HeadRol.php'
         <section>
             <!-- Card de Bienvenida -->
             <div class="dash-card welcome-card">
-                <h2>¡Bienvenido de nuevo, Carlos!</h2>
+                <h2>¡Bienvenido/a de nuevo, <?= $detalle['nombre'] ?>!</h2>
                 <p>Desde aquí puedes realizar el seguimiento académico de tu acudido, consultar calificaciones, revisar tareas pendientes y comunicarte con la institución.</p>
             </div>
 

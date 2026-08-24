@@ -105,7 +105,7 @@ require_once __DIR__ . "/../../controllers/UsuarioSesionController.php";
         <section>
             <!-- Card de Bienvenida -->
             <div class="dash-card welcome-card">
-                <h2>¡Bienvenido de nuevo, <?= $detalle['nombre'] ?>!</h2>
+                <h2>¡Bienvenido/a de nuevo, <?= $detalle['nombre'] ?>!</h2>
                 <p>Desde aquí puedes consultar tus asignaturas, revisar tareas pendientes, verificar tus calificaciones y estar al día con tus actividades escolares.</p>
             </div>
 

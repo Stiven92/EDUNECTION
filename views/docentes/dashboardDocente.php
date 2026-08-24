@@ -104,7 +104,7 @@ include'../layoutRol/HeadRol.php'
         <section>
             <!-- Card de Bienvenida -->
             <div class="dash-card welcome-card">
-                <h2>¡Bienvenido de nuevo, <?= $detalle['nombre'] ?>!</h2>
+                <h2>¡Bienvenido/a de nuevo, <?= $detalle['nombre'] ?>!</h2>
                 <p>Desde aquí puedes gestionar tus asignaturas, registrar calificaciones, consultar estudiantes y
                     comunicarte con la comunidad.</p>
             </div>

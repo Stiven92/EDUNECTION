@@ -4398,3 +4398,11 @@ body {
         box-sizing: border-box;
     }
 }
+
+.estudiante-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.estudiante-grid .form-group-full {
+    grid-column: 1 / -1;
+}

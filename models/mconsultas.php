@@ -1274,6 +1274,313 @@ class Consultas
 
 
 
+	// =====================================================
+	// ACTUALIZAR INFORMACIÓN DE LOS USUARIOS
+	// =====================================================
+
+	public function actualizarUsuario($idUsuario, $datos)
+	{
+	    $sql = "UPDATE usuario
+	            SET
+	                correo = :correo,
+	                estado = :estado
+	            WHERE id_usuario = :id_usuario";
+
+	    $stmt = $this->conexion->prepare($sql);
+
+	    $stmt->bindParam(":correo", $datos["correo"]);
+	    $stmt->bindParam(":estado", $datos["estado"]);
+	    $stmt->bindParam(":id_usuario", $idUsuario, PDO::PARAM_INT);
+
+	    try {
+
+	        $stmt->execute();
+
+	    } catch (Exception $e) {
+
+	        echo "<script>
+	                alert('Error al actualizar la información de la cuenta');
+	                history.back();
+	              </script>";
+
+	        exit;
+	    }
+	}
+
+
+	public function actualizarAdministrador($idUsuario, $datos)
+	{
+	    $sql = "UPDATE administrador
+	            SET
+	                nombres = :nombres,
+	                apellidos = :apellidos,
+	                id_tipo_documento = :id_tipo_documento,
+	                numero_documento = :numero_documento,
+	                numero_telefonico = :numero_telefonico
+	            WHERE id_usuario = :id_usuario";
+
+	    $stmt = $this->conexion->prepare($sql);
+
+	    $stmt->bindParam(":nombres", $datos["nombres"]);
+	    $stmt->bindParam(":apellidos", $datos["apellidos"]);
+	    $stmt->bindParam(":id_tipo_documento", $datos["id_tipo_documento"]);
+	    $stmt->bindParam(":numero_documento", $datos["numero_documento"]);
+	    $stmt->bindParam(":numero_telefonico", $datos["numero_telefonico"]);
+	    $stmt->bindParam(":id_usuario", $idUsuario, PDO::PARAM_INT);
+
+	    try {
+
+	        $stmt->execute();
+
+	        echo "<script>
+	                alert('Administrador actualizado correctamente');
+	              </script>";
+
+	    } catch (Exception $e) {
+
+	        echo "<script>
+	                alert('Error al actualizar los datos del administrador');
+	              </script>";
+	    }
+	}
+
+
+	public function actualizarDirectivo($idUsuario, $datos)
+	{
+	    $sql = "UPDATE directivo
+	            SET
+	                nombres = :nombres,
+	                apellidos = :apellidos,
+	                id_tipo_documento = :id_tipo_documento,
+	                numero_documento = :numero_documento,
+	                numero_telefonico = :numero_telefonico,
+	                cargo = :cargo,
+	                id_eps = :id_eps,
+	                id_tipo_sangre = :id_tipo_sangre
+	            WHERE id_usuario = :id_usuario";
+
+	    $stmt = $this->conexion->prepare($sql);
+
+	    $stmt->bindParam(":nombres", $datos["nombres"]);
+	    $stmt->bindParam(":apellidos", $datos["apellidos"]);
+	    $stmt->bindParam(":id_tipo_documento", $datos["id_tipo_documento"]);
+	    $stmt->bindParam(":numero_documento", $datos["numero_documento"]);
+	    $stmt->bindParam(":numero_telefonico", $datos["numero_telefonico"]);
+	    $stmt->bindParam(":cargo", $datos["cargo"]);
+	    $stmt->bindParam(":id_eps", $datos["id_eps"]);
+	    $stmt->bindParam(":id_tipo_sangre", $datos["id_tipo_sangre"]);
+	    $stmt->bindParam(":id_usuario", $idUsuario, PDO::PARAM_INT);
+
+	    try {
+
+	        $stmt->execute();
+
+	        echo "<script>
+	                alert('Directivo actualizado correctamente');
+	              </script>";
+
+	    } catch (Exception $e) {
+
+	        echo "<script>
+	                alert('Error al actualizar los datos del directivo');
+	              </script>";
+	    }
+	}
+
+
+	public function actualizarDocente($idUsuario, $datos)
+	{
+	    $sql = "UPDATE docente
+	            SET
+	                nombres = :nombres,
+	                apellidos = :apellidos,
+	                id_tipo_documento = :id_tipo_documento,
+	                numero_documento = :numero_documento,
+	                numero_telefonico = :numero_telefonico,
+	                especialidad = :especialidad,
+	                id_eps = :id_eps,
+	                id_tipo_sangre = :id_tipo_sangre
+	            WHERE id_usuario = :id_usuario";
+
+	    $stmt = $this->conexion->prepare($sql);
+
+	    $stmt->bindParam(":nombres", $datos["nombres"]);
+	    $stmt->bindParam(":apellidos", $datos["apellidos"]);
+	    $stmt->bindParam(":id_tipo_documento", $datos["id_tipo_documento"]);
+	    $stmt->bindParam(":numero_documento", $datos["numero_documento"]);
+	    $stmt->bindParam(":numero_telefonico", $datos["numero_telefonico"]);
+	    $stmt->bindParam(":especialidad", $datos["especialidad"]);
+	    $stmt->bindParam(":id_eps", $datos["id_eps"]);
+	    $stmt->bindParam(":id_tipo_sangre", $datos["id_tipo_sangre"]);
+	    $stmt->bindParam(":id_usuario", $idUsuario, PDO::PARAM_INT);
+
+	    try {
+
+	        $stmt->execute();
+
+	        echo "<script>
+	                alert('Docente actualizado correctamente');
+	              </script>";
+
+	    } catch (Exception $e) {
+
+	        echo "<script>
+	                alert('Error al actualizar los datos del docente');
+	              </script>";
+	    }
+	}
+
+
+	public function actualizarMatricula($idUsuario, $datos)
+	{
+	    $sql = "UPDATE matricula
+	            SET
+	                nombres = :nombres,
+	                apellidos = :apellidos,
+	                id_tipo_documento = :id_tipo_documento,
+	                numero_documento = :numero_documento,
+	                fecha_nacimiento = :fecha_nacimiento,
+	                id_sexo = :id_sexo,
+	                direccion = :direccion,
+	                id_municipio = :id_municipio,
+	                id_zona = :id_zona,
+	                numero_telefonico = :numero_telefonico,
+	                id_eps = :id_eps,
+	                id_tipo_sangre = :id_tipo_sangre,
+	                id_grado = :id_grado,
+	                id_curso = :id_curso,
+	                id_estado_matricula = :id_estado_matricula,
+	                observaciones = :observaciones
+	            WHERE id_usuario = :id_usuario";
+
+	    $stmt = $this->conexion->prepare($sql);
+
+	    $stmt->bindParam(":nombres", $datos["nombres"]);
+	    $stmt->bindParam(":apellidos", $datos["apellidos"]);
+	    $stmt->bindParam(":id_tipo_documento", $datos["id_tipo_documento"]);
+	    $stmt->bindParam(":numero_documento", $datos["numero_documento"]);
+	    $stmt->bindParam(":fecha_nacimiento", $datos["fecha_nacimiento"]);
+	    $stmt->bindParam(":id_sexo", $datos["id_sexo"]);
+	    $stmt->bindParam(":direccion", $datos["direccion"]);
+	    $stmt->bindParam(":id_municipio", $datos["id_municipio"]);
+	    $stmt->bindParam(":id_zona", $datos["id_zona"]);
+	    $stmt->bindParam(":numero_telefonico", $datos["numero_telefonico"]);
+	    $stmt->bindParam(":id_eps", $datos["id_eps"]);
+	    $stmt->bindParam(":id_tipo_sangre", $datos["id_tipo_sangre"]);
+	    $stmt->bindParam(":id_grado", $datos["id_grado"]);
+
+	    // Curso puede ser NULL
+	    if (
+	        isset($datos["id_curso"]) &&
+	        $datos["id_curso"] !== ''
+	    ) {
+
+	        $stmt->bindValue(
+	            ":id_curso",
+	            $datos["id_curso"],
+	            PDO::PARAM_INT
+	        );
+
+	    } else {
+
+	        $stmt->bindValue(
+	            ":id_curso",
+	            null,
+	            PDO::PARAM_NULL
+	        );
+	    }
+
+	    $stmt->bindParam(
+	        ":id_estado_matricula",
+	        $datos["id_estado_matricula"]
+	    );
+
+	    // Observaciones puede ser NULL
+	    if (
+	        isset($datos["observaciones"]) &&
+	        trim($datos["observaciones"]) !== ''
+	    ) {
+
+	        $stmt->bindValue(
+	            ":observaciones",
+	            $datos["observaciones"],
+	            PDO::PARAM_STR
+	        );
+
+	    } else {
+
+	        $stmt->bindValue(
+	            ":observaciones",
+	            null,
+	            PDO::PARAM_NULL
+	        );
+	    }
+
+	    $stmt->bindParam(
+	        ":id_usuario",
+	        $idUsuario,
+	        PDO::PARAM_INT
+	    );
+
+	    try {
+
+	        $stmt->execute();
+
+	        echo "<script>
+	                alert('Estudiante actualizado correctamente');
+	              </script>";
+
+	    } catch (Exception $e) {
+
+	        echo "<script>
+	                alert('Error al actualizar los datos del estudiante');
+	              </script>";
+	    }
+	}
+
+
+	public function actualizarAcudiente($idUsuario, $datos)
+	{
+	    $sql = "UPDATE acudiente
+	            SET
+	                nombres = :nombres,
+	                apellidos = :apellidos,
+	                id_tipo_documento = :id_tipo_documento,
+	                numero_documento = :numero_documento,
+	                numero_telefonico = :numero_telefonico,
+	                direccion = :direccion,
+	                ocupacion = :ocupacion
+	            WHERE id_usuario = :id_usuario";
+
+	    $stmt = $this->conexion->prepare($sql);
+
+	    $stmt->bindParam(":nombres", $datos["nombres"]);
+	    $stmt->bindParam(":apellidos", $datos["apellidos"]);
+	    $stmt->bindParam(":id_tipo_documento", $datos["id_tipo_documento"]);
+	    $stmt->bindParam(":numero_documento", $datos["numero_documento"]);
+	    $stmt->bindParam(":numero_telefonico", $datos["numero_telefonico"]);
+	    $stmt->bindParam(":direccion", $datos["direccion"]);
+	    $stmt->bindParam(":ocupacion", $datos["ocupacion"]);
+	    $stmt->bindParam(":id_usuario", $idUsuario, PDO::PARAM_INT);
+
+	    try {
+
+	        $stmt->execute();
+
+	        echo "<script>
+	                alert('Acudiente actualizado correctamente');
+	              </script>";
+
+	    } catch (Exception $e) {
+
+	        echo "<script>
+	                alert('Error al actualizar los datos del acudiente');
+	              </script>";
+	    }
+	}
+
+
+
 
 
 
@@ -1417,6 +1724,17 @@ class Consultas
 		$stmt = $this->conexion->prepare($sql);
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function obtenerEstadosMatricula()
+	{
+	    $sql = "SELECT id_estado_matricula, nombre 
+	            FROM estado_matricula";
+
+	    $stmt = $this->conexion->prepare($sql);
+	    $stmt->execute();
+
+	    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 	public function obtenerListaUsuarios()

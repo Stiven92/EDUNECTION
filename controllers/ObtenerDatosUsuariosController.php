@@ -24,6 +24,7 @@ $aniosLectivos = $consultas->obtenerAniosLectivos();
 $grados        = $consultas->obtenerGrados();
 $cursos        = $consultas->obtenerCursos();
 $usuarios      = $consultas->obtenerListaUsuarios();
+$estadosMatricula = $consultas->obtenerEstadosMatricula();
 
 // Cargar/Incluir la Vista para que pueda consumir las variables creadas
 
