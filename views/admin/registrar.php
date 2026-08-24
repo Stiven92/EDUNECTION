@@ -12,7 +12,8 @@
     <!-- Tipografía Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- Bootstrap 5.3 CSS & FontAwesome -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -447,22 +448,26 @@
                             </div>
                         </div>
 
-                        <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-4"> recordemos
-                            <a href="dashboardAdmin.php"
-                                class="text-secondary text-decoration-none fw-semibold">Cancelar</a>
-                            <div class="d-flex gap-2">
-                                <a id="btn-descargar-plantilla" href="javascript:void(0);"
-                                    class="btn btn-light text-muted border-0 fw-semibold px-3 py-2 d-inline-flex align-items-center gap-2 disabled"
-                                    aria-disabled="true" style="background-color: #e2e8f0; pointer-events: none;">
-                                    <i class="fa-solid fa-file-excel"></i> Descargar Plantilla
-                                </a>
-                                <button type="submit"
-                                    class="btn btn-success fw-semibold px-4 py-2 d-inline-flex align-items-center gap-2"
-                                    style="background-color: #10b981; border: none;">
-                                    <i class="fa-solid fa-upload"></i> Procesar Usuarios
-                                </button>
-                            </div>
-                        </div>
+<div class="d-flex flex-column flex-md-row align-items-stretch align-items-md-center justify-content-between pt-3 border-top mt-4 gap-3">
+    <!-- En móvil se muestra como un botón secundario claro, en PC vuelve a ser texto simple -->
+    <a href="dashboardAdmin.php"
+        class="btn btn-outline-secondary border-0 fw-semibold text-center order-3 order-md-1">
+        Cancelar
+    </a>
+    
+    <div class="d-flex flex-column flex-sm-row gap-2 order-1 order-md-2  w-md-auto">
+        <a id="btn-descargar-plantilla" href="javascript:void(0);"
+            class="btn btn-light text-muted border-0 fw-semibold px-3 py-2 d-inline-flex align-items-center justify-content-center gap-2 disabled w-100 w-sm-auto"
+            aria-disabled="true" style="background-color: #e2e8f0; pointer-events: none;">
+            <i class="fa-solid fa-file-excel"></i> Descargar Plantilla
+        </a>
+        <button type="submit"
+            class="btn btn-success fw-semibold px-4 py-2 d-inline-flex align-items-center justify-content-center gap-2 w-100 w-sm-auto"
+            style="background-color: #10b981; border: none;">
+            <i class="fa-solid fa-upload"></i> Procesar Usuarios
+        </button>
+    </div>
+</div>
                     </div>
                 </form>
             </div>
@@ -737,7 +742,7 @@
                                                 <?= htmlspecialchars($usr['institucion']) ?>
                                             </span>
                                         </td>
-                                        <td>
+                                        <td data-filter="<?= htmlspecialchars($usr['rol']) ?>">
                                             <span class="badge rounded-pill fw-normal px-3 py-2"
                                                 style="background-color: #f3e8ff; color: #7e22ce;">
                                                 <?= htmlspecialchars($usr['rol']) ?>
@@ -772,7 +777,7 @@
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 
-<script type="module" src="../../js/main.js"></script>
+    <script type="module" src="../../js/main.js"></script>
 </body>
 
 </html>
